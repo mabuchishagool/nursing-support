@@ -241,14 +241,15 @@
   /* Login Welcome */
   .login-welcome{
     position:fixed;inset:0;z-index:20000;background:#eef4ff;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    display:none;flex-direction:column;align-items:center;justify-content:center;
     text-align:center;padding:2rem;
-    opacity:0;pointer-events:none;transition:opacity 0.4s ease;
   }
-  .login-welcome.show{opacity:1;pointer-events:auto;}
-  .login-welcome img{width:90px;height:90px;border-radius:20px;object-fit:cover;margin-bottom:24px;box-shadow:0 8px 32px rgba(25,113,194,0.2);animation:float 3s ease-in-out infinite;}
-  .login-welcome-msg{font-size:20px;font-weight:600;color:#1971c2;line-height:1.8;margin-bottom:12px;}
-  .login-welcome-sub{font-size:13px;color:#74a7d8;letter-spacing:0.08em;animation:blink 1.8s ease-in-out infinite;}
+  .login-welcome.show{display:flex;}
+  .login-welcome-logo{width:100px;height:100px;border-radius:22px;object-fit:cover;margin-bottom:20px;box-shadow:0 12px 40px rgba(25,113,194,0.22);animation:float 3s ease-in-out infinite;}
+  .login-welcome-title{font-size:16px;font-weight:600;color:#1971c2;margin-bottom:24px;letter-spacing:0.04em;}
+  .login-welcome-card{background:#fff;border-radius:20px;padding:24px 28px;max-width:300px;width:100%;box-shadow:0 4px 24px rgba(25,113,194,0.12);margin-bottom:28px;}
+  .login-welcome-msg{font-size:17px;font-weight:600;color:#1971c2;line-height:1.9;}
+  .login-welcome-tap{font-size:12px;color:#74a7d8;letter-spacing:0.14em;animation:blink 1.8s ease-in-out infinite;}
 
   /* Toast */
   .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:#212529;color:#fff;padding:10px 20px;border-radius:99px;font-size:14px;opacity:0;transition:all 0.22s;pointer-events:none;z-index:9999;white-space:nowrap;}
@@ -328,9 +329,12 @@
 
 <!-- Login Welcome Overlay -->
 <div class="login-welcome" id="loginWelcome" onclick="dismissLoginWelcome()">
-  <img src="icon.png" alt="ロゴ">
-  <div class="login-welcome-msg">今日もちょこっと頑張りましょう！<br>頑張るあなたをサポートします！</div>
-  <div class="login-welcome-sub">TAP TO START</div>
+  <img src="icon.png" alt="ロゴ" class="login-welcome-logo">
+  <div class="login-welcome-title">小児科看護支援ガイド</div>
+  <div class="login-welcome-card">
+    <div class="login-welcome-msg">今日もちょこっと頑張りましょう！<br>頑張るあなたをサポートします！</div>
+  </div>
+  <div class="login-welcome-tap">TAP TO START</div>
 </div>
 
 <!-- Splash Screen -->
@@ -455,6 +459,13 @@ let history = [];
 let memos = {};
 let syncTimer = null;
 
+// ====== ZOOM RESET ======
+function resetZoom(){
+  const vp = document.querySelector('meta[name=viewport]');
+  vp.setAttribute('content','width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');
+  setTimeout(()=>{ vp.setAttribute('content','width=device-width,initial-scale=1.0'); }, 400);
+}
+
 // ====== SPLASH ======
 let splashDone = false;
 function splashTap(){
@@ -479,6 +490,7 @@ auth.onAuthStateChanged(user => {
     document.getElementById('userEmail').textContent = user.email;
     loadUserData().then(()=>{
       hideSplash();
+      resetZoom();
       if(isFirstLogin){
         isFirstLogin = false;
         showLoginWelcome();
@@ -489,6 +501,7 @@ auth.onAuthStateChanged(user => {
   } else {
     currentUser = null;
     hideSplash();
+    resetZoom();
     showAuthScreen();
   }
 });
@@ -498,17 +511,19 @@ function showLoginWelcome(){
   document.getElementById('authScreen').style.display = 'none';
   document.getElementById('layout').style.display = 'flex';
   if(!document.getElementById('catBar').hasChildNodes()) initApp();
-  const el = document.getElementById('loginWelcome');
-  el.classList.add('show');
+  resetZoom();
+  document.getElementById('loginWelcome').classList.add('show');
 }
 function dismissLoginWelcome(){
   document.getElementById('loginWelcome').classList.remove('show');
+  resetZoom();
 }
 
 // ====== AUTH FUNCTIONS ======
 function showAuthScreen(){
   document.getElementById('authScreen').style.display = 'flex';
   document.getElementById('layout').style.display = 'none';
+  resetZoom();
   showLogin();
 }
 function showApp(){
@@ -536,10 +551,18 @@ async function doLogin(){
   if(!email||!pass){ setAuthError('メールアドレスとパスワードを入力してください'); return; }
   const btn = document.getElementById('loginBtn');
   btn.disabled = true; btn.textContent = 'ログイン中…';
+  setAuthError('');
+  const timeout = setTimeout(()=>{
+    btn.disabled = false; btn.textContent = 'ログイン';
+    setAuthError('タイムアウトしました。もう一度お試しください');
+    isFirstLogin = false;
+  }, 10000);
   try{
     isFirstLogin = true;
     await auth.signInWithEmailAndPassword(email, pass);
+    clearTimeout(timeout);
   } catch(e){
+    clearTimeout(timeout);
     isFirstLogin = false;
     setAuthError(authErrMsg(e.code));
     btn.disabled = false; btn.textContent = 'ログイン';
