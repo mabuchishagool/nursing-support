@@ -1,0 +1,18 @@
+{
+  "name": "小児科看護支援ガイド",
+  "short_name": "小児科看護",
+  "description": "小児科看護師のための疾患観察支援アプリ",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1971c2",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
