@@ -102,7 +102,7 @@
   .main{flex:1;overflow-y:auto;background:var(--bg);}
 
   /* Sidebar header */
-  .sidebar-header{padding:14px 14px 12px;border-bottom:1px solid var(--border);background:var(--bg-header);}
+  .sidebar-header{padding:14px 14px 12px;border-bottom:1px solid var(--border);background:var(--bg-header);padding-top:calc(14px + env(safe-area-inset-top));}
   .sidebar-header-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
   .logo-btn{
     background:none;border:none;cursor:pointer;padding:0;border-radius:10px;
@@ -238,6 +238,18 @@
   .cheer-msg em{font-style:normal;font-weight:700;color:var(--blue);}
   .cheer-sub{font-size:11px;color:var(--text-tertiary);letter-spacing:0.08em;}
 
+  /* Login Welcome */
+  .login-welcome{
+    position:fixed;inset:0;z-index:20000;background:#eef4ff;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:2rem;
+    opacity:0;pointer-events:none;transition:opacity 0.4s ease;
+  }
+  .login-welcome.show{opacity:1;pointer-events:auto;}
+  .login-welcome img{width:90px;height:90px;border-radius:20px;object-fit:cover;margin-bottom:24px;box-shadow:0 8px 32px rgba(25,113,194,0.2);animation:float 3s ease-in-out infinite;}
+  .login-welcome-msg{font-size:20px;font-weight:600;color:#1971c2;line-height:1.8;margin-bottom:12px;}
+  .login-welcome-sub{font-size:13px;color:#74a7d8;letter-spacing:0.08em;animation:blink 1.8s ease-in-out infinite;}
+
   /* Toast */
   .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:#212529;color:#fff;padding:10px 20px;border-radius:99px;font-size:14px;opacity:0;transition:all 0.22s;pointer-events:none;z-index:9999;white-space:nowrap;}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
@@ -270,6 +282,13 @@
 <body>
 
 <div class="toast" id="toast"></div>
+
+<!-- Login Welcome Overlay -->
+<div class="login-welcome" id="loginWelcome" onclick="dismissLoginWelcome()">
+  <img src="icon.png" alt="ロゴ">
+  <div class="login-welcome-msg">今日もちょこっと頑張りましょう！<br>頑張るあなたをサポートします！</div>
+  <div class="login-welcome-sub">TAP TO START</div>
+</div>
 
 <!-- Splash Screen -->
 <div class="splash" id="splash" onclick="splashTap()">
@@ -410,13 +429,19 @@ function hideSplash(){
 }
 
 // ====== AUTH STATE ======
+let isFirstLogin = false;
 auth.onAuthStateChanged(user => {
   if(user){
     currentUser = user;
     document.getElementById('userEmail').textContent = user.email;
     loadUserData().then(()=>{
       hideSplash();
-      showApp();
+      if(isFirstLogin){
+        isFirstLogin = false;
+        showLoginWelcome();
+      } else {
+        showApp();
+      }
     });
   } else {
     currentUser = null;
@@ -424,6 +449,18 @@ auth.onAuthStateChanged(user => {
     showAuthScreen();
   }
 });
+
+// ====== LOGIN WELCOME ======
+function showLoginWelcome(){
+  document.getElementById('authScreen').style.display = 'none';
+  document.getElementById('layout').style.display = 'flex';
+  if(!document.getElementById('catBar').hasChildNodes()) initApp();
+  const el = document.getElementById('loginWelcome');
+  el.classList.add('show');
+}
+function dismissLoginWelcome(){
+  document.getElementById('loginWelcome').classList.remove('show');
+}
 
 // ====== AUTH FUNCTIONS ======
 function showAuthScreen(){
@@ -457,8 +494,10 @@ async function doLogin(){
   const btn = document.getElementById('loginBtn');
   btn.disabled = true; btn.textContent = 'ログイン中…';
   try{
+    isFirstLogin = true;
     await auth.signInWithEmailAndPassword(email, pass);
   } catch(e){
+    isFirstLogin = false;
     setAuthError(authErrMsg(e.code));
     btn.disabled = false; btn.textContent = 'ログイン';
   }
@@ -474,8 +513,10 @@ async function doRegister(){
   const btn = document.getElementById('registerBtn');
   btn.disabled = true; btn.textContent = '登録中…';
   try{
+    isFirstLogin = true;
     await auth.createUserWithEmailAndPassword(email, pass);
   } catch(e){
+    isFirstLogin = false;
     setAuthError(authErrMsg(e.code));
     btn.disabled = false; btn.textContent = '登録する';
   }
