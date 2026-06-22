@@ -281,6 +281,55 @@
   }
   .ref-static a:hover { background: var(--blue-light); }
 
+  /* ======== SPLASH SCREEN ======== */
+  .splash {
+    position: fixed; inset: 0; z-index: 99999;
+    background: #f0f5ff;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0;
+    transition: opacity 0.7s ease;
+  }
+  .splash.hidden { opacity: 0; pointer-events: none; }
+  .splash-logo {
+    width: 120px; height: 120px; border-radius: 26px;
+    object-fit: cover;
+    box-shadow: 0 16px 48px rgba(25,113,194,0.2);
+    animation: splash-float 3s ease-in-out infinite;
+  }
+  @keyframes splash-float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .splash-title {
+    margin-top: 20px; font-size: 18px; font-weight: 600;
+    color: #1971c2; letter-spacing: 0.04em;
+  }
+  .splash-tap {
+    margin-top: 40px; font-size: 13px; color: #74a7d8;
+    letter-spacing: 0.12em;
+    animation: splash-blink 1.8s ease-in-out infinite;
+  }
+  @keyframes splash-blink {
+    0%,100% { opacity: 1; } 50% { opacity: 0.3; }
+  }
+  .splash-welcome {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: #f0f5ff;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.4s ease;
+    text-align: center; padding: 2rem;
+  }
+  .splash-welcome.show { opacity: 1; }
+  .splash-welcome-msg {
+    font-size: 19px; font-weight: 600; color: #1971c2;
+    line-height: 1.8; margin-top: 20px;
+  }
+  .splash-welcome-sub {
+    margin-top: 12px; font-size: 14px; color: #6c757d; line-height: 1.7;
+  }
+
   /* ======== CHEER POPUP ======== */
   .cheer-overlay {
     position: fixed; inset: 0;
@@ -388,10 +437,21 @@
 
 <div class="toast" id="toast"></div>
 
+<div class="splash" id="splash" onclick="splashTap()">
+  <img src="icon.png" alt="ロゴ" class="splash-logo">
+  <div class="splash-title">小児科看護支援ガイド</div>
+  <div class="splash-tap">TAP TO START</div>
+  <div class="splash-welcome" id="splashWelcome">
+    <img src="icon.png" alt="ロゴ" style="width:80px;height:80px;border-radius:18px;object-fit:cover;">
+    <div class="splash-welcome-msg">今日もちょこっと頑張りましょう！<br>頑張るあなたをサポートします！</div>
+    <div class="splash-welcome-sub">Loading…</div>
+  </div>
+</div>
+
 <div class="cheer-overlay" id="cheerOverlay" onclick="closeCheer()">
-  <div class="cheer-card" onclick="event.stopPropagation()">
+  <div class="cheer-card">
     <div class="cheer-line"></div>
-    <div class="cheer-msg">今の頑張りは、<br>これから出会う<em>すべての人の幸せ</em>に<br>つながっている。<br><br>あなたらしく、<br>この１分を生きて。<br><br><em>幸あれ</em></div>
+    <div class="cheer-msg">あなたらしく、<br>学ぶときも、休むときも、<em>幸あれ。</em><br><br><span style="font-size:12px;font-weight:400;color:var(--text-tertiary)">※本アプリ製作者は、一生懸命学ぶあなたが、<br>こうして学んでいる３倍の時間、<br>ゆったり休むことを望んでいます。</span></div>
     <div class="cheer-sub">— tap to close —</div>
   </div>
 </div>
@@ -433,13 +493,25 @@
 
 <script src="diseases.js"></script>
 <script>
+// ===== SPLASH =====
+function splashTap() {
+  const welcome = document.getElementById('splashWelcome');
+  const splash = document.getElementById('splash');
+  if (welcome.classList.contains('show')) return;
+  welcome.classList.add('show');
+  setTimeout(() => {
+    splash.classList.add('hidden');
+    setTimeout(() => { splash.style.display = 'none'; }, 700);
+  }, 1800);
+}
+
+// ===== CHEER =====
 function showCheer() {
   const overlay = document.getElementById('cheerOverlay');
   overlay.classList.add('show');
   clearTimeout(overlay._t);
-  overlay._t = setTimeout(closeCheer, 7000);
+  overlay._t = setTimeout(closeCheer, 8000);
 }
-
 function closeCheer() {
   document.getElementById('cheerOverlay').classList.remove('show');
 }
