@@ -281,6 +281,41 @@
   }
   .ref-static a:hover { background: var(--blue-light); }
 
+  /* ======== CHEER POPUP ======== */
+  .cheer-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10000; opacity: 0; transition: opacity 0.25s;
+    pointer-events: none;
+  }
+  .cheer-overlay.show { opacity: 1; pointer-events: auto; }
+  .cheer-card {
+    background: var(--bg-card);
+    border-radius: 22px;
+    padding: 36px 30px 28px;
+    max-width: 290px; width: 88%;
+    text-align: center;
+    transform: scale(0.82) translateY(24px);
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+  }
+  .cheer-overlay.show .cheer-card { transform: scale(1) translateY(0); }
+  .cheer-emoji { font-size: 52px; margin-bottom: 16px; line-height: 1; }
+  .cheer-msg {
+    font-size: 17px; font-weight: 600; color: var(--text-primary);
+    line-height: 1.7; margin-bottom: 22px; white-space: pre-line;
+  }
+  .cheer-sub { font-size: 12px; color: var(--text-tertiary); }
+  .logo-btn {
+    background: none; border: none; cursor: pointer;
+    font-size: 22px; color: var(--blue); padding: 2px;
+    border-radius: var(--radius-sm); transition: transform 0.18s;
+    display: flex; align-items: center;
+  }
+  .logo-btn:hover { transform: scale(1.18) rotate(-8deg); }
+  .logo-btn:active { transform: scale(0.92); }
+
   /* ======== TOAST ======== */
   .toast {
     position: fixed; bottom: 24px; left: 50%;
@@ -338,10 +373,23 @@
 
 <div class="toast" id="toast"></div>
 
+<div class="cheer-overlay" id="cheerOverlay" onclick="closeCheer()">
+  <div class="cheer-card" onclick="event.stopPropagation()">
+    <div class="cheer-emoji" id="cheerEmoji">🌸</div>
+    <div class="cheer-msg" id="cheerMsg"></div>
+    <div class="cheer-sub">タップして閉じる</div>
+  </div>
+</div>
+
 <div class="layout" id="layout">
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <h1><i class="ti ti-stethoscope"></i>小児科看護支援ガイド</h1>
+      <h1>
+        <button class="logo-btn" onclick="showCheer()" title="応援メッセージ">
+          <img src="icon.png" alt="ロゴ" style="width:28px;height:28px;border-radius:6px;object-fit:cover;">
+        </button>
+        小児科看護支援ガイド
+      </h1>
       <div class="search-wrap">
         <i class="ti ti-search"></i>
         <input type="text" id="searchInput" placeholder="疾患名・カテゴリで検索…" oninput="filterDiseases()">
@@ -370,6 +418,38 @@
 
 <script src="diseases.js"></script>
 <script>
+// ===== CHEER MESSAGES =====
+const cheerMessages = [
+  { emoji:'🌸', msg:'今日もお疲れ様！\nよく頑張ってるよ！' },
+  { emoji:'😌', msg:'たまには横着しながらでも、\n休みながら生きていこう！' },
+  { emoji:'✨', msg:'全肯定！\nあなたの判断は正しい！' },
+  { emoji:'🙆', msg:'何をどうしようが\nそれでいい！' },
+  { emoji:'😴', msg:'睡眠時間は大切に！\n今夜はちゃんと休んでね。' },
+  { emoji:'💙', msg:'あなたが走るから、\n小さな命が守られている。' },
+  { emoji:'🌙', msg:'ミスしても大丈夫。\n明日また笑えばいい。' },
+  { emoji:'🤗', msg:'完璧じゃなくていい。\n今日も来てくれてありがとう。' },
+  { emoji:'🌱', msg:'深呼吸して。\nあなたはすでに十分すごい。' },
+  { emoji:'⭐', msg:'今夜もお疲れ様！\nゆっくり休んでね。' },
+];
+let lastCheerIdx = -1;
+
+function showCheer() {
+  let idx;
+  do { idx = Math.floor(Math.random() * cheerMessages.length); } while(idx === lastCheerIdx);
+  lastCheerIdx = idx;
+  const c = cheerMessages[idx];
+  document.getElementById('cheerEmoji').textContent = c.emoji;
+  document.getElementById('cheerMsg').textContent = c.msg;
+  const overlay = document.getElementById('cheerOverlay');
+  overlay.classList.add('show');
+  clearTimeout(overlay._t);
+  overlay._t = setTimeout(closeCheer, 5000);
+}
+
+function closeCheer() {
+  document.getElementById('cheerOverlay').classList.remove('show');
+}
+
 const KEYS = { bookmarks:'ns_bm', history:'ns_hist', memos:'ns_memo' };
 let bookmarks = JSON.parse(localStorage.getItem(KEYS.bookmarks)||'[]');
 let history    = JSON.parse(localStorage.getItem(KEYS.history)||'[]');
