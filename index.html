@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小児科看護支援ガイド</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+  :root {
+    --bg: #f8f9fa;
+    --bg-card: #ffffff;
+    --bg-secondary: #f1f3f5;
+    --bg-header: #e8f0fe;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-tertiary: #adb5bd;
+    --border: rgba(0,0,0,0.1);
+    --border-md: rgba(0,0,0,0.18);
+    --blue: #1971c2;
+    --blue-light: #e8f0fe;
+    --blue-mid: #4dabf7;
+    --teal-light: #e6fcf5;
+    --teal: #0ca678;
+    --red: #e03131;
+    --red-light: #fff5f5;
+    --amber: #e67700;
+    --amber-light: #fff9db;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141518;
+      --bg-card: #1e2024;
+      --bg-secondary: #2a2d33;
+      --bg-header: #1a2340;
+      --text-primary: #e9ecef;
+      --text-secondary: #adb5bd;
+      --text-tertiary: #6c757d;
+      --border: rgba(255,255,255,0.08);
+      --border-md: rgba(255,255,255,0.15);
+      --blue: #74c0fc;
+      --blue-light: #1a2340;
+      --blue-mid: #4dabf7;
+      --teal-light: #0d2b22;
+      --teal: #38d9a9;
+      --red: #ff6b6b;
+      --red-light: #2b1212;
+      --amber: #ffd43b;
+      --amber-light: #2b2000;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Layout */
+  .layout { display: flex; height: 100vh; overflow: hidden; }
+  .sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    background: var(--bg-card);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .main {
+    flex: 1;
+    overflow-y: auto;
+    background: var(--bg);
+  }
+
+  /* Sidebar header */
+  .sidebar-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-header);
+  }
+  .sidebar-header h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .sidebar-header h1 i { font-size: 20px; }
+  .search-wrap { position: relative; }
+  .search-wrap input {
+    width: 100%;
+    padding: 8px 12px 8px 34px;
+    font-size: 13px;
+    border: 1px solid var(--border-md);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    outline: none;
+  }
+  .search-wrap input:focus { border-color: var(--blue-mid); box-shadow: 0 0 0 3px rgba(77,171,247,0.15); }
+  .search-wrap i {
+    position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+    color: var(--text-tertiary); font-size: 16px; pointer-events: none;
+  }
+
+  /* Category tabs */
+  .cat-scroll {
+    padding: 10px 12px 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    flex-shrink: 0;
+    scrollbar-width: none;
+  }
+  .cat-scroll::-webkit-scrollbar { display: none; }
+  .cat-btn {
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    border: 1px solid var(--border-md);
+    border-radius: 99px;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .cat-btn:hover { background: var(--bg-secondary); }
+  .cat-btn.active { background: var(--blue-light); color: var(--blue); border-color: var(--blue-mid); }
+
+  /* Disease list */
+  .disease-list { flex: 1; overflow-y: auto; padding: 8px; }
+  .disease-list-label {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    padding: 4px 6px 6px;
+  }
+  .disease-item {
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background 0.12s;
+    margin-bottom: 2px;
+  }
+  .disease-item:hover { background: var(--bg-secondary); }
+  .disease-item.active { background: var(--blue-light); }
+  .disease-item .d-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  .disease-item.active .d-name { color: var(--blue); }
+  .disease-item .d-meta {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 2px;
+    display: flex;
+    gap: 8px;
+  }
+  .d-cat-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: 1px;
+  }
+  .empty-msg {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 13px;
+  }
+  .empty-msg i { font-size: 28px; display: block; margin-bottom: 8px; }
+
+  /* Main content */
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-tertiary);
+    text-align: center;
+    padding: 2rem;
+  }
+  .welcome i { font-size: 48px; margin-bottom: 16px; color: var(--blue-mid); opacity: 0.5; }
+  .welcome h2 { font-size: 18px; font-weight: 500; margin-bottom: 8px; color: var(--text-secondary); }
+  .welcome p { font-size: 13px; }
+
+  .detail-wrap { padding: 24px; max-width: 820px; }
+
+  .detail-header {
+    background: var(--bg-header);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .detail-header h2 { font-size: 22px; font-weight: 600; color: var(--blue); margin-bottom: 10px; }
+  .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .badge-blue { background: var(--blue-light); color: var(--blue); border: 1px solid rgba(77,171,247,0.4); }
+  .badge-gray { background: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border-md); }
+  .badge-teal { background: var(--teal-light); color: var(--teal); border: 1px solid rgba(12,166,120,0.3); }
+  .detail-overview {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    padding: 12px 14px;
+    background: var(--bg-card);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--blue-mid);
+  }
+
+  .obs-section-header {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .obs-section-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .obs-cards { display: flex; flex-direction: column; gap: 12px; }
+  .obs-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.15s;
+  }
+  .obs-card:hover { box-shadow: var(--shadow-md); }
+  .obs-card-header {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .obs-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .obs-num.high { background: var(--red); }
+  .obs-num.mid { background: var(--amber); }
+  .obs-title-wrap { flex: 1; }
+  .obs-title { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+  .priority-badge {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 99px;
+  }
+  .priority-high { background: var(--red-light); color: var(--red); }
+  .priority-mid { background: var(--amber-light); color: var(--amber); }
+
+  .obs-card-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .obs-why {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    padding: 10px 12px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--blue-mid);
+  }
+  .obs-why-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .obs-rows { display: flex; flex-direction: column; gap: 6px; }
+  .obs-normal, .obs-warn {
+    font-size: 12px;
+    padding: 7px 10px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.5;
+  }
+  .obs-normal { background: var(--teal-light); color: var(--teal); }
+  .obs-warn { background: var(--red-light); color: var(--red); }
+  .obs-normal i, .obs-warn i { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* Responsive */
+  @media (max-width: 680px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; max-height: 45vh; }
+    .main { height: auto; overflow-y: auto; }
+    .detail-wrap { padding: 16px; }
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 99px; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1><i class="ti ti-stethoscope"></i>小児科看護支援ガイド</h1>
+      <div class="search-wrap">
+        <i class="ti ti-search"></i>
+        <input type="text" id="searchInput" placeholder="疾患名・カテゴリで検索…" oninput="filterDiseases()">
+      </div>
+    </div>
+    <div class="cat-scroll" id="catBar"></div>
+    <div class="disease-list">
+      <div class="disease-list-label" id="listLabel"></div>
+      <div id="diseaseList"></div>
+    </div>
+  </aside>
+
+  <main class="main" id="mainPanel">
+    <div class="welcome">
+      <i class="ti ti-clipboard-heart"></i>
+      <h2>疾患を選択してください</h2>
+      <p>左のリストから疾患を選ぶと<br>観察項目と根拠が表示されます</p>
+    </div>
+  </main>
+</div>
+
+<script>
+const diseases = [
+  {
+    id:1, name:"小児喘息", en:"Bronchial Asthma", cat:"呼吸器", age:"乳幼児〜学童",
+    overview:"気道の慢性炎症により気道が狭窄し、喘鳴・呼吸困難を繰り返す。夜間〜早朝に悪化しやすく、アレルゲン・感染・運動が誘因になる。",
+    observations:[
+      {name:"呼吸数", priority:"high",
+       why:"気道狭窄により換気効率が低下するため、代償として呼吸数が増加する。年齢別正常値（乳児:30-60回/分、幼児:20-40回/分、学童:18-25回/分）を超えていないか確認する。呼吸数の増加は最も早期に出現する代償サインである。",
+       normal:"乳児30-60 / 幼児20-40 / 学童18-25（回/分）",
+       warn:"呼吸数>60（乳児）/>40（幼児）は重篤なサインとして緊急対応"},
+      {name:"SpO2（酸素飽和度）", priority:"high",
+       why:"気道狭窄により酸素取り込みが低下するため、末梢血酸素飽和度が低下する。95%未満は酸素投与の適応を検討し、90%未満は重篤な状態を示す。パルスオキシメータは末梢循環不全・マニキューアで偽低値になることに注意。",
+       normal:"正常値：95%以上",
+       warn:"<90%：直ちに医師へ報告、酸素投与開始"},
+      {name:"喘鳴（呼気性wheeze）", priority:"high",
+       why:"気道狭窄・分泌物貯留によりガスが狭い気道を通過する際に生じる笛声音。聴診で呼気時のwheezeを確認する。喘鳴が消失しても閉塞悪化（silent chest）の可能性があるため、換気音の左右差・全体的な換気量も同時に評価する。",
+       normal:"喘鳴なし",
+       warn:"silent chest（喘鳴消失+換気不全）は最重症サイン→緊急気道管理"},
+      {name:"陥没呼吸・鼻翼呼吸", priority:"high",
+       why:"呼吸補助筋を動員した努力呼吸のサイン。肋間・胸骨下・鎖骨上窩の陥没、鼻翼の動きを観察する。小児は胸郭コンプライアンスが高く変形しやすいため成人より観察しやすい。陥没の程度と部位数が重症度の指標になる。",
+       normal:"陥没なし・鼻翼呼吸なし",
+       warn:"強い陥没+チアノーゼ→呼吸不全が切迫"},
+      {name:"会話・啼泣の可否", priority:"mid",
+       why:"呼吸困難の程度の指標。文章で話せるか、単語のみか、話せないかで重症度を評価する（GINA重症度分類）。乳幼児では啼泣できるか・哺乳できるかを確認する。啼泣できないほどの呼吸困難は重篤を意味する。",
+       normal:"普通に会話・啼泣できる",
+       warn:"話せない・啼泣できない→重篤"},
+      {name:"皮膚色・チアノーゼ", priority:"high",
+       why:"末梢循環・酸素化の指標。口唇・爪床のチアノーゼは還元ヘモグロビン増加（SpO2低下）を示す。末梢冷感・まだらな皮膚色も循環不全のサイン。中心性チアノーゼ（口唇・舌）は末梢性より重篤。",
+       normal:"口唇・爪床ピンク色",
+       warn:"口唇チアノーゼ→緊急対応"},
+      {name:"心拍数・脈拍", priority:"mid",
+       why:"低酸素・興奮・β刺激薬副作用で頻脈になる。年齢別正常値（乳児:100-160/幼児:80-130/学童:70-110）と比較し、β刺激薬投与後の心拍変動も把握する。気管支拡張薬の過剰投与で頻脈・低カリウム血症が起こりうる。",
+       normal:"乳児100-160 / 幼児80-130 / 学童70-110（回/分）",
+       warn:"HR>200または不整脈→心電図モニター"},
+      {name:"意識レベル・不穏", priority:"high",
+       why:"低酸素血症が進行すると脳への酸素供給が低下し、不穏・傾眠・意識障害が出現する。JCS/GCSで評価し、興奮から急激に傾眠になる変化は危険信号。「ぐったりしてきた」という変化を見逃さない。",
+       normal:"清明・普段通りの活動",
+       warn:"傾眠・反応低下→緊急対応"},
+    ]
+  },
+  {
+    id:2, name:"RSウイルス感染症", en:"RSV Infection", cat:"呼吸器", age:"主に2歳以下",
+    overview:"RSウイルスによる下気道感染。細気管支炎・肺炎を引き起こし、早産児・先天性心疾患児・免疫不全児は重症化リスクが高い。冬〜春に流行。",
+    observations:[
+      {name:"呼吸数・呼吸パターン", priority:"high",
+       why:"細気管支浮腫・分泌物閉塞により換気障害が起こる。乳児は鼻呼吸に依存するため鼻閉でも呼吸困難となる。呼吸数増加・不規則呼吸・無呼吸発作（特に早産児）を継続的に観察する。",
+       normal:"正常：30-60回/分（乳児）",
+       warn:"無呼吸発作（>20秒または徐脈・チアノーゼを伴う）→緊急"},
+      {name:"SpO2", priority:"high",
+       why:"細気管支閉塞による換気血流不均等が酸素化低下を引き起こす。特に睡眠中・哺乳中に低下しやすいため継続モニタリングが重要。酸素投与中は投与量と効果の記録を行う。",
+       normal:"95%以上",
+       warn:"<92%：酸素投与適応 / <90%：呼吸管理を検討"},
+      {name:"哺乳量・哺乳力", priority:"high",
+       why:"呼吸困難があると哺乳時に息苦しさが増強するため哺乳量が低下する。普段の哺乳量の50%以下への低下は入院管理の目安とされる。哺乳量低下は直接脱水リスクにも直結する。",
+       normal:"普段の哺乳量と比較して80%以上",
+       warn:"哺乳量<50%→輸液管理を検討"},
+      {name:"陥没呼吸・呼気延長", priority:"high",
+       why:"細気管支炎では呼気時に気道が虚脱しやすく、空気の捕捉（air trapping）が起こる。樽状胸・呼気延長（I:E比>1:3）・肋間陥没として観察できる。空気の捕捉が高度だと肺過膨張となる。",
+       normal:"陥没なし・I:E比=1:1.5程度",
+       warn:"強い陥没・著明な呼気延長→重症細気管支炎"},
+      {name:"体温", priority:"mid",
+       why:"RSウイルスは発熱を伴うことが多いが、高体温は酸素消費量を増加させ呼吸仕事量をさらに増やす。解熱時に一時的にSpO2が改善することもある。高熱の持続は細菌性重複感染を疑う。",
+       normal:"36.5-37.5℃",
+       warn:"39℃以上の持続→細菌性重複感染を疑う"},
+      {name:"脱水徴候", priority:"mid",
+       why:"哺乳不良・発熱・頻呼吸による不感蒸泄増加が脱水を引き起こす。大泉門陥凹・皮膚ツルゴール低下・口腔乾燥・尿量減少で評価する。",
+       normal:"尿量1-3mL/kg/時、皮膚ツルゴール良好",
+       warn:"尿量<0.5mL/kg/時→輸液開始"},
+    ]
+  },
+  {
+    id:3, name:"クループ症候群", en:"Croup (Laryngotracheobronchitis)", cat:"呼吸器", age:"生後6ヶ月〜3歳",
+    overview:"喉頭・気管の浮腫による犬吠様咳嗽・嗄声・吸気性喘鳴を呈する。夜間に悪化しやすく、激しく泣くと悪化する。アドレナリン吸入・デキサメタゾン投与が効果的。",
+    observations:[
+      {name:"犬吠様咳嗽の有無と程度", priority:"high",
+       why:"声門下浮腫により特徴的な犬吠様（オットセイ声）の咳嗽が出現する。咳の頻度・強度の変化は浮腫の進行度を反映し、治療効果の判定にも用いる。夜間悪化・日中改善のパターンが典型的。",
+       normal:"咳嗽なし",
+       warn:"持続する犬吠様咳嗽＋安静時喘鳴→重症"},
+      {name:"吸気性喘鳴（stridor）", priority:"high",
+       why:"声門下狭窄により吸気時に特徴的な高音性の喘鳴が生じる。安静時にも聴取される場合は中等症〜重症、啼泣・興奮時のみは軽症の目安（Westley croupスコア参照）。治療後のstridor消失を確認する。",
+       normal:"吸気性喘鳴なし",
+       warn:"安静時stridor+陥没呼吸→エピネフリン吸入適応"},
+      {name:"嗄声の程度", priority:"mid",
+       why:"声帯・声門周囲の浮腫による嗄声。完全な失声は高度浮腫を示す。また啼泣声の変化（弱々しい・泣けない）は気道閉塞悪化のサインとなる。",
+       normal:"正常な発声",
+       warn:"無声・弱々しい泣き声→重症"},
+      {name:"陥没呼吸", priority:"high",
+       why:"気道狭窄により吸気時に胸腔内陰圧が高まり、胸郭が陥没する。鎖骨上窩・胸骨上窩・肋間の陥没を確認する。小児は胸郭が軟らかく陥没しやすいため変化を観察しやすい。",
+       normal:"陥没なし",
+       warn:"著明な3カ所以上の陥没→重症"},
+      {name:"不穏・興奮の程度", priority:"high",
+       why:"低酸素血症初期には不穏・興奮が生じる。しかし興奮すると呼吸困難が悪化するため、できるだけ安静に保つことが重要。保護者に抱かせ安心させることで気道狭窄を最小限にする。",
+       normal:"穏やか・保護者で落ち着く",
+       warn:"持続する不穏（低酸素サイン）→SpO2確認・医師報告"},
+      {name:"SpO2・チアノーゼ", priority:"high",
+       why:"気道狭窄が高度になると低酸素血症が生じる。クループでは比較的SpO2低下は遅れて現れるため、臨床症状（stridor・陥没）の変化が先行することに注意。",
+       normal:"95%以上",
+       warn:"SpO2<92%またはチアノーゼ→緊急気道管理"},
+    ]
+  },
+  {
+    id:4, name:"川崎病", en:"Kawasaki Disease", cat:"心血管", age:"主に5歳以下",
+    overview:"全身性血管炎。冠動脈瘤を合併することがある。主要5症状＋発熱5日以上で診断。免疫グロブリン大量療法（IVIG）が根本治療。早期治療で冠動脈病変を予防する。",
+    observations:[
+      {name:"発熱の持続日数・体温", priority:"high",
+       why:"川崎病の診断基準は「5日以上続く発熱＋主要症状4つ以上」。解熱しても再発熱することがある（二峰性発熱）。IVIG投与後24〜48時間で解熱しなければ追加投与を検討する（IVIG不応例）。",
+       normal:"解熱目標：37.5℃以下（IVIG後）",
+       warn:"IVIG後48時間以上解熱しない→IVIG不応と判断・治療変更"},
+      {name:"眼球結膜充血", priority:"mid",
+       why:"川崎病の主要症状のひとつ。両眼性・非化膿性の結膜充血。発症2〜4日目に最も強く現れることが多い。角膜炎・虹彩毛様体炎の合併も確認する。化膿性分泌物は他疾患を示唆する。",
+       normal:"充血なし",
+       warn:"化膿性分泌物→川崎病以外の鑑別（細菌性結膜炎等）"},
+      {name:"口唇・口腔内変化", priority:"mid",
+       why:"主要症状：口唇紅潮・いちご舌・口腔咽頭粘膜のびまん性発赤。口腔内炎症により哺乳・摂食が困難になることがある。口唇のひび割れ・出血も観察する。",
+       normal:"正常な口腔粘膜",
+       warn:"強い口腔粘膜炎→経口摂取困難→輸液管理"},
+      {name:"発疹の性状・分布", priority:"mid",
+       why:"主要症状：不定形紅斑（麻疹様・猩紅熱様・多形性紅斑様など多様）。BCG接種部位の発赤は川崎病に特異度が高い所見で早期診断に有用。発疹は一過性で経過とともに変化する。",
+       normal:"発疹なし",
+       warn:"BCG接種部位の発赤→川崎病を強く疑う"},
+      {name:"手足の変化（硬性浮腫・落屑）", priority:"mid",
+       why:"急性期：手掌・足底の硬性浮腫・紅斑。回復期（発症10〜15日）：爪周囲からの膜様落屑（特徴的所見）。浮腫により手をつきたがらない・歩行困難なことがある。",
+       normal:"浮腫なし・落屑なし",
+       warn:"回復期落屑の出現→経過観察・冠動脈エコーの確認"},
+      {name:"頸部リンパ節腫脹", priority:"mid",
+       why:"主要症状：>1.5cm、単発〜片側性が多い。川崎病に特異的ではないが5主要症状のひとつ。発熱＋リンパ節腫脹で来院した場合に他の主要症状を積極的に探す。",
+       normal:"腫脹なし",
+       warn:""},
+      {name:"心拍数・心雑音", priority:"high",
+       why:"川崎病は冠動脈炎・心筋炎・心膜炎を合併する。頻脈・心雑音（僧帽弁逆流など）・心音減弱を観察する。急性期はモニタリングを行い、心エコーの結果と合わせて評価する。",
+       normal:"年齢別正常心拍数以内",
+       warn:"新たな心雑音・不整脈→心エコー・心電図確認"},
+      {name:"冠動脈瘤の症状（胸痛・顔色不良）", priority:"high",
+       why:"冠動脈瘤形成後に血栓が生じ心筋梗塞を発症することがある。乳幼児では胸痛を訴えられないため、突然の顔色不良・啼泣・嘔吐・発汗が心筋虚血のサインとなる。心エコーの結果を常に把握する。",
+       normal:"冠動脈瘤なし（エコーで確認）",
+       warn:"突然の顔色不良・啼泣・発汗→心筋虚血を疑い緊急対応"},
+    ]
+  },
+  {
+    id:5, name:"熱性けいれん", en:"Febrile Seizure", cat:"神経", age:"生後6ヶ月〜5歳",
+    overview:"38℃以上の発熱に伴う発作。多くは単純型（全般性・5分以内・24時間内1回）で予後良好。複雑型は精査が必要。5分以上持続で薬物治療を開始する。",
+    observations:[
+      {name:"けいれん発作の持続時間", priority:"high",
+       why:"5分以上持続するけいれんはてんかん重積状態の可能性があり、抗けいれん薬投与（ジアゼパム直腸内投与など）の適応となる。開始時刻を必ず記録し、医師へ速やかに報告する。",
+       normal:"通常5分以内に自然停止",
+       warn:"5分以上持続→ジアゼパム投与・医師への緊急報告"},
+      {name:"発作の性状（全般性か部分性か）", priority:"high",
+       why:"単純型熱性けいれんは全般性強直間代発作。焦点性（一側の手足のみ）の発作・眼球偏位・自動症は複雑型または器質的疾患（脳炎・腫瘍など）を疑うサイン。発作中の詳細な観察と記録が重要。",
+       normal:"両側対称性の全般発作",
+       warn:"焦点性発作→脳炎・腫瘍等の鑑別が必要"},
+      {name:"発作後状態（Todd麻痺・意識回復）", priority:"high",
+       why:"発作後は通常傾眠・ぐったりするが15〜30分で回復する。一側性の麻痺（Todd麻痺）や30分以上の意識障害は器質的疾患の可能性があり精査が必要。意識回復の経過を時系列で記録する。",
+       normal:"発作後30分以内に意識回復",
+       warn:"30分以上の意識障害・一側麻痺→MRI・脳波検査"},
+      {name:"体温・解熱経過", priority:"mid",
+       why:"発熱の上昇期（体温が急激に上がる時）にけいれんが起きやすい。解熱薬投与のタイミング・効果を確認し、再度発熱が上昇する際に再発しないか観察する。",
+       normal:"解熱薬投与後1時間で0.5〜1℃低下",
+       warn:"39℃以上の再上昇時はけいれん再発に注意"},
+      {name:"呼吸状態・SpO2", priority:"high",
+       why:"発作中は舌根沈下・分泌物貯留により気道閉塞が起こりやすい。側臥位にし気道確保を行う。発作後もSpO2が回復するまで酸素投与を継続する。",
+       normal:"発作終了後速やかに95%以上に回復",
+       warn:"発作後SpO2<90%→吸引・酸素投与継続"},
+      {name:"嘔吐・誤嚥の有無", priority:"high",
+       why:"発作中〜直後に嘔吐し誤嚥性肺炎を起こすリスクがある。必ず側臥位（回復体位）を維持し、口腔内の嘔吐物を確認する。",
+       normal:"嘔吐なし",
+       warn:"嘔吐物誤嚥→急性期は吸引・酸素投与"},
+      {name:"24時間以内の再発", priority:"mid",
+       why:"複雑型熱性けいれんの診断基準のひとつが「24時間以内に2回以上の発作」。再発時は持続時間・性状を詳細に記録し医師へ報告する。",
+       normal:"24時間以内に1回のみ",
+       warn:"24時間内2回以上→複雑型として精査"},
+    ]
+  },
+  {
+    id:6, name:"急性胃腸炎・脱水", en:"Acute Gastroenteritis / Dehydration", cat:"消化器", age:"全年齢",
+    overview:"ウイルス・細菌による嘔吐・下痢。脱水症が最も重要な合併症。輸液管理とともに排泄量の正確な把握が鍵となる。",
+    observations:[
+      {name:"脱水徴候の評価（大泉門・皮膚ツルゴール）", priority:"high",
+       why:"大泉門陥凹は乳児の脱水評価に有用。皮膚ツルゴール低下（腹部の皮膚をつまんで2秒以上戻らない）は中等度脱水（5〜10%）以上のサイン。複数の脱水所見を組み合わせて評価する。",
+       normal:"大泉門平坦・皮膚ツルゴール良好（<2秒）",
+       warn:"大泉門著明陥凹+ツルゴール低下→重症脱水（>10%）"},
+      {name:"尿量・最終排尿時刻", priority:"high",
+       why:"腎灌流低下により尿量が減少する。最終排尿から6〜8時間以上経過していれば中等度脱水以上を疑う。おむつ重量を測定（乾燥時と排尿後の差）し尿量を定量的に把握する。",
+       normal:"尿量1-3mL/kg/時（乳幼児）",
+       warn:"8時間以上排尿なし→重症脱水・急性腎障害を疑う"},
+      {name:"嘔吐・下痢の回数・性状", priority:"high",
+       why:"嘔吐・下痢は腸管感染の病勢把握と喪失量評価の指標。血性下痢は細菌性腸炎（カンピロバクター・腸管出血性大腸菌など）を示す。胆汁性嘔吐は腸閉塞・腸重積を疑う。",
+       normal:"嘔吐・下痢なし",
+       warn:"血性下痢→HUS（溶血性尿毒症症候群）発症を注視"},
+      {name:"体重変化", priority:"high",
+       why:"入院時体重と普段の体重を比較し脱水率を計算する。急性期の体重減少は体液喪失と一致する（脱水率(%)= (普段の体重-現在体重)/普段の体重×100）。",
+       normal:"脱水率<5%",
+       warn:"脱水率>10%→点滴急速輸液（20mL/kg/回）"},
+      {name:"バイタルサイン（血圧・心拍数）", priority:"high",
+       why:"脱水が進行すると循環血液量が低下し、代償的に頻脈が起こる。低血圧は非代償性ショック（重篤）のサイン。小児は成人より長く血圧を維持できるため低血圧時はすでに重症。",
+       normal:"年齢別正常値内・体位変換で変動なし",
+       warn:"頻脈+起立性低血圧→中等症脱水以上"},
+      {name:"意識・活気", priority:"high",
+       why:"脳への循環・酸素供給が低下すると意識変容（傾眠・ぐったり）が起こる。「普段と比べてどうですか？」と保護者に確認することが重要。活気不良は重症度の信頼できる指標。",
+       normal:"普段通りの活気",
+       warn:"傾眠・ぐったり→重症脱水・敗血症の可能性"},
+      {name:"口腔内乾燥・涙の有無", priority:"mid",
+       why:"涙なし泣き・口腔粘膜乾燥・眼窩陥凹は脱水の身体所見として標準評価項目（WHO/CDCの脱水スコア）。乳幼児では特に涙の有無が観察しやすい。",
+       normal:"口腔内湿潤・泣き時に涙あり",
+       warn:"涙なし泣き+口腔乾燥→中等度以上の脱水"},
+    ]
+  },
+  {
+    id:7, name:"髄膜炎（細菌性・ウイルス性）", en:"Meningitis", cat:"神経", age:"新生児〜小児",
+    overview:"髄膜・くも膜下腔への炎症。細菌性は致死的な可能性があり早急な抗菌薬投与が必要。三主徴（発熱・頭痛・項部硬直）が古典的だが乳幼児では非典型的。",
+    observations:[
+      {name:"項部硬直・髄膜刺激症状", priority:"high",
+       why:"髄膜炎症により頸部屈曲時に抵抗感・疼痛が生じる（項部硬直）。Kernig徴候（膝伸展抵抗）・Brudzinski徴候（頸部屈曲で股関節屈曲）も確認する。乳幼児では陽性率が低い点に注意。",
+       normal:"項部硬直なし",
+       warn:"項部硬直陽性→腰椎穿刺・抗菌薬投与を迅速に"},
+      {name:"大泉門膨隆（乳児）", priority:"high",
+       why:"頭蓋内圧亢進により大泉門が膨隆する。乳児では項部硬直の代わりに大泉門評価が髄膜炎診断の重要な手がかり。泣いていない安静時に評価する（泣くと膨隆するため偽陽性になりやすい）。",
+       normal:"大泉門平坦（生後18ヶ月まで）",
+       warn:"大泉門膨隆→頭蓋内圧亢進・髄膜炎を強く疑う"},
+      {name:"意識レベル変化", priority:"high",
+       why:"髄膜炎・脳炎では炎症が脳実質に波及し意識障害を来す。GCS/JCSで定期的に評価する。意識障害の程度は予後と相関し、迅速な治療開始が重要。",
+       normal:"清明",
+       warn:"GCS<14→重症・ICU管理を検討"},
+      {name:"体温・発熱パターン", priority:"high",
+       why:"細菌性髄膜炎では高熱が持続することが多い。しかし新生児・免疫不全児では低体温を呈することがある。解熱薬に反応しない高熱は細菌性を疑う根拠になる。",
+       normal:"37.5℃以下",
+       warn:"40℃以上の持続高熱→細菌性髄膜炎を優先的に疑う"},
+      {name:"頭痛・噴射性嘔吐", priority:"mid",
+       why:"頭蓋内圧亢進症状。学童以上では強い頭痛、乳幼児では不機嫌・啼泣として現れる。噴射性嘔吐（急に嘔吐する）は頭蓋内圧亢進の特徴的症状。",
+       normal:"頭痛なし・嘔吐なし",
+       warn:"噴射性嘔吐+頭痛→頭蓋内圧亢進を疑う"},
+      {name:"皮膚所見（点状出血・紫斑）", priority:"high",
+       why:"髄膜炎菌による髄膜炎では皮膚への播種性血管内凝固（DIC）により点状出血・紫斑が出現する。ガラスで圧迫しても消えない（非圧白性）紫斑は緊急のサイン。",
+       normal:"皮膚出血なし",
+       warn:"非圧白性紫斑→髄膜炎菌敗血症→超緊急対応"},
+      {name:"光過敏・聴覚過敏", priority:"mid",
+       why:"髄膜刺激により光・音への過敏性が増す。部屋を暗くすると落ち着く、騒音で不機嫌になるなどの行動変化が手がかりになる。",
+       normal:"光・音に過敏でない",
+       warn:""},
+    ]
+  },
+  {
+    id:8, name:"腸重積", en:"Intussusception", cat:"消化器", age:"生後3ヶ月〜2歳",
+    overview:"腸管が腸管内に入り込む疾患。間欠的な腹痛・嘔吐・血便（イチゴジャム様）が三主徴。非観血的整復（高圧浣腸）で多くは治癒するが、遅れると腸管壊死に至る。",
+    observations:[
+      {name:"間欠的腹痛（突然の啼泣）", priority:"high",
+       why:"腸の蠕動運動に伴い5〜30分間隔で強い腹痛が起こる。乳幼児では言語化できないため「突然大泣きして手足をバタバタさせた後ぐったりする」繰り返しが特徴的。この間隔と程度を詳細に記録する。",
+       normal:"啼泣なし",
+       warn:"間欠的啼泣＋嘔吐→腸重積を最優先に疑う"},
+      {name:"嘔吐の性状", priority:"high",
+       why:"腸閉塞が進行すると胆汁性嘔吐が出現する。胆汁性嘔吐（緑色）は外科的緊急疾患のサインであり、直ちに外科医への報告が必要。",
+       normal:"嘔吐なし",
+       warn:"胆汁性嘔吐（緑色）→外科緊急対応"},
+      {name:"血便（イチゴジャム様）", priority:"high",
+       why:"腸管の血流障害により粘液血便（イチゴジャム様）が出現する。これは腸管壊死が進行しているサインで緊急度が高い。発症から12時間以上経過した場合に出現することが多い。",
+       normal:"正常な便",
+       warn:"血便出現→腸管壊死進行中→緊急整復・手術適応"},
+      {name:"腹部腫瘤の触知", priority:"mid",
+       why:"重積した腸管が腸管腫瘤として触知される（ソーセージ状腫瘤、右上腹部に多い）。泣いているときは筋緊張で分かりにくいため、眠っているときや落ち着いたときに確認する。",
+       normal:"腫瘤触知なし",
+       warn:"腹部腫瘤触知→腸重積確定的（超音波エコーで確認）"},
+      {name:"全身状態・活気", priority:"high",
+       why:"腸重積が進行するにつれ腸管虚血・敗血症から全身状態が急速に悪化する。「発症前は元気だったのに急にぐったりした」という経過が典型的。",
+       normal:"普段通りの活気",
+       warn:"急激なぐったり感→腸管壊死・敗血症移行"},
+      {name:"整復後の腹痛・バイタル変化", priority:"high",
+       why:"高圧浣腸整復後も再発（5〜10%）の可能性がある。整復後24時間は入院経過観察し、再度の間欠的啼泣・腹痛が現れたら再発を疑い超音波検査を行う。",
+       normal:"整復後は疼痛消失・哺乳再開",
+       warn:"整復後の再啼泣→腸重積再発を疑いエコー再検"},
+    ]
+  },
+  {
+    id:9, name:"アナフィラキシー", en:"Anaphylaxis", cat:"アレルギー", age:"全年齢",
+    overview:"アレルゲン曝露後数分〜数十分で発症する全身性即時型アレルギー反応。アドレナリン筋注が第一選択。迅速な対応が生死を分ける。",
+    observations:[
+      {name:"呼吸症状（喘鳴・嗄声・呼吸困難）", priority:"high",
+       why:"喉頭浮腫（嗄声・嚥下困難）・気管支痙攣（喘鳴・呼吸困難）が上下気道を閉塞する。症状は数分で重篤化することがある。嗄声の出現は喉頭浮腫の危険なサイン。",
+       normal:"嗄声なし・喘鳴なし",
+       warn:"嗄声/stridor出現→アドレナリン筋注を直ちに"},
+      {name:"血圧・脈拍（循環症状）", priority:"high",
+       why:"血管拡張・血管透過性亢進により循環血液量が急減しアナフィラキシーショックを来す。収縮期血圧<90mmHg（成人）または年齢別低血圧基準値以下が基準。",
+       normal:"年齢別正常血圧・心拍数",
+       warn:"頻脈+低血圧→アナフィラキシーショック→アドレナリン・輸液"},
+      {name:"皮膚症状（蕁麻疹・紅潮・血管性浮腫）", priority:"mid",
+       why:"全身性の蕁麻疹・紅潮・口唇・眼瞼の血管性浮腫はアナフィラキシーの最も頻度の高い症状（80-90%）。ただし皮膚症状のみでは軽症であり、臓器症状の進行を監視する。",
+       normal:"蕁麻疹なし",
+       warn:"皮膚症状＋呼吸/循環症状→アドレナリン投与適応"},
+      {name:"消化器症状（嘔吐・腹痛）", priority:"mid",
+       why:"消化管のアレルギー反応による悪心・嘔吐・腹痛・下痢。誤食後の消化器症状は食物アレルギーアナフィラキシーの早期サインとなる。",
+       normal:"消化器症状なし",
+       warn:"食後の消化器症状＋皮膚症状→アナフィラキシーの可能性"},
+      {name:"意識レベル", priority:"high",
+       why:"脳への灌流低下により不安・興奮→意識障害が進行する。意識消失はショックの末期サイン。アドレナリン投与後も意識回復がなければ追加投与・高次医療機関搬送を検討。",
+       normal:"清明",
+       warn:"意識消失→心停止が切迫している可能性"},
+      {name:"アドレナリン投与後のバイタル変化", priority:"high",
+       why:"アドレナリン筋注（0.01mg/kg、大腿外側）後5〜15分で効果を評価する。血圧回復・SpO2改善・喘鳴軽減を確認。5〜15分で改善なければ追加投与する（最大3回まで）。",
+       normal:"投与後15分以内にバイタル改善",
+       warn:"2回投与後も改善なし→ICU転送"},
+    ]
+  },
+  {
+    id:10, name:"ネフローゼ症候群", en:"Nephrotic Syndrome", cat:"腎・泌尿器", age:"2〜6歳が多い",
+    overview:"大量蛋白尿・低アルブミン血症・浮腫を三主徴とする。微小変化型が小児の大多数。ステロイド治療に反応するが再発しやすい。",
+    observations:[
+      {name:"浮腫の部位・程度", priority:"high",
+       why:"低アルブミン血症による血漿膠質浸透圧低下で浮腫が起きる。朝起きたときの眼瞼浮腫（特に目立つ）から始まり、下腿・腹水・胸水・陰嚢浮腫へと進行する。",
+       normal:"浮腫なし",
+       warn:"腹水著明・呼吸困難→胸水合併を疑い胸部X線"},
+      {name:"尿量・尿の性状（泡立ち）", priority:"high",
+       why:"大量蛋白尿（尿が泡立つ）・乏尿が特徴的症状。尿量減少は腎機能低下・重篤な浮腫のサイン。試験紙で蛋白（3+〜4+）を確認する。",
+       normal:"尿量1mL/kg/時以上・尿蛋白陰性",
+       warn:"尿量<0.5mL/kg/時→急性腎障害合併を疑う"},
+      {name:"体重（毎日測定）", priority:"high",
+       why:"浮腫の増減を最も客観的に反映するのが体重変化。毎朝同時刻・同条件で測定し、1日500g以上の増加は浮腫悪化のサイン。輸液管理・利尿薬調整の指標にもなる。",
+       normal:"前日比±200g以内",
+       warn:"1日500g以上増加→浮腫悪化・輸液見直し"},
+      {name:"血圧", priority:"high",
+       why:"ネフローゼでは血管内脱水（浮腫があっても血管内は空）なのに血圧が高い場合は腎炎性変化（ネフリティス）合併を疑う。低血圧は循環血液量低下（ショック）のサイン。",
+       normal:"年齢別正常血圧",
+       warn:"高血圧→ネフリティス合併疑い / 低血圧→ショック"},
+      {name:"感染徴候（発熱・腹痛）", priority:"high",
+       why:"低アルブミン血症・免疫グロブリン喪失・ステロイド投与により易感染性となる。特発性細菌性腹膜炎（肺炎球菌・大腸菌）は命に関わる合併症。腹痛・発熱を見逃さない。",
+       normal:"発熱なし・腹痛なし",
+       warn:"発熱＋腹痛→細菌性腹膜炎を疑い血液培養・抗菌薬"},
+      {name:"電解質異常の症状（低Na症状）", priority:"mid",
+       why:"浮腫が強い症例では利尿薬投与・体液移動により低ナトリウム血症を来すことがある。倦怠感・頭痛・けいれんとして現れる。",
+       normal:"Na 135-145mEq/L",
+       warn:"低Na(<130)+けいれん→3%NaCl投与を検討"},
+    ]
+  },
+  {
+    id:11, name:"糖尿病性ケトアシドーシス（DKA）", en:"Diabetic Ketoacidosis", cat:"内分泌・代謝", age:"小児〜青年",
+    overview:"インスリン不足による高血糖・ケトン体産生・代謝性アシドーシスの三徴。意識障害・脳浮腫（最重篤合併症）の早期発見が重要。",
+    observations:[
+      {name:"血糖値の推移", priority:"high",
+       why:"DKAでは血糖>200mg/dLが基準。インスリン投与後の血糖低下速度（50〜100mg/dL/時が目標）を確認する。急速な血糖低下は脳浮腫リスクを高めるため慎重に管理する。",
+       normal:"血糖70-180mg/dL（入院管理目標）",
+       warn:"血糖低下速度>100mg/dL/時→脳浮腫リスク上昇"},
+      {name:"意識レベル・頭痛・嘔吐", priority:"high",
+       why:"脳浮腫（DKA最重篤合併症、死亡率20〜30%）の早期徴候は頭痛・不穏・意識変容。輸液・インスリン開始後1〜12時間で発症することが多い。GCSで定期評価（1〜2時間毎）。",
+       normal:"GCS 15・頭痛なし",
+       warn:"頭痛悪化/GCS低下→脳浮腫を疑い20%マンニトール投与"},
+      {name:"呼吸パターン（Kussmaul呼吸）", priority:"high",
+       why:"代謝性アシドーシスの代償として深く規則的な過呼吸（Kussmaul呼吸）が起こる。甘酸っぱいアセトン臭の呼気も特徴的。呼吸性代償の消失（浅い不規則な呼吸）は重篤化のサイン。",
+       normal:"正常呼吸",
+       warn:"Kussmaul呼吸消失→呼吸筋疲労・気管挿管を検討"},
+      {name:"尿量・脱水評価", priority:"high",
+       why:"高血糖による浸透圧利尿で多尿→脱水が進行する。輸液開始後の尿量を毎時測定し、適切な水分補給を確認する。過剰輸液は脳浮腫リスクを上げる。",
+       normal:"輸液開始後：1-3mL/kg/時",
+       warn:"尿量<0.5mL/kg/時→腎機能評価 / 過多→輸液速度見直し"},
+      {name:"電解質（特にカリウム）", priority:"high",
+       why:"DKAでは総カリウムが不足しているが、アシドーシスのため血清Kは正常〜高値を示す。インスリン投与・アシドーシス改善でKが急低下し、低K血症による不整脈・心停止リスクがある。",
+       normal:"K 3.5-5.0mEq/L",
+       warn:"K<3.0→カリウム補充なしにインスリン増量禁"},
+      {name:"バイタルサイン（ショック徴候）", priority:"high",
+       why:"重症脱水によるショック状態（頻脈・低血圧・末梢冷感）は緊急輸液（生食10〜20mL/kg）の適応。ただしショック改善後は緩徐な輸液補正へ切り替え脳浮腫を予防する。",
+       normal:"年齢別正常範囲内",
+       warn:"頻脈+低血圧→生食20mL/kg急速静注"},
+    ]
+  },
+  {
+    id:12, name:"先天性心疾患", en:"Congenital Heart Disease", cat:"心血管", age:"新生児〜乳児",
+    overview:"心臓の構造的異常。VSD（心室中隔欠損）・ASD（心房中隔欠損）・TOF（ファロー四徴症）など多種類。チアノーゼの有無で分類される。",
+    observations:[
+      {name:"チアノーゼの有無・部位", priority:"high",
+       why:"中心性チアノーゼ（口唇・舌・眼球結膜）は右→左シャントや低酸素血症を示す。末梢性チアノーゼ（手足のみ）は冷感・循環不全による場合がある。TOFのチアノーゼ発作（無酸素発作）は緊急。",
+       normal:"中心性チアノーゼなし",
+       warn:"突然の著明なチアノーゼ（無酸素発作）→胸膝位・酸素・モルヒネ"},
+      {name:"哺乳力・哺乳量", priority:"high",
+       why:"心不全があると哺乳時の酸素需要増大で疲弊しやすく哺乳量が低下する。「哺乳中に汗をかく」「30分以上かかる」「途中で眠ってしまう」は心不全のサイン。",
+       normal:"哺乳量普段通り・哺乳時に発汗なし",
+       warn:"哺乳量<50%＋発汗→心不全悪化を疑う"},
+      {name:"体重増加の推移", priority:"high",
+       why:"心不全による体液貯留は体重増加として現れる（浮腫性体重増加）。一方、心不全による哺乳不良では体重増加不良をきたす。毎日同条件での体重測定が管理の基本。",
+       normal:"標準的な体重増加（30g/日以上、乳児期）",
+       warn:"急激な体重増加（1日100g以上）→体液過剰"},
+      {name:"呼吸数・呼吸困難", priority:"high",
+       why:"左心不全による肺うっ血で呼吸数増加・陥没呼吸が起こる。哺乳時・睡眠時の呼吸観察が重要。肺水腫では聴診でcrackle（副雑音）が聴取される。",
+       normal:"乳児30-60回/分以内",
+       warn:"安静時呼吸数>60＋陥没→肺うっ血・緊急"},
+      {name:"SpO2（右手と足で測定）", priority:"high",
+       why:"右手（前動脈管）と足（後動脈管）のSpO2の差（差動性チアノーゼ）は動脈管依存性先天性心疾患の診断に重要。TOFではSpO2が60〜85%に低下することがある。",
+       normal:"両部位でSpO2>95%",
+       warn:"前後差>3%→動脈管依存性病変を疑う"},
+      {name:"肝腫大", priority:"mid",
+       why:"右心不全による肝静脈うっ血で肝臓が腫大する（乳幼児では肋骨弓下2cm以上）。心不全治療（利尿薬）の効果判定にも用いられる。",
+       normal:"肝臓触知≦肋骨弓下2cm（乳幼児）",
+       warn:"著明な肝腫大＋浮腫→重症右心不全"},
+    ]
+  },
+  {
+    id:13, name:"急性虫垂炎", en:"Acute Appendicitis", cat:"外科", age:"学童〜青年",
+    overview:"虫垂の炎症。穿孔すると腹膜炎になるため早期診断・手術が必要。非典型的な症状も多く小児では診断が難しい。",
+    observations:[
+      {name:"腹痛の部位・移動", priority:"high",
+       why:"虫垂炎の典型的な経過は「臍周囲痛→右下腹部痛（McBurney点）への移動」。しかし小児（特に低年齢）では非典型的で臍周囲痛のみのことも多い。疼痛が持続・増悪する経過は手術適応を示唆。",
+       normal:"腹痛なし",
+       warn:"右下腹部痛の増悪＋発熱→虫垂炎を疑い外科紹介"},
+      {name:"体温", priority:"mid",
+       why:"炎症により37.5〜39℃の発熱を伴う。穿孔が起こると高熱（39℃以上）になることが多い。発熱がなくても虫垂炎を否定できない。",
+       normal:"37.5℃以下",
+       warn:"39℃以上の発熱＋腹膜刺激症状→穿孔性腹膜炎を疑う"},
+      {name:"腹膜刺激症状（反跳痛・筋性防御）", priority:"high",
+       why:"腹膜に炎症が及ぶと圧迫を離した時に痛みが増す（反跳痛/Blumberg徴候）・腹壁筋が収縮する（筋性防御）。これらが陽性のときは穿孔または穿孔が切迫していることを示す。",
+       normal:"反跳痛なし・筋性防御なし",
+       warn:"反跳痛陽性＋筋性防御→緊急手術適応"},
+      {name:"嘔吐・食欲不振", priority:"mid",
+       why:"虫垂炎では腹痛に引き続き（腹痛の後に）嘔吐・食欲不振が現れるのが典型的。嘔吐が先行する場合はウイルス性胃腸炎を疑う。",
+       normal:"嘔吐なし・食欲あり",
+       warn:"腹痛後の嘔吐→虫垂炎の経過として重要な所見"},
+      {name:"歩行・体動時の痛み", priority:"mid",
+       why:"腹膜刺激症状の検出に有用。「右足を上げると痛い（腸腰筋徴候）」「右下腹部を触れると体をこわばらせる」「歩くと痛いため小股で歩く」などの行動変化を観察する。",
+       normal:"普通に歩行できる",
+       warn:"歩行困難・腸腰筋徴候陽性→後腹膜の炎症波及"},
+    ]
+  },
+  {
+    id:14, name:"敗血症（小児）", en:"Pediatric Sepsis", cat:"感染症", age:"全年齢",
+    overview:"感染に対する生命を脅かす臓器障害。早期認識と抗菌薬投与（1時間以内）が予後を左右する。「何かおかしい」という保護者の直感を大切にする。",
+    observations:[
+      {name:"体温（発熱・低体温）", priority:"high",
+       why:"感染に対する炎症反応として発熱（>38℃）または低体温（<36℃）が起こる。特に新生児・乳児では低体温が敗血症のサインになることがある。体温の急激な変化は菌血症の証拠となりえる。",
+       normal:"36.5-37.5℃",
+       warn:"<36℃（低体温）は重症感染の危険なサイン"},
+      {name:"心拍数・毛細血管再充血時間（CRT）", priority:"high",
+       why:"代償性頻脈と末梢血管収縮が敗血症の早期サイン。CRT>2秒は末梢循環不全を示す。温かいショック（敗血症性）では皮膚が温かく紅潮することもある。",
+       normal:"CRT≦2秒・年齢別正常心拍数",
+       warn:"CRT>3秒＋頻脈→敗血症性ショック開始"},
+      {name:"意識レベル・活気", priority:"high",
+       why:"脳への灌流低下・炎症性サイトカインにより意識変容（不穏・傾眠）が起こる。保護者の「何かおかしい」という訴えを真剣に受け止める（Gut feeling is important）。",
+       normal:"普段通りの活気・清明",
+       warn:"急激な活気低下→敗血症性ショックの危険なサイン"},
+      {name:"血圧・脈圧", priority:"high",
+       why:"敗血症性ショックでは末梢血管拡張により脈圧が広がる（温かいショック）か、末梢血管収縮で血圧が維持され頻脈が先行する。小児は成人より長く血圧維持できるため低血圧は非代償期。",
+       normal:"収縮期血圧：70+2×年齢mmHg以上",
+       warn:"低血圧→非代償性ショック→急速輸液20mL/kg"},
+      {name:"尿量", priority:"high",
+       why:"腎灌流低下を反映する最も信頼性の高い臓器障害指標のひとつ。尿量<0.5mL/kg/時が持続する場合は急性腎障害合併を示す。導尿カテーテルで正確な尿量管理が必要。",
+       normal:"尿量1-3mL/kg/時",
+       warn:"<0.5mL/kg/時→急性腎障害合併"},
+      {name:"皮膚所見（花斑・冷感・点状出血）", priority:"high",
+       why:"末梢循環障害により皮膚に花斑（大理石様の斑点状変色）・冷感・チアノーゼが出現する。非圧白性の点状出血・紫斑はDIC・髄膜炎菌敗血症のサインで最重篤。",
+       normal:"皮膚温かく・花斑なし",
+       warn:"花斑＋非圧白性紫斑→DIC合併・超緊急"},
+    ]
+  }
+];
+
+const catColors = {
+  '呼吸器':'#1971c2','心血管':'#c92a2a','神経':'#862e9c',
+  '消化器':'#0ca678','腎・泌尿器':'#1864ab','内分泌・代謝':'#e67700',
+  'アレルギー':'#d6336c','感染症':'#c92a2a','外科':'#5c7cfa'
+};
+const categories = ["すべて","呼吸器","心血管","神経","消化器","腎・泌尿器","内分泌・代謝","アレルギー","感染症","外科"];
+let selectedCat = "すべて";
+let selectedId = null;
+let filtered = [...diseases];
+
+function init(){
+  const catBar = document.getElementById('catBar');
+  categories.forEach(c=>{
+    const btn = document.createElement('button');
+    btn.className = 'cat-btn' + (c===selectedCat?' active':'');
+    btn.textContent = c;
+    btn.onclick = ()=>{ selectedCat=c; filterDiseases(); renderCats(); };
+    catBar.appendChild(btn);
+  });
+  renderList();
+}
+
+function renderCats(){
+  document.querySelectorAll('.cat-btn').forEach((btn,i)=>{
+    btn.className = 'cat-btn' + (categories[i]===selectedCat?' active':'');
+  });
+}
+
+function filterDiseases(){
+  const q = document.getElementById('searchInput').value.trim();
+  filtered = diseases.filter(d=>{
+    const matchCat = selectedCat==="すべて" || d.cat===selectedCat;
+    const matchQ = !q || d.name.includes(q) || d.en.toLowerCase().includes(q.toLowerCase()) || d.cat.includes(q);
+    return matchCat && matchQ;
+  });
+  renderList();
+}
+
+function renderList(){
+  const list = document.getElementById('diseaseList');
+  const label = document.getElementById('listLabel');
+  label.textContent = `${filtered.length}件`;
+  list.innerHTML = '';
+  if(filtered.length===0){
+    list.innerHTML = '<div class="empty-msg"><i class="ti ti-search"></i>該当する疾患が見つかりません</div>';
+    return;
+  }
+  filtered.forEach(d=>{
+    const item = document.createElement('div');
+    item.className = 'disease-item' + (selectedId===d.id?' active':'');
+    const col = catColors[d.cat] || '#888';
+    item.innerHTML = `
+      <div class="d-name">${d.name}</div>
+      <div class="d-meta">
+        <span><span class="d-cat-dot" style="background:${col}"></span>${d.cat}</span>
+        <span>${d.age}</span>
+      </div>`;
+    item.onclick = ()=>{ selectedId=d.id; renderList(); renderDetail(d); };
+    list.appendChild(item);
+  });
+}
+
+function renderDetail(d){
+  const main = document.getElementById('mainPanel');
+  const highCount = d.observations.filter(o=>o.priority==='high').length;
+  const midCount = d.observations.filter(o=>o.priority==='mid').length;
+  main.innerHTML = `
+    <div class="detail-wrap">
+      <div class="detail-header">
+        <h2>${d.name}</h2>
+        <div class="badge-row">
+          <span class="badge badge-blue">${d.en}</span>
+          <span class="badge badge-teal">${d.cat}</span>
+          <span class="badge badge-gray">${d.age}</span>
+          <span class="badge badge-gray">観察項目 ${d.observations.length}項目</span>
+        </div>
+        <div class="detail-overview">${d.overview}</div>
+      </div>
+
+      <div class="obs-section-header">観察項目と根拠</div>
+      <div class="obs-cards">
+        ${d.observations.map((o,i)=>`
+        <div class="obs-card">
+          <div class="obs-card-header">
+            <div class="obs-num ${o.priority}">${i+1}</div>
+            <div class="obs-title-wrap">
+              <div class="obs-title">${o.name}</div>
+            </div>
+            <span class="priority-badge priority-${o.priority}">${o.priority==='high'?'高優先度':'中優先度'}</span>
+          </div>
+          <div class="obs-card-body">
+            <div class="obs-why">
+              <div class="obs-why-label"><i class="ti ti-bulb" style="font-size:13px"></i>なぜ観察するか</div>
+              ${o.why}
+            </div>
+            <div class="obs-rows">
+              ${o.normal?`<div class="obs-normal"><i class="ti ti-check"></i><span><strong>正常値・目安：</strong>${o.normal}</span></div>`:''}
+              ${o.warn?`<div class="obs-warn"><i class="ti ti-alert-triangle"></i><span><strong>警戒ライン：</strong>${o.warn}</span></div>`:''}
+            </div>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+}
+
+init();
+</script>
+</body>
+</html>
