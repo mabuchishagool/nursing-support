@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#1971c2">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -462,8 +462,8 @@ let syncTimer = null;
 // ====== ZOOM RESET ======
 function resetZoom(){
   const vp = document.querySelector('meta[name=viewport]');
-  vp.setAttribute('content','width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');
-  setTimeout(()=>{ vp.setAttribute('content','width=device-width,initial-scale=1.0'); }, 400);
+  vp.setAttribute('content','width=device-width,initial-scale=1.0,viewport-fit=cover,maximum-scale=1.0');
+  setTimeout(()=>{ vp.setAttribute('content','width=device-width,initial-scale=1.0,viewport-fit=cover'); }, 300);
 }
 
 // ====== SPLASH ======
@@ -490,7 +490,6 @@ auth.onAuthStateChanged(user => {
     document.getElementById('userEmail').textContent = user.email;
     loadUserData().then(()=>{
       hideSplash();
-      resetZoom();
       if(isFirstLogin){
         isFirstLogin = false;
         showLoginWelcome();
@@ -501,7 +500,6 @@ auth.onAuthStateChanged(user => {
   } else {
     currentUser = null;
     hideSplash();
-    resetZoom();
     showAuthScreen();
   }
 });
@@ -511,12 +509,10 @@ function showLoginWelcome(){
   document.getElementById('authScreen').style.display = 'none';
   document.getElementById('layout').style.display = 'flex';
   if(!document.getElementById('catBar').hasChildNodes()) initApp();
-  resetZoom();
   document.getElementById('loginWelcome').classList.add('show');
 }
 function dismissLoginWelcome(){
   document.getElementById('loginWelcome').classList.remove('show');
-  resetZoom();
 }
 
 // ====== AUTH FUNCTIONS ======
@@ -546,6 +542,7 @@ function setAuthError(msg){
 }
 
 async function doLogin(){
+  resetZoom();
   const email = document.getElementById('loginEmail').value.trim();
   const pass  = document.getElementById('loginPassword').value;
   if(!email||!pass){ setAuthError('メールアドレスとパスワードを入力してください'); return; }
@@ -570,6 +567,7 @@ async function doLogin(){
 }
 
 async function doRegister(){
+  resetZoom();
   const email  = document.getElementById('regEmail').value.trim();
   const pass   = document.getElementById('regPassword').value;
   const pass2  = document.getElementById('regPassword2').value;
