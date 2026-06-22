@@ -306,6 +306,56 @@
   .obs-warn { background: var(--red-light); color: var(--red); }
   .obs-normal i, .obs-warn i { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
 
+  /* ======== REFERENCES SECTION ======== */
+  .ref-section { margin-top: 24px; }
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .ref-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    box-shadow: var(--shadow-sm);
+  }
+  .ref-link:hover { background: var(--blue-light); border-color: var(--blue-mid); transform: translateY(-1px); }
+  .ref-link i { font-size: 18px; flex-shrink: 0; color: var(--blue); }
+  .ref-link .ref-label { display: flex; flex-direction: column; }
+  .ref-link .ref-label span { font-size: 11px; color: var(--text-tertiary); font-weight: 400; }
+  .ref-static {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 14px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .ref-static strong { display: block; width: 100%; margin-bottom: 6px; font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; }
+  .ref-static a {
+    color: var(--blue);
+    text-decoration: none;
+    padding: 3px 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    font-size: 12px;
+    transition: background 0.12s;
+  }
+  .ref-static a:hover { background: var(--blue-light); }
+
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border-md); border-radius: 99px; }
@@ -497,6 +547,44 @@ function renderList(){
   });
 }
 
+function buildRefs(d) {
+  const q = encodeURIComponent(d.name);
+  const qEn = encodeURIComponent(d.en + ' pediatric');
+  const qNurse = encodeURIComponent(d.name + ' 小児 看護 観察項目');
+  const qGuide = encodeURIComponent(d.name + ' 診療ガイドライン 小児');
+  const qCase  = encodeURIComponent(d.name + ' 小児 症例');
+  return `
+    <div class="ref-section">
+      <div class="obs-section-header">参考・出典・関連検索</div>
+      <div class="ref-grid">
+        <a class="ref-link" href="https://www.google.com/search?q=${qNurse}" target="_blank" rel="noopener">
+          <i class="ti ti-brand-google"></i>
+          <div class="ref-label">Google検索<span>看護・観察項目</span></div>
+        </a>
+        <a class="ref-link" href="https://www.google.com/search?q=${qGuide}" target="_blank" rel="noopener">
+          <i class="ti ti-book"></i>
+          <div class="ref-label">診療ガイドライン<span>Mindsほか</span></div>
+        </a>
+        <a class="ref-link" href="https://www.google.com/search?q=${qCase}" target="_blank" rel="noopener">
+          <i class="ti ti-stethoscope"></i>
+          <div class="ref-label">症例・事例検索<span>小児科症例</span></div>
+        </a>
+        <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=${qEn}" target="_blank" rel="noopener">
+          <i class="ti ti-microscope"></i>
+          <div class="ref-label">PubMed<span>${d.en}</span></div>
+        </a>
+      </div>
+      <div class="ref-static">
+        <strong>信頼性の高い医療情報サイト</strong>
+        <a href="https://www.jpeds.or.jp/" target="_blank" rel="noopener">日本小児科学会</a>
+        <a href="https://minds.jcqhc.or.jp/" target="_blank" rel="noopener">Mindsガイドラインライブラリ</a>
+        <a href="https://www.mhlw.go.jp/" target="_blank" rel="noopener">厚生労働省</a>
+        <a href="https://www.ncchd.go.jp/" target="_blank" rel="noopener">国立成育医療研究センター</a>
+        <a href="https://www.google.com/search?q=${q}+site:jpeds.or.jp" target="_blank" rel="noopener">日本小児科学会内を検索</a>
+      </div>
+    </div>`;
+}
+
 function renderDetail(d){
   const main = document.getElementById('mainPanel');
   main.innerHTML = `
@@ -537,6 +625,7 @@ function renderDetail(d){
           </div>
         </div>`).join('')}
       </div>
+      ${buildRefs(d)}
     </div>`;
 }
 
