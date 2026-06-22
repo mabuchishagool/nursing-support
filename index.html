@@ -258,22 +258,65 @@
   ::-webkit-scrollbar-track{background:transparent;}
   ::-webkit-scrollbar-thumb{background:var(--border-md);border-radius:99px;}
 
-  /* Mobile */
+  /* ====== RESPONSIVE ====== */
   .mobile-back{display:none;}
+
+  /* スマホ縦向き（〜680px）: フルスクリーン切り替え */
   @media(max-width:680px){
     .layout{flex-direction:column;height:100dvh;}
-    .sidebar{width:100%;height:100%;position:absolute;top:0;left:0;z-index:10;transition:transform 0.3s ease;}
+    .sidebar{
+      width:100%;height:100%;position:absolute;top:0;left:0;z-index:10;
+      transition:transform 0.3s ease;
+    }
     .sidebar.hidden{transform:translateX(-100%);}
     .main{width:100%;height:100%;position:absolute;top:0;left:0;z-index:5;overflow-y:auto;}
-    .mobile-back{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--bg-card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;cursor:pointer;color:var(--blue);font-size:15px;font-weight:500;}
+    .mobile-back{
+      display:flex;align-items:center;gap:8px;
+      padding:12px 16px;
+      padding-left:calc(16px + env(safe-area-inset-left));
+      background:var(--bg-card);border-bottom:1px solid var(--border);
+      position:sticky;top:0;z-index:10;cursor:pointer;color:var(--blue);font-size:15px;font-weight:500;
+    }
     .mobile-back i{font-size:20px;}
-    .detail-wrap{padding:16px;}
-    .detail-header{padding:16px;}
-    .detail-header-top h2{font-size:20px;}
+    .detail-wrap{padding:14px;}
+    .detail-header{padding:14px;}
+    .detail-header-top h2{font-size:19px;}
     .disease-item .d-arrow{display:block;}
     .welcome{display:none;}
   }
-  @media(min-width:681px){
+
+  /* スマホ横向き（681px〜900px）: サイドバー+メインの2カラム */
+  @media(min-width:681px) and (max-width:900px){
+    .sidebar{
+      width:220px;
+      padding-left:env(safe-area-inset-left);
+    }
+    .sidebar-header{
+      padding:10px 10px 8px;
+      padding-top:calc(10px + env(safe-area-inset-top));
+    }
+    .sidebar-header-top{gap:7px;margin-bottom:7px;}
+    .logo-btn img{width:34px!important;height:34px!important;}
+    .sidebar-title-wrap h1{font-size:12px;}
+    .user-info{font-size:10px;}
+    .search-wrap input{padding:6px 10px 6px 28px;font-size:13px;}
+    .sidebar-tabs{padding:6px 8px;gap:3px;}
+    .stab{font-size:11px;padding:4px 4px;}
+    .cat-scroll{padding:7px 8px 6px;gap:4px;}
+    .cat-btn{padding:3px 8px;font-size:11px;}
+    .disease-item{padding:8px 10px;}
+    .disease-item .d-name{font-size:13px;}
+    .detail-wrap{padding:14px;}
+    .detail-header{padding:14px;}
+    .detail-header-top h2{font-size:18px;}
+    .disease-item .d-arrow{display:none;}
+    .mobile-back{display:none!important;}
+    .main{padding-right:env(safe-area-inset-right);}
+  }
+
+  /* iPad・タブレット（901px〜）: 広めのサイドバー */
+  @media(min-width:901px){
+    .sidebar{width:300px;}
     .disease-item .d-arrow{display:none;}
     .mobile-back{display:none!important;}
   }
