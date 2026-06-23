@@ -455,7 +455,7 @@ const db = firebase.firestore();
 
 let currentUser = null;
 let bookmarks = [];
-let history = [];
+let viewHistory = [];
 let memos = {};
 let syncTimer = null;
 
@@ -508,7 +508,8 @@ auth.onAuthStateChanged(user => {
 function showLoginWelcome(){
   document.getElementById('authScreen').style.display = 'none';
   document.getElementById('layout').style.display = 'flex';
-  if(!document.getElementById('catBar').hasChildNodes()) initApp();
+  if(!document.getElementById('catBar').hasChildNodes()){ initApp(); }
+  else { renderList(); }
   document.getElementById('loginWelcome').classList.add('show');
 }
 function dismissLoginWelcome(){
@@ -525,7 +526,8 @@ function showAuthScreen(){
 function showApp(){
   document.getElementById('authScreen').style.display = 'none';
   document.getElementById('layout').style.display = 'flex';
-  if(!document.getElementById('catBar').hasChildNodes()) initApp();
+  if(!document.getElementById('catBar').hasChildNodes()){ initApp(); }
+  else { renderList(); }
 }
 function showLogin(){
   document.getElementById('loginForm').style.display = 'block';
@@ -589,7 +591,7 @@ async function doRegister(){
 async function doLogout(){
   if(!confirm('ログアウトしますか？')) return;
   await auth.signOut();
-  bookmarks=[]; history=[]; memos={};
+  bookmarks=[]; viewHistory=[]; memos={};
   selectedId=null; currentDisease=null; currentTab='all';
 }
 
@@ -614,7 +616,7 @@ async function loadUserData(){
     if(doc.exists){
       const d = doc.data();
       bookmarks = d.bookmarks || [];
-      history   = d.history   || [];
+      viewHistory = d.history || [];
       memos     = d.memos     || {};
     }
   } catch(e){ console.warn('loadUserData:', e); }
@@ -629,7 +631,7 @@ async function syncToFirestore(){
   if(!currentUser) return;
   try{
     await db.collection('users').doc(currentUser.uid).set({
-      bookmarks, history, memos,
+      bookmarks, history: viewHistory, memos,
       updatedAt: firebase.firestore.FieldValue.serverTimestamp()
     }, { merge: true });
   } catch(e){ console.warn('syncToFirestore:', e); }
@@ -670,9 +672,9 @@ function toggleBookmark(id){
 
 // ====== HISTORY ======
 function addToHistory(id){
-  history=history.filter(h=>h!==id);
-  history.unshift(id);
-  if(history.length>20) history=history.slice(0,20);
+  viewHistory=viewHistory.filter(h=>h!==id);
+  viewHistory.unshift(id);
+  if(viewHistory.length>20) viewHistory=viewHistory.slice(0,20);
   scheduleSync();
 }
 
@@ -702,7 +704,7 @@ function filterDiseases(){
   const q=document.getElementById('searchInput').value.trim();
   let base;
   if(currentTab==='bookmarks') base=diseases.filter(d=>bookmarks.includes(d.id));
-  else if(currentTab==='history') base=history.map(id=>diseases.find(d=>d.id===id)).filter(Boolean);
+  else if(currentTab==='history') base=viewHistory.map(id=>diseases.find(d=>d.id===id)).filter(Boolean);
   else base=diseases;
   filtered=base.filter(d=>{
     const matchCat=selectedCat==='すべて'||d.cat===selectedCat;
