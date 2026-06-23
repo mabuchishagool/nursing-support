@@ -509,7 +509,7 @@ function showLoginWelcome(){
   document.getElementById('authScreen').style.display = 'none';
   document.getElementById('layout').style.display = 'flex';
   if(!document.getElementById('catBar').hasChildNodes()){ initApp(); }
-  else { renderList(); }
+  else { filterDiseases(); }
   document.getElementById('loginWelcome').classList.add('show');
 }
 function dismissLoginWelcome(){
@@ -527,7 +527,7 @@ function showApp(){
   document.getElementById('authScreen').style.display = 'none';
   document.getElementById('layout').style.display = 'flex';
   if(!document.getElementById('catBar').hasChildNodes()){ initApp(); }
-  else { renderList(); }
+  else { filterDiseases(); }
 }
 function showLogin(){
   document.getElementById('loginForm').style.display = 'block';
@@ -592,7 +592,11 @@ async function doLogout(){
   if(!confirm('ログアウトしますか？')) return;
   await auth.signOut();
   bookmarks=[]; viewHistory=[]; memos={};
-  selectedId=null; currentDisease=null; currentTab='all';
+  selectedId=null; currentDisease=null;
+  currentTab='all';
+  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('active'));
+  const allTab=document.getElementById('tab-all');
+  if(allTab) allTab.classList.add('active');
 }
 
 function authErrMsg(code){
