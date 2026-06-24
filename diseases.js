@@ -15,7 +15,13 @@ normal:"普段の80%以上の水分摂取",warn:"哺乳量・水分摂取が50%�
 {name:"呼吸音・咳嗽の変化",priority:"high",
 why:"かぜが下気道に波及すると気管支炎・肺炎へ進行する。喘鳴の出現・呼吸数増加・SpO2低下は入院適応を検討するサイン。",
 normal:"呼吸音清明・咳嗽が軽度",warn:"喘鳴出現・SpO2<95%・呼吸数増加→肺炎移行を疑う"},
-]},
+],
+refs:[
+"日本小児科学会（2022）『小児科診療ガイドライン』南山堂.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"上村克徳（2019）「上気道炎（かぜ症候群）」『小児内科』51(増刊号):116-119."
+]
+},
 {id:2,name:"インフルエンザ",en:"Influenza",cat:"ウイルス感染症",age:"全年齢",
 overview:"インフルエンザウイルスによる急性呼吸器感染症。38〜40℃の急激な発熱・頭痛・全身筋肉痛が特徴。インフルエンザ脳症（48時間以内発症）は致死的合併症。",
 observations:[
@@ -34,7 +40,14 @@ normal:"アセトアミノフェンのみ使用",warn:"アスピリン・ジク�
 {name:"脱水徴候",priority:"mid",
 why:"高熱・食欲不振・嘔吐により脱水しやすい。口腔乾燥・尿量減少・皮膚ツルゴール低下を確認する。",
 normal:"口腔湿潤・排尿あり",warn:"8時間以上排尿なし・著明な口腔乾燥→輸液検討"},
-]},
+],
+refs:[
+"日本小児科学会（2023）「インフルエンザの診断・治療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"厚生労働省（2023）「インフルエンザ対策」感染症法に基づく届出基準.",
+"Kimberlin DW et al. Red Book: 2021-2024 Report of the Committee on Infectious Diseases. AAP."
+]
+},
 {id:3,name:"RSウイルス感染症",en:"RSV Infection",cat:"ウイルス感染症",age:"主に2歳以下",
 overview:"RSウイルスによる下気道感染。細気管支炎・肺炎を引き起こす。早産児・先天性心疾患児・免疫不全児は重症化リスクが高い。冬〜春に流行。",
 observations:[
@@ -53,7 +66,14 @@ normal:"陥没なし・I:E比=1:1.5程度",warn:"強い陥没・著明な呼気�
 {name:"脱水徴候",priority:"mid",
 why:"哺乳不良・発熱・頻呼吸による不感蒸泄増加が脱水を引き起こす。",
 normal:"尿量1-3mL/kg/時、ツルゴール良好",warn:"尿量<0.5mL/kg/時→輸液開始"},
-]},
+],
+refs:[
+"日本小児科学会（2021）「RSウイルス感染症について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"American Academy of Pediatrics. Red Book: 2021-2024. AAP.",
+"Ralston SL et al. (2014). Clinical practice guideline: the diagnosis, management, and prevention of bronchiolitis. Pediatrics, 134(5):e1474-e1502."
+]
+},
 {id:4,name:"ヒトメタニューモウイルス感染症",en:"Human Metapneumovirus Infection",cat:"ウイルス感染症",age:"主に5歳以下",
 overview:"ヒトメタニューモウイルス（hMPV）による下気道感染。症状はRSウイルスに類似し細気管支炎・肺炎を引き起こす。2〜5歳に多く春に流行のピーク。",
 observations:[
@@ -69,7 +89,13 @@ normal:"解熱傾向あり・活気あり",warn:"高熱4日以上持続→細菌
 {name:"哺乳量・水分摂取",priority:"mid",
 why:"呼吸困難・倦怠感により経口摂取が低下する。脱水評価と並行して水分補給の工夫を検討する。",
 normal:"普段の70%以上",warn:"50%以下→輸液検討"},
-]},
+],
+refs:[
+"Williams JV et al. (2004). Human metapneumovirus and lower respiratory tract disease in otherwise healthy infants and children. NEJM, 350:443-450.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児科学会（2022）「ヒトメタニューモウイルス感染症について」"
+]
+},
 {id:5,name:"アデノウイルス感染症",en:"Adenovirus Infection",cat:"ウイルス感染症",age:"乳幼児〜学童",
 overview:"アデノウイルスによる感染症。咽頭結膜熱（プール熱）・急性出血性結膜炎・胃腸炎・肺炎など多彩な病態を呈する。高熱が5日前後続くことが多い。",
 observations:[
@@ -85,7 +111,13 @@ normal:"嚥下可能・水分摂取良好",warn:"嚥下不能・流涎→輸液�
 {name:"胃腸症状",priority:"mid",
 why:"アデノウイルス（特に40・41型）は胃腸炎も引き起こす。嘔吐・下痢が重なる場合は脱水リスクが上昇する。",
 normal:"嘔吐・下痢なし〜軽度",warn:"頻回嘔吐＋下痢→脱水評価"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児科学会（2022）「アデノウイルス感染症について」",
+"Kimberlin DW et al. Red Book: 2021-2024. AAP."
+]
+},
 {id:6,name:"ライノウイルス感染症",en:"Rhinovirus Infection",cat:"ウイルス感染症",age:"全年齢",
 overview:"かぜの最多原因ウイルス。上気道炎が主体で通常軽症。喘息や慢性肺疾患のある児では喘息発作・喘鳴悪化のきっかけになりやすい。",
 observations:[
@@ -98,7 +130,12 @@ normal:"喘鳴なし・SpO2 95%以上",warn:"喘鳴出現・SpO2低下→喘息�
 {name:"水分摂取量",priority:"mid",
 why:"鼻閉・咽頭痛により飲水量が減少する。発熱がなくても不感蒸泄増加に注意。",
 normal:"普段通りの水分摂取",warn:"水分摂取著減・尿量低下→脱水リスク"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児科学会感染症委員会（2022）「感冒（かぜ症候群）診療の手引き」"
+]
+},
 {id:7,name:"新型コロナウイルス感染症（COVID-19）",en:"COVID-19",cat:"ウイルス感染症",age:"全年齢",
 overview:"SARS-CoV-2による感染症。小児は成人より軽症が多いが乳幼児・基礎疾患のある児は重症化しうる。MIS-C（小児多系統炎症性症候群）は重篤な合併症。",
 observations:[
@@ -114,7 +151,14 @@ normal:"SpO2 95%以上・呼吸数正常",warn:"SpO2<93%・努力呼吸→入院
 {name:"消化器症状（嘔吐・腹痛・下痢）",priority:"mid",
 why:"小児COVID-19は消化器症状が比較的多い。脱水に注意し水分摂取量・尿量を確認する。",
 normal:"消化器症状なし〜軽度",warn:"頻回嘔吐＋下痢＋脱水徴候→輸液検討"},
-]},
+],
+refs:[
+"日本小児科学会（2023）「新型コロナウイルス感染症の小児への影響」",
+"厚生労働省（2023）「新型コロナウイルス感染症診療の手引き」",
+"CDC (2023). COVID-19 in children and teens. cdc.gov.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:8,name:"手足口病",en:"Hand, Foot and Mouth Disease",cat:"ウイルス感染症",age:"主に5歳以下",
 overview:"エンテロウイルス（コクサッキーウイルスA16・A6等）による感染症。口腔内・手掌・足底の水疱が特徴。夏に流行。コクサッキーA6型は重症皮疹を呈する。",
 observations:[
@@ -130,7 +174,13 @@ normal:"神経症状なし",warn:"けいれん・意識変容・急激な状態�
 {name:"発熱・全身状態",priority:"mid",
 why:"38℃前後の発熱が1〜3日続く。高熱が持続する場合や全身状態が急激に悪化する場合は重症合併症を疑う。",
 normal:"37〜38℃台・1〜3日で解熱",warn:"39℃以上の高熱持続＋嘔吐・不穏→神経合併症を疑う"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「手足口病の対応について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"国立感染症研究所（2022）「手足口病とは」感染症情報センター."
+]
+},
 {id:9,name:"ヘルパンギーナ",en:"Herpangina",cat:"ウイルス感染症",age:"主に5歳以下",
 overview:"コクサッキーウイルスA群による感染症。突然の高熱と口蓋弓・口蓋垂周囲の水疱・潰瘍が特徴。夏季に流行。",
 observations:[
@@ -143,7 +193,12 @@ normal:"通常1〜3日で解熱",warn:"5日以上の高熱持続→細菌性二�
 {name:"脱水徴候",priority:"high",
 why:"口腔内疼痛による水分摂取拒否と発熱の不感蒸泄増加が重なり脱水しやすい。口腔乾燥・尿量・大泉門（乳児）で評価する。",
 normal:"口腔湿潤・尿量1mL/kg/時以上",warn:"口腔乾燥・尿量低下→輸液検討"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「ヘルパンギーナについて」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:10,name:"突発性発疹",en:"Roseola Infantum",cat:"ウイルス感染症",age:"生後6ヶ月〜2歳",
 overview:"ヒトヘルペスウイルス6型（HHV-6）による感染症。3〜4日間の高熱後に解熱と同時に体幹中心の発疹が出現する。生後6〜12ヶ月に初感染が多い。",
 observations:[
@@ -159,7 +214,13 @@ normal:"解熱後に体幹中心の一過性発疹",warn:"発疹が顔面中心�
 {name:"大泉門膨隆（乳児）",priority:"high",
 why:"HHV-6感染時に頭蓋内圧が上昇し大泉門膨隆が起こることがある。脳炎合併の早期サインとして確認する。",
 normal:"大泉門平坦または軽度膨隆（泣いていない時）",warn:"著明な大泉門膨隆＋意識変容→脳炎を疑う"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「突発性発疹について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"国立感染症研究所（2022）「突発性発疹」感染症情報センター."
+]
+},
 {id:11,name:"水痘（水ぼうそう）",en:"Varicella (Chickenpox)",cat:"ウイルス感染症",age:"主に10歳以下",
 overview:"水痘帯状疱疹ウイルス（VZV）による感染症。発疹は紅斑→水疱→膿疱→痂皮へと段階的に進行し、様々なステージが混在するのが特徴。",
 observations:[
@@ -175,7 +236,14 @@ normal:"隔離管理で接触なし",warn:"免疫抑制患者への接触→VZIG
 {name:"発熱・全身状態",priority:"mid",
 why:"37〜38℃台の発熱を伴う。高熱・強い倦怠感・呼吸困難は重症水痘肺炎の可能性がある。",
 normal:"軽度発熱・発疹出現後改善傾向",warn:"高熱＋呼吸困難→水痘肺炎を疑い胸部X線"},
-]},
+],
+refs:[
+"日本小児科学会（2023）「水痘（水ぼうそう）について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Kimberlin DW et al. Red Book: 2021-2024. AAP.",
+"厚生労働省（2023）「水痘（水ぼうそう）とは」"
+]
+},
 {id:12,name:"麻疹（はしか）",en:"Measles",cat:"ウイルス感染症",age:"ワクチン未接種者全般",
 overview:"麻疹ウイルスによる高感染性疾患。カタル期（発熱・鼻水・コプリック斑）→発疹期（高熱＋融合傾向の紅斑）→回復期の3期に分かれる。肺炎・脳炎が主な死因。",
 observations:[
@@ -194,7 +262,14 @@ normal:"清明・意識障害なし",warn:"意識障害・けいれん→脳炎�
 {name:"感染管理（隔離）",priority:"high",
 why:"麻疹は感染力が極めて強く（基本再生産数12〜18）、空気感染する。発症4日前〜発疹後4日は感染力あり。厳重な空気感染予防策が必要。",
 normal:"空気感染予防策実施",warn:"隔離不十分→病棟内アウトブレイクの危険"},
-]},
+],
+refs:[
+"日本小児科学会（2023）「麻疹（はしか）の対応について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"厚生労働省（2023）「麻疹（はしか）について」",
+"WHO (2023). Measles. who.int."
+]
+},
 {id:13,name:"風疹",en:"Rubella",cat:"ウイルス感染症",age:"ワクチン未接種者",
 overview:"風疹ウイルスによる感染症。発熱・発疹・リンパ節腫脹（耳後部・後頸部）が三主徴。妊娠初期の感染は先天性風疹症候群（CRS）を引き起こすため感染管理が重要。",
 observations:[
@@ -207,7 +282,13 @@ normal:"軽度腫脹・圧痛あり",warn:""},
 {name:"妊婦・免疫のない女性スタッフへの感染管理",priority:"high",
 why:"妊娠初期（特に妊娠12週未満）の風疹感染は先天性風疹症候群（心奇形・白内障・難聴）を引き起こす。病棟内の妊娠可能な女性スタッフへの曝露を防ぐ。",
 normal:"感染予防策の徹底",warn:"妊娠初期の妊婦への曝露→産婦人科に即時報告"},
-]},
+],
+refs:[
+"日本小児科学会（2023）「風疹について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"厚生労働省（2023）「風疹について」"
+]
+},
 {id:14,name:"おたふくかぜ（流行性耳下腺炎）",en:"Mumps",cat:"ウイルス感染症",age:"主に学童",
 overview:"ムンプスウイルスによる耳下腺炎。両側または一側の耳下腺腫脹が特徴。合併症として難聴・髄膜炎・精巣炎（思春期以降）が重要。",
 observations:[
@@ -223,7 +304,13 @@ normal:"頭痛なし・項部硬直なし",warn:"頭痛＋嘔吐＋項部硬直�
 {name:"水分摂取量",priority:"mid",
 why:"咀嚼・嚥下時の疼痛により食事・水分摂取が低下する。冷たい飲み物は疼痛を和らげる。",
 normal:"水分摂取良好",warn:"水分摂取不能→輸液検討"},
-]},
+],
+refs:[
+"日本小児科学会（2023）「流行性耳下腺炎（おたふくかぜ）について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"国立感染症研究所（2023）「流行性耳下腺炎（ムンプス）とは」"
+]
+},
 {id:15,name:"伝染性紅斑（りんご病）",en:"Erythema Infectiosum (Fifth Disease)",cat:"ウイルス感染症",age:"主に学童",
 overview:"パルボウイルスB19による感染症。頬部の蝶形紅斑（ほっぺた発赤）と四肢のレース様発疹が特徴。溶血性貧血・免疫不全の児や妊婦への感染が重要。",
 observations:[
@@ -236,7 +323,12 @@ normal:"溶血性貧血患者は定期Hb確認",warn:"急激な貧血悪化（Hb
 {name:"妊婦スタッフへの感染管理",priority:"high",
 why:"妊娠20週未満の妊婦への感染は胎児水腫を引き起こす可能性がある。病棟内の妊娠中スタッフへの曝露を防ぐ。",
 normal:"感染予防策の徹底",warn:"妊娠中スタッフが曝露→産婦人科に報告"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「伝染性紅斑（りんご病）について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:16,name:"EBウイルス感染症（伝染性単核症）",en:"Infectious Mononucleosis (EBV)",cat:"ウイルス感染症",age:"主に学童〜青年",
 overview:"EBウイルス（EBV）初感染による伝染性単核症。発熱・咽頭炎・リンパ節腫脹・肝脾腫の四主徴が典型。アンピシリン投与で発疹が出る。",
 observations:[
@@ -252,7 +344,13 @@ normal:"黄疸なし・肝機能正常",warn:"黄疸出現・肝機能著明上�
 {name:"アンピシリン・アモキシシリン不使用の確認",priority:"high",
 why:"伝染性単核症患者にアンピシリン・アモキシシリンを投与すると90%以上の確率で全身性の皮疹（薬疹）が出現する。溶連菌との鑑別のため抗菌薬投与前にEBV検査が重要。",
 normal:"アンピシリン系抗菌薬未使用",warn:"アンピシリン系投与後の発疹→薬疹として対応"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「伝染性単核症について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Kimberlin DW et al. Red Book: 2021-2024. AAP."
+]
+},
 {id:17,name:"単純ヘルペス感染症",en:"Herpes Simplex Virus Infection",cat:"ウイルス感染症",age:"全年齢（新生児〜)",
 overview:"HSV（単純ヘルペスウイルス）による感染症。口唇ヘルペス・歯肉口内炎が多い。新生児ヘルペスは致死的で早期認識・アシクロビル投与が必須。",
 observations:[
@@ -265,7 +363,13 @@ normal:"口腔粘膜正常",warn:"歯肉全体の発赤・多発口内炎・水�
 {name:"眼症状（ヘルペス角膜炎）",priority:"high",
 why:"眼のヘルペス感染（角膜炎・結膜炎）は視力障害につながる。眼痛・流涙・羞明・眼脂が症状。ステロイド点眼は禁忌。",
 normal:"眼症状なし",warn:"眼の水疱・眼痛・羞明→眼科緊急紹介"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「単純ヘルペスウイルス感染症について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Kimberlin DW et al. Red Book: 2021-2024. AAP."
+]
+},
 {id:18,name:"帯状疱疹",en:"Herpes Zoster",cat:"ウイルス感染症",age:"免疫抑制のある小児に多い",
 overview:"水痘後に潜伏したVZVの再活性化による疾患。片側性の神経支配領域に一致した疼痛・水疱が特徴。小児では白血病・ステロイド治療中に多い。",
 observations:[
@@ -278,7 +382,12 @@ normal:"疼痛が管理可能",warn:"強い疼痛・生活に支障→鎮痛薬�
 {name:"免疫状態の確認",priority:"high",
 why:"帯状疱疹は免疫抑制状態のサインとなりうる。白血病・HIV感染・ステロイド長期投与の児では播種性帯状疱疹（全身への水痘様皮疹拡散）が起こりうる。",
 normal:"皮疹が1デルマトームに限局",warn:"全身への水疱拡散→播種性帯状疱疹・抗ウイルス薬静注"},
-]},
+],
+refs:[
+"日本皮膚科学会（2020）「帯状疱疹ガイドライン（改訂版）」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 // ===== 細菌感染症 =====
 {id:19,name:"溶連菌感染症（A群溶連菌咽頭炎）",en:"Group A Streptococcal Pharyngitis",cat:"細菌感染症",age:"学童が多い",
 overview:"A群β溶連菌による咽頭炎・扁桃炎。抗菌薬未治療の場合リウマチ熱・糸球体腎炎の合併リスクがある。抗菌薬（ペニシリン系）10日間投与が原則。",
@@ -295,7 +404,13 @@ normal:"感染後2〜4週間で関節症状なし",warn:"関節痛・心雑音�
 {name:"尿の性状（糸球体腎炎）",priority:"mid",
 why:"溶連菌感染後糸球体腎炎は感染1〜3週後に起こる。肉眼的血尿（コーラ色の尿）・浮腫・高血圧・乏尿が初発症状。",
 normal:"尿色正常・浮腫なし",warn:"血尿・浮腫・高血圧→溶連菌後腎炎を疑い尿検査"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「A群溶連菌咽頭炎の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Shulman ST et al. (2012). Clinical practice guideline for the diagnosis and management of group A streptococcal pharyngitis. Clin Infect Dis, 55(10):1279-1282."
+]
+},
 {id:20,name:"急性中耳炎",en:"Acute Otitis Media",cat:"細菌感染症",age:"乳幼児に多い",
 overview:"肺炎球菌・インフルエンザ菌による中耳の急性炎症。乳幼児は耳管が短く水平に近いため罹患しやすい。発熱・耳痛・耳を触る行動が特徴。",
 observations:[
@@ -311,7 +426,13 @@ normal:"耳漏なし",warn:"持続する膿性耳漏→慢性中耳炎・真珠�
 {name:"抗菌薬投与後の反応",priority:"mid",
 why:"抗菌薬開始48〜72時間で症状改善が基準。改善しない場合は薬剤耐性菌（PRSP）や合併症（乳様突起炎・脳膜炎）を疑う。",
 normal:"48〜72時間以内に解熱・疼痛軽減",warn:"72時間以内に改善なし→鼓膜切開・薬剤変更を検討"},
-]},
+],
+refs:[
+"日本耳科学会（2018）「小児急性中耳炎診療ガイドライン2018年版」金原出版.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Lieberthal AS et al. (2013). The diagnosis and management of acute otitis media. Pediatrics, 131(3):e964-e999."
+]
+},
 {id:21,name:"副鼻腔炎",en:"Sinusitis",cat:"細菌感染症",age:"学童以上",
 overview:"肺炎球菌・インフルエンザ菌による副鼻腔の炎症。かぜ症状が10日以上続く・膿性鼻汁・顔面痛が特徴。急性と慢性（3ヶ月以上）に分類。",
 observations:[
@@ -324,7 +445,12 @@ normal:"顔面痛・頭痛なし",warn:"眼瞼腫脹・眼球突出→眼窩合�
 {name:"嗅覚異常・鼻閉",priority:"mid",
 why:"副鼻腔炎による慢性鼻閉・嗅覚低下が生活の質を低下させる。鼻呼吸困難による口呼吸・睡眠障害にも注意する。",
 normal:"嗅覚正常・鼻呼吸可能",warn:""},
-]},
+],
+refs:[
+"日本鼻科学会（2022）「急性鼻副鼻腔炎診療ガイドライン2022年版」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:22,name:"細菌性肺炎",en:"Bacterial Pneumonia",cat:"細菌感染症",age:"全年齢",
 overview:"肺炎球菌・インフルエンザ菌・マイコプラズマなどによる肺実質の炎症。発熱・咳・頻呼吸・SpO2低下が主症状。年齢によって原因菌が異なる。",
 observations:[
@@ -343,7 +469,13 @@ normal:"抗菌薬開始48〜72時間で解熱傾向",warn:"抗菌薬72時間後�
 {name:"水分摂取量・脱水",priority:"mid",
 why:"高熱・頻呼吸による不感蒸泄増加と食欲不振で脱水しやすい。SpO2管理と並行して水分補給を確保する。",
 normal:"水分摂取良好・尿量確保",warn:"水分摂取不能→輸液開始"},
-]},
+],
+refs:[
+"日本呼吸器学会（2022）「肺炎診療ガイドライン」Minds掲載版.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Bradley JS et al. (2011). The management of community-acquired pneumonia in infants and children older than 3 months of age. Clin Infect Dis, 53(7):e25-e76."
+]
+},
 {id:23,name:"尿路感染症",en:"Urinary Tract Infection",cat:"細菌感染症",age:"全年齢（乳幼児に多い）",
 overview:"大腸菌などによる腎盂腎炎・膀胱炎。乳幼児は発熱のみのことが多く原因不明の発熱の精査時に発見される。腎瘢痕予防のため早期診断・治療が重要。",
 observations:[
@@ -359,7 +491,13 @@ normal:"排尿時疼痛なし",warn:""},
 {name:"嘔吐・食欲不振",priority:"mid",
 why:"腎盂腎炎では嘔吐・食欲不振・側腹部痛が加わる。脱水評価とともに水分補給を確保する。",
 normal:"経口摂取良好",warn:"嘔吐により経口不能→静注抗菌薬・輸液"},
-]},
+],
+refs:[
+"日本小児泌尿器科学会（2020）「小児尿路感染症診療の手引き」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Roberts KB (2011). Urinary tract infection: clinical practice guideline. Pediatrics, 128(3):595-610."
+]
+},
 {id:24,name:"とびひ（伝染性膿痂疹）",en:"Impetigo",cat:"細菌感染症",age:"乳幼児〜学童",
 overview:"黄色ブドウ球菌・A群溶連菌による皮膚の浅在性感染症。水疱・痂皮形成が特徴。掻破・タオル共有で広がりやすい。",
 observations:[
@@ -372,7 +510,12 @@ normal:"Nikolsky徴候陰性",warn:"Nikolsky徴候陽性・高熱→SSSS確定�
 {name:"搔破防止・二次感染予防",priority:"mid",
 why:"掻破により病変が広がる。爪を短く切ること・患部を触らないよう指導する。保育園・学校は治癒または抗菌薬開始後24〜48時間経過まで休園・休校。",
 normal:"掻破なし・病変限局",warn:""},
-]},
+],
+refs:[
+"日本皮膚科学会（2021）「伝染性膿痂疹診療ガイドライン2021」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:25,name:"蜂窩織炎",en:"Cellulitis",cat:"細菌感染症",age:"全年齢",
 overview:"A群溶連菌・黄色ブドウ球菌による皮膚・皮下組織の急性感染症。発赤・腫脹・熱感・疼痛が特徴。壊死性筋膜炎への進行に注意。",
 observations:[
@@ -388,7 +531,13 @@ normal:"発熱のみ・全身状態良好",warn:"頻脈＋低血圧＋意識障�
 {name:"水疱・壊死の有無",priority:"high",
 why:"水疱形成・皮膚壊死・捻髪音（皮下気腫）は壊死性筋膜炎または壊死性感染症の特徴的所見。",
 normal:"水疱・壊死なし",warn:"水疱・皮膚壊死・捻髪音→壊死性筋膜炎・緊急手術適応"},
-]},
+],
+refs:[
+"日本皮膚科学会（2020）「蜂窩織炎・丹毒の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Stevens DL et al. (2014). Practice guidelines for the diagnosis and management of skin and soft tissue infections. Clin Infect Dis, 59(2):e10-e52."
+]
+},
 {id:26,name:"細菌性髄膜炎",en:"Bacterial Meningitis",cat:"細菌感染症",age:"新生児〜小児",
 overview:"肺炎球菌・髄膜炎菌・インフルエンザ菌による髄膜炎症。致死率が高く後遺症（難聴・神経障害）リスクがある。早急な抗菌薬投与が生死を分ける。",
 observations:[
@@ -407,7 +556,13 @@ normal:"皮膚出血なし",warn:"非圧白性紫斑→髄膜炎菌敗血症・�
 {name:"発熱・頭痛・嘔吐",priority:"high",
 why:"高熱・強い頭痛・噴射性嘔吐の三主徴が典型的。乳幼児では不機嫌・啼泣として現れる。",
 normal:"37.5℃以下",warn:"40℃以上の持続高熱＋頭痛＋嘔吐→髄膜炎精査"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「細菌性髄膜炎の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Tunkel AR et al. (2004). Practice guidelines for the management of bacterial meningitis. Clin Infect Dis, 39(9):1267-1284."
+]
+},
 {id:27,name:"百日咳",en:"Pertussis (Whooping Cough)",cat:"細菌感染症",age:"乳幼児（成人も）",
 overview:"百日咳菌による感染症。発作性の痙攣性咳嗽・吸気性笛声（whoop）・嘔吐が三主徴。乳幼児（特に3ヶ月未満）では無呼吸発作が命にかかわる。",
 observations:[
@@ -423,7 +578,13 @@ normal:"発作後速やかに95%以上に回復",warn:"SpO2回復遅延・発作
 {name:"栄養状態・嘔吐後の哺乳",priority:"mid",
 why:"発作後嘔吐により摂取量が低下し低栄養・脱水リスクがある。発作直後に落ち着いたタイミングで少量ずつ哺乳する。",
 normal:"体重増加維持",warn:"体重減少傾向・嘔吐頻回→栄養サポート・輸液検討"},
-]},
+],
+refs:[
+"日本小児科学会（2023）「百日咳について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"厚生労働省（2023）「百日せき(百日咳)について」"
+]
+},
 {id:28,name:"結核",en:"Tuberculosis",cat:"細菌感染症",age:"全年齢",
 overview:"結核菌による感染症。小児は成人からの感染が多い。初期は無症状から始まり、粟粒結核・結核性髄膜炎は致命的。BCG接種歴・接触者の確認が重要。",
 observations:[
@@ -439,7 +600,13 @@ normal:"隔離管理実施",warn:"疑い例の隔離不十分→病棟内感染�
 {name:"神経症状（結核性髄膜炎）",priority:"high",
 why:"播種性結核では髄膜炎を合併し予後不良。頭痛・嘔吐・項部硬直・意識障害は結核性髄膜炎のサイン。",
 normal:"神経症状なし",warn:"頭痛＋嘔吐＋意識障害→結核性髄膜炎を疑い精査"},
-]},
+],
+refs:[
+"日本結核・非結核性抗酸菌症学会（2021）「結核診療ガイドライン（改訂第4版）」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"厚生労働省（2022）「結核に関する情報」"
+]
+},
 // ===== 胃腸炎 =====
 {id:29,name:"ロタウイルス胃腸炎",en:"Rotavirus Gastroenteritis",cat:"胃腸炎",age:"主に2歳以下",
 overview:"ロタウイルスによる急性胃腸炎。冬〜春に流行。白色〜黄白色の水様下痢・嘔吐・発熱が特徴。重度の脱水を引き起こしやすい。ワクチンで予防可能。",
@@ -456,7 +623,13 @@ normal:"嘔吐が24時間以内に軽減",warn:"6時間以上嘔吐が持続し�
 {name:"体重変化",priority:"high",
 why:"入院前の体重と比較し脱水率を計算する。脱水率>5%は中等症・>10%は重症。",
 normal:"脱水率<5%",warn:"脱水率>10%→急速輸液（20mL/kg）"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「ロタウイルスワクチンについて」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"ESPGHAN (2014). Evidence-based guidelines for the management of acute gastroenteritis in children in Europe. J Pediatr Gastroenterol Nutr, 46(Suppl 1):S81-S122."
+]
+},
 {id:30,name:"ノロウイルス胃腸炎",en:"Norovirus Gastroenteritis",cat:"胃腸炎",age:"全年齢",
 overview:"ノロウイルスによる急性胃腸炎。冬季に流行。突然の激しい嘔吐・下痢・腹痛が特徴。感染力が非常に強く、嘔吐物の適切な処理・手洗いが感染管理の要。",
 observations:[
@@ -469,7 +642,13 @@ normal:"適切な感染管理実施",warn:"嘔吐物処理不適切→病棟内�
 {name:"下痢の状態・持続",priority:"mid",
 why:"水様下痢が嘔吐に続いて出現する。嘔吐より下痢の方が長く続くことがある。血性下痢は他の病原体を疑う。",
 normal:"3〜5日以内に下痢軽快",warn:"血性下痢→細菌性腸炎・腸重積を鑑別"},
-]},
+],
+refs:[
+"国立感染症研究所（2022）「ノロウイルス感染症とは」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"厚生労働省（2022）「ノロウイルスに関するQ&A」"
+]
+},
 {id:31,name:"アデノウイルス胃腸炎",en:"Adenovirus Gastroenteritis",cat:"胃腸炎",age:"2歳以下",
 overview:"アデノウイルス（40・41型）による胃腸炎。ロタウイルスに次いで乳幼児の胃腸炎の重要な原因。下痢が長引く（7〜10日）のが特徴。",
 observations:[
@@ -482,7 +661,12 @@ normal:"尿量1mL/kg/時以上",warn:"体重減少・尿量低下→輸液"},
 {name:"発熱・全身状態",priority:"mid",
 why:"38〜39℃の発熱が数日続く。アデノウイルスは複数の臓器を侵すため他の症状（咽頭炎・結膜炎）の合併にも注意する。",
 normal:"5日以内で解熱",warn:"10日以上の発熱持続→他疾患を鑑別"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児科学会（2022）「感染性胃腸炎の診療の手引き」"
+]
+},
 {id:32,name:"細菌性腸炎",en:"Bacterial Gastroenteritis",cat:"胃腸炎",age:"全年齢",
 overview:"カンピロバクター・サルモネラ・病原性大腸菌などによる腸炎。血性下痢・高熱・腹痛が特徴。腸管出血性大腸菌（O157等）はHUS（溶血性尿毒症症候群）を合併する。",
 observations:[
@@ -498,7 +682,12 @@ normal:"腹痛が排便後に軽減",warn:"持続する右下腹部痛→虫垂�
 {name:"脱水・発熱",priority:"high",
 why:"高熱（39〜40℃）と頻回の下痢・嘔吐により急速に脱水が進行する。",
 normal:"抗菌薬・水分補給で改善",warn:"脱水率>5%→輸液"},
-]},
+],
+refs:[
+"日本感染症学会・日本化学療法学会（2021）「JAID/JSC感染症治療ガイドライン2021（腸管感染症）」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:33,name:"食中毒",en:"Food Poisoning",cat:"胃腸炎",age:"全年齢",
 overview:"細菌毒素（黄色ブドウ球菌・ボツリヌス菌・セレウス菌等）または感染型（サルモネラ・カンピロバクター等）による急性消化器症状。集団発生に注意。",
 observations:[
@@ -514,7 +703,13 @@ normal:"神経症状なし",warn:"哺乳力低下＋筋緊張低下→乳児ボ�
 {name:"集団発生の確認",priority:"high",
 why:"複数の人が同じ食事後に発症した場合は食中毒を疑い保健所への報告義務がある。食事歴・発症時刻・症状の共通点を記録する。",
 normal:"",warn:"集団発生確認→保健所への報告・原因食品の保存"},
-]},
+],
+refs:[
+"厚生労働省（2022）「食中毒について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"国立感染症研究所（2022）「食中毒の動向と対策」"
+]
+},
 ,
 // ===== 呼吸器 =====
 {id:34,name:"気管支炎",en:"Bronchitis",cat:"呼吸器",age:"幼児〜学童",
@@ -529,7 +724,12 @@ normal:"呼吸音清明",warn:"喘鳴＋呼吸困難→細気管支炎・喘息�
 {name:"SpO₂・呼吸数",priority:"high",
 why:"重症化すると換気不全に至る。SpO₂低下は酸素投与の指標。呼吸数増加は呼吸仕事量増加のサイン。",
 normal:"SpO₂≥96%、呼吸数正常域",warn:"SpO₂<95%→酸素投与検討"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児呼吸器学会（2021）「小児の気道感染症診療の手引き」"
+]
+},
 {id:35,name:"細気管支炎",en:"Bronchiolitis",cat:"呼吸器",age:"乳児（2歳未満）",
 overview:"RSウイルスを主因とする乳幼児の細気管支炎症。喘鳴・陥没呼吸・哺乳困難が特徴。重症化すると呼吸不全に至る。",
 observations:[
@@ -542,7 +742,13 @@ normal:"SpO₂≥95%",warn:"SpO₂<92%→入院適応"},
 {name:"哺乳量・水分摂取",priority:"high",
 why:"呼吸困難による哺乳困難が脱水を招く。哺乳量が通常の半分以下なら輸液を検討。",
 normal:"通常の哺乳量の70%以上",warn:"哺乳量50%以下→輸液適応"},
-]},
+],
+refs:[
+"Ralston SL et al. (2014). Clinical practice guideline: the diagnosis, management, and prevention of bronchiolitis. Pediatrics, 134(5):e1474-e1502.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児科学会（2021）「細気管支炎の診療指針」"
+]
+},
 {id:36,name:"ウイルス性肺炎",en:"Viral Pneumonia",cat:"呼吸器",age:"乳幼児〜学童",
 overview:"RSウイルス・インフルエンザ・アデノウイルス等による肺実質の炎症。細菌性肺炎より緩徐な経過をたどることが多い。",
 observations:[
@@ -555,7 +761,13 @@ normal:"SpO₂≥96%、呼吸数正常",warn:"SpO₂<94%→入院・酸素投与
 {name:"呼吸音（湿性ラ音）",priority:"high",
 why:"肺胞内の滲出液・炎症により湿性ラ音が聴取される。聴診部位・範囲を記録し変化を追う。",
 normal:"呼吸音清明",warn:"両側性湿性ラ音→重症肺炎を疑う"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児呼吸器学会（2022）「小児肺炎診療ガイドライン」",
+"Bradley JS et al. (2011). Management of community-acquired pneumonia in children. Clin Infect Dis, 53(7):e25-e76."
+]
+},
 {id:37,name:"クループ症候群",en:"Croup",cat:"呼吸器",age:"生後6か月〜3歳",
 overview:"パラインフルエンザウイルスによる声門下浮腫。犬吠え様咳嗽・吸気性喘鳴・嗄声が特徴的三徴候。",
 observations:[
@@ -568,7 +780,13 @@ normal:"呼吸補助筋使用なし",warn:"強い陥没呼吸＋チアノーゼ�
 {name:"SpO₂・活気",priority:"high",
 why:"重症クループは低酸素血症をきたす。活気低下・哺乳困難を伴う場合は入院適応。",
 normal:"SpO₂≥96%",warn:"SpO₂<92%→即時対応"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「クループ（急性喉頭気管気管支炎）の対応について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Bjornson CL & Johnson DW (2008). Croup. Lancet, 371(9609):329-339."
+]
+},
 {id:38,name:"気管支喘息",en:"Bronchial Asthma",cat:"呼吸器",age:"幼児〜成人",
 overview:"気道の慢性炎症による可逆性の気道狭窄。夜間・早朝の喘鳴・呼吸困難・咳嗽が反復。アレルゲン・運動・感染が誘因。",
 observations:[
@@ -584,7 +802,13 @@ normal:"補助筋使用なし",warn:"強い補助筋使用→重症発作とし�
 {name:"ピークフロー（PEF）",priority:"mid",
 why:"最大呼気流量は気道閉塞の程度を定量化する。予測値・個人最良値との比較で重症度評価。",
 normal:"予測値の80%以上",warn:"予測値50%未満→重症発作"},
-]},
+],
+refs:[
+"日本小児アレルギー学会（2020）「小児気管支喘息治療・管理ガイドライン2020」",
+"Global Initiative for Asthma (GINA) (2023). Global Strategy for Asthma Management and Prevention. ginasthma.org.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:39,name:"咳喘息",en:"Cough Variant Asthma",cat:"呼吸器",age:"幼児〜成人",
 overview:"喘鳴を伴わない慢性乾性咳嗽のみを主症状とする喘息亜型。8週間以上続く夜間・早朝の咳嗽が特徴。",
 observations:[
@@ -594,7 +818,12 @@ normal:"",warn:"8週以上持続＋夜間増悪→気管支拡張薬試験的投
 {name:"気管支拡張薬への反応",priority:"high",
 why:"β2刺激薬吸入で有意に改善すれば咳喘息と診断。反応不良なら百日咳・後鼻漏などを鑑別。",
 normal:"気管支拡張薬で改善",warn:"無効→他疾患を疑い精査"},
-]},
+],
+refs:[
+"日本小児アレルギー学会（2020）「小児気管支喘息治療・管理ガイドライン2020」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:40,name:"アレルギー性鼻炎",en:"Allergic Rhinitis",cat:"呼吸器",age:"学童〜",
 overview:"ダニ・花粉などのアレルゲンによるIgE介在性の鼻粘膜炎症。くしゃみ・鼻水・鼻閉の三主徴。",
 observations:[
@@ -604,7 +833,13 @@ normal:"軽症：日常生活への影響なし",warn:"重症：睡眠障害・�
 {name:"睡眠の質・日中の集中力",priority:"mid",
 why:"鼻閉による口呼吸・睡眠障害は日中の眠気・学業成績低下につながる。",
 normal:"睡眠良好",warn:"睡眠障害＋日中眠気→学校生活への影響を評価"},
-]},
+],
+refs:[
+"日本耳鼻咽喉科学会（2020）「アレルギー性鼻炎の診療ガイドライン」",
+"日本アレルギー学会（2020）「アレルギー総合ガイドライン2020」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:41,name:"副鼻腔炎",en:"Sinusitis",cat:"呼吸器",age:"幼児〜",
 overview:"副鼻腔の細菌・ウイルス感染による炎症。膿性鼻漏・鼻閉・頭痛・発熱が主症状。慢性化に注意。",
 observations:[
@@ -614,7 +849,12 @@ normal:"透明〜白色鼻漏",warn:"膿性鼻漏10日以上持続→細菌性�
 {name:"頭痛・顔面痛・圧痛",priority:"mid",
 why:"副鼻腔内の膿貯留・圧力上昇による疼痛。前額部・眼窩下部・頬部の圧痛を確認。",
 normal:"疼痛なし",warn:"強い頭痛・眼窩周囲浮腫→眼窩内・頭蓋内合併症を疑う"},
-]},
+],
+refs:[
+"日本鼻科学会（2022）「急性鼻副鼻腔炎診療ガイドライン2022年版」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:42,name:"睡眠時無呼吸症候群",en:"Obstructive Sleep Apnea",cat:"呼吸器",age:"幼児〜",
 overview:"睡眠中の上気道閉塞による無呼吸・低呼吸の反復。小児では扁桃・アデノイド肥大が主因。行動障害・成長障害の原因となる。",
 observations:[
@@ -627,7 +867,13 @@ normal:"日中活気あり",warn:"日中過眠＋学習・行動問題→睡眠�
 {name:"扁桃の大きさ・口呼吸",priority:"mid",
 why:"扁桃サイズ（Grade 1〜4）を評価し手術適応を検討。口呼吸は上気道閉塞のサイン。",
 normal:"扁桃Grade 1〜2",warn:"扁桃Grade 3〜4＋OSA→耳鼻科手術適応"},
-]},
+],
+refs:[
+"日本睡眠学会（2021）「小児閉塞性睡眠時無呼吸症候群の診療ガイドライン」",
+"Marcus CL et al. (2012). Diagnosis and management of childhood obstructive sleep apnea syndrome. Pediatrics, 130(3):576-584.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 // ===== アレルギー =====
 {id:43,name:"食物アレルギー",en:"Food Allergy",cat:"アレルギー",age:"乳幼児〜",
 overview:"食物抗原に対するIgE介在性アレルギー反応。鶏卵・牛乳・小麦が三大アレルゲン（乳幼児）。皮膚・消化器・呼吸器症状が混在。",
@@ -644,7 +890,13 @@ normal:"呼吸器症状なし",warn:"喘鳴＋呼吸困難→アドレナリン�
 {name:"循環器症状（血圧低下・意識）",priority:"high",
 why:"アナフィラキシーショックでは血圧低下・意識障害が生じる。",
 normal:"血圧・意識正常",warn:"血圧低下＋意識障害→アドレナリン＋仰臥位＋緊急搬送"},
-]},
+],
+refs:[
+"日本小児アレルギー学会（2021）「食物アレルギー診療ガイドライン2021」",
+"Sampson HA et al. (2014). Food allergy: a practice parameter update—2014. J Allergy Clin Immunol, 134(5):1016-1025.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:44,name:"アトピー性皮膚炎",en:"Atopic Dermatitis",cat:"アレルギー",age:"乳児〜",
 overview:"皮膚バリア機能障害とTh2優位の免疫応答による慢性再燃性湿疹。強い瘙痒と特徴的分布（乳児：顔面、幼児以降：関節窩）。",
 observations:[
@@ -657,7 +909,13 @@ normal:"瘙痒あるが睡眠可",warn:"毎夜の掻破で睡眠不可→治療�
 {name:"感染徴候（黄色痂皮・浸出液）",priority:"high",
 why:"皮膚バリア破綻により黄色ブドウ球菌感染が起きやすい。カポジ水痘様発疹症（HSV感染）は緊急。",
 normal:"感染徴候なし",warn:"急速拡大する水疱・糜爛→カポジ水痘様発疹症を疑い緊急受診"},
-]},
+],
+refs:[
+"日本皮膚科学会・日本アレルギー学会（2021）「アトピー性皮膚炎診療ガイドライン2021」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Eichenfield LF et al. (2014). Guidelines of care for the management of atopic dermatitis. J Am Acad Dermatol, 70(2):338-351."
+]
+},
 {id:45,name:"アレルギー性結膜炎",en:"Allergic Conjunctivitis",cat:"アレルギー",age:"学童〜",
 overview:"ダニ・花粉によるIgE介在性の結膜炎症。眼瘙痒・充血・流涙が主症状。春季カタルは重症型で角膜障害リスクあり。",
 observations:[
@@ -667,7 +925,12 @@ normal:"軽度の不快感のみ",warn:"激しい眼のこすり＋羞明→角�
 {name:"乳頭形成（春季カタル）",priority:"high",
 why:"春季カタルでは眼瞼結膜に巨大乳頭が形成され角膜炎・角膜潰瘍を合併することがある。",
 normal:"乳頭形成なし",warn:"巨大乳頭＋角膜混濁→ステロイド点眼・眼科管理"},
-]},
+],
+refs:[
+"日本眼科学会（2021）「アレルギー性結膜疾患診療ガイドライン（第3版）」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:46,name:"じんましん",en:"Urticaria",cat:"アレルギー",age:"全年齢",
 overview:"皮膚の一過性の膨疹・紅斑・瘙痒。原因は食物・薬剤・感染・物理的刺激・特発性。多くは数時間以内に消退。",
 observations:[
@@ -680,7 +943,13 @@ normal:"皮膚症状のみ",warn:"呼吸器・循環器症状合併→アドレ�
 {name:"原因の特定",priority:"mid",
 why:"発症前24時間の食事・薬剤・感染症・物理的刺激を聴取し再発予防につなげる。",
 normal:"",warn:""},
-]},
+],
+refs:[
+"日本アレルギー学会（2022）「蕁麻疹・血管性浮腫の診療ガイドライン2022」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Zuberbier T et al. (2022). EAACI/GA2LEN/EuroGuiDerm/APAAACI guideline for the definition, classification, diagnosis, and management of urticaria. Allergy, 77(3):734-766."
+]
+},
 {id:47,name:"花粉症",en:"Pollinosis",cat:"アレルギー",age:"学童〜",
 overview:"スギ・ヒノキ・イネ科等の花粉によるIgE介在性アレルギー。季節性のくしゃみ・鼻水・鼻閉・眼瘙痒。",
 observations:[
@@ -693,7 +962,12 @@ normal:"軽症〜中等症",warn:"重症（日常生活困難）→強化治療�
 {name:"口腔アレルギー症候群（OAS）",priority:"mid",
 why:"花粉と食物の交差反応で果物・野菜摂取後に口腔内の痒み・腫脹が生じる。",
 normal:"OASなし",warn:"果物摂取後の口唇腫脹→OAS・アナフィラキシーリスクを評価"},
-]},
+],
+refs:[
+"日本アレルギー学会（2020）「花粉症の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:48,name:"アナフィラキシー",en:"Anaphylaxis",cat:"アレルギー",age:"全年齢",
 overview:"急速に進行する全身性重篤アレルギー反応。食物・薬剤・蜂毒が主因。気道・循環器・皮膚・消化器症状が複数臓器に出現。",
 observations:[
@@ -709,7 +983,13 @@ normal:"意識清明",warn:"意識障害→ショック体位・アドレナリ�
 {name:"皮膚症状（蕁麻疹・紅潮）",priority:"mid",
 why:"80〜90%に皮膚症状。ただし皮膚症状なしのアナフィラキシーも存在するため他臓器症状を重視。",
 normal:"",warn:"皮膚症状急速拡大＋他臓器症状→アナフィラキシーと診断"},
-]},
+],
+refs:[
+"日本アレルギー学会（2022）「アナフィラキシーガイドライン2022」",
+"Simons FE et al. (2015). World allergy organization anaphylaxis guidelines. World Allergy Organ J, 8(1):32.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 ,
 // ===== 消化器 =====
 {id:49,name:"胃食道逆流症（GERD）",en:"GERD",cat:"消化器",age:"乳児〜",
@@ -727,7 +1007,13 @@ normal:"呼吸器症状なし",warn:"哺乳後の無呼吸・喘鳴→GERD関連
 {name:"胸焼け・嚥下困難（年長児）",priority:"mid",
 why:"年長児以降は成人同様の胸焼け・嚥下困難・咽頭違和感を訴える。食道炎の指標。",
 normal:"",warn:"嚥下困難持続→内視鏡検査"},
-]},
+],
+refs:[
+"日本小児栄養消化器肝臓学会（2020）「小児GERDの診療ガイドライン」",
+"Vandenplas Y et al. (2009). Pediatric gastroesophageal reflux clinical practice guidelines. J Pediatr Gastroenterol Nutr, 49(4):498-547.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:50,name:"肥厚性幽門狭窄症",en:"Hypertrophic Pyloric Stenosis",cat:"消化器",age:"生後2〜8週",
 overview:"幽門筋の肥厚による胃出口狭窄。生後2〜8週に発症する噴水状嘔吐が特徴。男児に多い（4:1）。",
 observations:[
@@ -743,7 +1029,13 @@ normal:"",warn:"オリーブ腫瘤触知→超音波確認→手術"},
 {name:"哺乳量・体重増加",priority:"high",
 why:"嘔吐後も空腹感が強く哺乳を繰り返すが体重増加不良。生後2〜8週の体重停滞に注意。",
 normal:"体重増加良好",warn:"体重増加不良＋噴水状嘔吐→精査"},
-]},
+],
+refs:[
+"日本小児外科学会（2020）「肥厚性幽門狭窄症の診断・治療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Maheshwai N (2007). Are young infants treated with erythromycin at risk for developing hypertrophic pyloric stenosis? Arch Dis Child, 92(3):271-273."
+]
+},
 {id:51,name:"腸重積",en:"Intussusception",cat:"消化器",age:"生後3か月〜2歳",
 overview:"腸管の一部が隣接腸管に陥入する急性腹症。間欠的腹痛・嘔吐・血便（イチゴジャム様）の三徴。早期整復が重要。",
 observations:[
@@ -759,7 +1051,13 @@ normal:"",warn:"腹部膨満＋嘔吐→整復遅延は腸管壊死リスク"},
 {name:"全身状態（活気・バイタル）",priority:"high",
 why:"腸管壊死・穿孔によりショック状態となる。発症から時間が経つほど重症化する。",
 normal:"活気あり",warn:"活気不良＋血圧低下→緊急手術適応"},
-]},
+],
+refs:[
+"日本小児外科学会（2022）「腸重積症の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Huppertz HI et al. (2006). Intussusception among young European children: a large scale prospective study. Eur J Pediatr, 165(5):286-294."
+]
+},
 {id:52,name:"急性虫垂炎",en:"Acute Appendicitis",cat:"消化器",age:"学童〜",
 overview:"虫垂の急性炎症。臍周囲から右下腹部への移動する疼痛・発熱・嘔吐が典型。穿孔・腹膜炎に進展するリスクあり。",
 observations:[
@@ -775,7 +1073,13 @@ normal:"",warn:"食欲不振＋右下腹部痛→虫垂炎を鑑別"},
 {name:"腹膜刺激症状",priority:"high",
 why:"筋性防御・反跳痛は腹膜炎（穿孔）の徴候。歩行時の腹痛増強も腹膜刺激を示唆。",
 normal:"腹膜刺激症状なし",warn:"筋性防御＋反跳痛→緊急手術"},
-]},
+],
+refs:[
+"日本小児外科学会（2022）「急性虫垂炎の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Snyder MJ et al. (2018). Acute appendicitis: efficient diagnosis and management. Am Fam Physician, 98(1):25-33."
+]
+},
 {id:53,name:"炎症性腸疾患（IBD）",en:"Inflammatory Bowel Disease",cat:"消化器",age:"学童〜",
 overview:"クローン病・潰瘍性大腸炎を含む慢性炎症性腸疾患。反復する血性下痢・腹痛・体重減少が主症状。",
 observations:[
@@ -791,7 +1095,13 @@ normal:"成長曲線正常範囲",warn:"成長障害→栄養療法・治療強�
 {name:"腸管外合併症",priority:"mid",
 why:"関節炎・ぶどう膜炎・皮膚病変（結節性紅斑・壊疽性膿皮症）が合併することがある。",
 normal:"腸管外症状なし",warn:"眼症状・関節症状→腸管外合併症として専門科受診"},
-]},
+],
+refs:[
+"日本炎症性腸疾患学会（2022）「炎症性腸疾患（IBD）診療ガイドライン2022」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Ruemmele FM et al. (2014). Consensus guidelines of ECCO/ESPGHAN on the medical management of pediatric Crohn's disease. J Crohns Colitis, 8(10):1179-1207."
+]
+},
 {id:54,name:"過敏性腸症候群（IBS）",en:"Irritable Bowel Syndrome",cat:"消化器",age:"学童〜",
 overview:"器質的疾患なく反復する腹痛・便通異常。腹痛は排便で改善。心理社会的因子が関与。学童期の腹痛の主要原因。",
 observations:[
@@ -804,7 +1114,12 @@ normal:"",warn:"登校前のみの腹痛→心身症・不登校の評価"},
 {name:"体重変化・全身状態",priority:"mid",
 why:"体重減少・発熱・血便・夜間の腹痛・6歳未満はIBSより器質的疾患を疑うレッドフラグ。",
 normal:"体重安定",warn:"体重減少＋夜間痛→IBDを疑い精査"},
-]},
+],
+refs:[
+"日本消化器病学会（2020）「過敏性腸症候群の診療ガイドライン2020」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:55,name:"急性膵炎",en:"Acute Pancreatitis",cat:"消化器",age:"学童〜",
 overview:"膵酵素の自己消化による膵炎。小児では外傷・薬剤・代謝疾患・ウイルス感染が主因。上腹部痛・嘔吐・リパーゼ上昇が特徴。",
 observations:[
@@ -820,7 +1135,12 @@ normal:"",warn:"嘔吐反復＋経口不能→輸液・膵安静"},
 {name:"全身炎症反応（発熱・頻脈）",priority:"high",
 why:"重症膵炎では全身炎症反応症候群（SIRS）・多臓器不全に至ることがある。",
 normal:"バイタル安定",warn:"SIRS基準2項目以上→重症膵炎として集中管理"},
-]},
+],
+refs:[
+"日本膵臓学会（2021）「急性膵炎診療ガイドライン2021」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:56,name:"肝炎（ウイルス性）",en:"Viral Hepatitis",cat:"消化器",age:"全年齢",
 overview:"HAV・HBV・HCV・EBV・CMVによる肝細胞障害。黄疸・肝腫大・食欲不振・暗色尿が主症状。",
 observations:[
@@ -836,7 +1156,13 @@ normal:"意識清明・PT正常",warn:"意識障害＋PT延長→劇症肝炎・
 {name:"食欲・体重・倦怠感",priority:"mid",
 why:"食欲不振・強い倦怠感は肝炎の初期症状。黄疸出現前から2週間程度先行することがある。",
 normal:"",warn:""},
-]},
+],
+refs:[
+"日本肝臓学会（2021）「ウイルス性肝炎の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Jonas MM (2010). Children with hepatitis B virus infection. Clin Liver Dis, 14(1):123-141."
+]
+},
 // ===== 神経 =====
 {id:57,name:"熱性けいれん",en:"Febrile Seizure",cat:"神経",age:"生後6か月〜6歳",
 overview:"発熱に伴う全般性けいれん。多くは5分未満で自然終止。複雑型（15分以上・焦点性・24時間内反復）は精査が必要。",
@@ -853,7 +1179,13 @@ normal:"発熱と同時〜24時間以内",warn:"発熱なしの発作→てん�
 {name:"発作後の意識回復",priority:"high",
 why:"単純型では数分〜30分以内に意識が回復する。遷延する意識障害・麻痺は脳炎・てんかんを疑う。",
 normal:"30分以内に意識回復",warn:"意識回復遅延＋麻痺→脳炎・てんかんを緊急評価"},
-]},
+],
+refs:[
+"日本小児神経学会（2021）「熱性けいれん診療ガイドライン2021」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Subcommittee on Febrile Seizures (2011). Febrile seizures: guideline for the neurodiagnostic evaluation. Pediatrics, 127(2):389-394."
+]
+},
 {id:58,name:"てんかん",en:"Epilepsy",cat:"神経",age:"全年齢",
 overview:"反復性の非誘発性てんかん発作。多種多様な発作型（全般・焦点・欠神等）があり、年齢によって特徴が異なる。",
 observations:[
@@ -869,7 +1201,13 @@ normal:"血中濃度治療域内",warn:"服薬中断→重積状態リスク→�
 {name:"発達・学習への影響",priority:"mid",
 why:"難治性てんかんは神経発達に悪影響を及ぼす。学習困難・行動問題の評価が重要。",
 normal:"",warn:"発達退行＋難治性発作→難治性てんかんを疑い精査"},
-]},
+],
+refs:[
+"日本小児神経学会（2018）「小児てんかん診療ガイドライン2018」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Fisher RS et al. (2017). Operational classification of seizure types by the International League Against Epilepsy. Epilepsia, 58(4):522-530."
+]
+},
 {id:59,name:"急性脳炎・脳症",en:"Acute Encephalitis/Encephalopathy",cat:"神経",age:"乳幼児〜学童",
 overview:"ウイルス・免疫反応による脳実質の炎症または代謝障害。発熱・けいれん・意識障害の三主徴。インフルエンザ脳症が代表的。",
 observations:[
@@ -885,7 +1223,13 @@ normal:"",warn:"高熱急峻発症＋意識障害→インフルエンザ脳症�
 {name:"髄膜刺激症状",priority:"high",
 why:"項部硬直・ケルニッヒ徴候・ブルジンスキー徴候は髄膜炎・脳炎を示唆。",
 normal:"髄膜刺激症状なし",warn:"髄膜刺激症状あり→髄液検査・抗菌薬・抗ウイルス薬"},
-]},
+],
+refs:[
+"日本小児神経学会（2022）「急性脳炎・脳症の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"厚生労働省（2022）「急性脳炎への対応ガイダンス」"
+]
+},
 {id:60,name:"髄膜炎",en:"Meningitis",cat:"神経",age:"全年齢",
 overview:"細菌・ウイルスによる髄膜の炎症。頭痛・発熱・嘔吐・髄膜刺激症状が三主徴。細菌性は生命予後に関わる緊急疾患。",
 observations:[
@@ -901,7 +1245,13 @@ normal:"出血斑なし",warn:"圧迫不退色の紫斑→髄膜炎菌敗血症�
 {name:"頭痛・嘔吐・光過敏",priority:"high",
 why:"頭蓋内圧亢進による頭痛・噴水状嘔吐・光過敏。乳幼児では不機嫌・哺乳不良・啼泣で表現される。",
 normal:"頭痛なし",warn:"激しい頭痛＋嘔吐→颅内圧亢進を疑う"},
-]},
+],
+refs:[
+"Tunkel AR et al. (2004). Practice guidelines for the management of bacterial meningitis. Clin Infect Dis, 39(9):1267-1284.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児神経学会（2022）「髄膜炎の診療指針」"
+]
+},
 {id:61,name:"頭蓋内圧亢進",en:"Increased Intracranial Pressure",cat:"神経",age:"全年齢",
 overview:"脳腫瘍・水頭症・出血・脳炎等による頭蓋内圧上昇。頭痛・嘔吐・うっ血乳頭が古典的三徴。乳児は大泉門膨隆・頭囲拡大。",
 observations:[
@@ -917,7 +1267,13 @@ normal:"大泉門平坦・柔軟",warn:"大泉門膨隆→頭蓋内圧亢進と�
 {name:"視神経乳頭浮腫・瞳孔変化",priority:"high",
 why:"眼底検査でうっ血乳頭が確認されれば頭蓋内圧亢進の証拠。瞳孔不同は脳ヘルニアのサイン。",
 normal:"瞳孔等大・対光反射正常",warn:"瞳孔不同・対光反射消失→脳ヘルニア緊急対応"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本神経救急学会（2020）「頭蓋内圧亢進症の管理指針」",
+"Rangel-Castilla L et al. (2008). Management of intracranial hypertension. Neurol Clin, 26(2):521-541."
+]
+},
 {id:62,name:"脳性麻痺",en:"Cerebral Palsy",cat:"神経",age:"乳幼児〜",
 overview:"胎児・新生児期の脳障害による非進行性の運動・姿勢障害。痙直型が最も多い。合併症（てんかん・知的障害・摂食障害）を伴うことが多い。",
 observations:[
@@ -933,7 +1289,13 @@ normal:"発作なし",warn:"発作増加→薬物調整"},
 {name:"呼吸器合併症",priority:"mid",
 why:"誤嚥性肺炎・拘束性換気障害による呼吸器合併症は生命予後に直結。",
 normal:"呼吸器症状なし",warn:"発熱＋呼吸器症状→誤嚥性肺炎を疑う"},
-]},
+],
+refs:[
+"日本小児神経学会（2020）「脳性麻痺のリハビリテーションと支援指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Rosenbaum P et al. (2007). A report: the definition and classification of cerebral palsy. Dev Med Child Neurol Suppl, 109:8-14."
+]
+},
 {id:63,name:"注意欠陥多動性障害（ADHD）",en:"ADHD",cat:"神経",age:"学童〜",
 overview:"不注意・多動・衝動性を主症状とする神経発達症。学習・対人関係・日常生活に支障をきたす。",
 observations:[
@@ -946,7 +1308,13 @@ normal:"",warn:"衝動性による危険行動→安全管理強化"},
 {name:"薬物療法の効果・副作用",priority:"high",
 why:"メチルフェニデート・アトモキセチン等の食欲低下・不眠・心拍数増加を確認。",
 normal:"副作用なし",warn:"食欲著減＋成長不良→薬物調整"},
-]},
+],
+refs:[
+"日本小児神経学会・日本小児精神神経学会（2020）「注意欠如・多動症（ADHD）診療ガイドライン2020」",
+"American Psychiatric Association (2013). DSM-5. APA.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 // ===== 発達 =====
 {id:64,name:"自閉スペクトラム症（ASD）",en:"Autism Spectrum Disorder",cat:"発達",age:"乳幼児〜",
 overview:"社会的コミュニケーション障害と限定的反復行動を主症状とする神経発達症。感覚過敏・こだわり・常同行動を伴う。",
@@ -963,7 +1331,13 @@ normal:"",warn:"こだわりによる食事制限→低栄養リスク評価"},
 {name:"睡眠障害",priority:"mid",
 why:"ASDの70〜80%に睡眠障害を合併。睡眠不足は行動問題・学習能力低下につながる。",
 normal:"睡眠良好",warn:"慢性睡眠障害→メラトニン・環境調整"},
-]},
+],
+refs:[
+"American Psychiatric Association (2013). DSM-5. APA.",
+"日本自閉症スペクトラム学会（2021）「自閉スペクトラム症（ASD）診療の手引き」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:65,name:"知的障害",en:"Intellectual Disability",cat:"発達",age:"乳幼児〜",
 overview:"知的機能と適応行動の有意な制限を特徴とする神経発達症。原因は遺伝・染色体・周産期障害など多岐にわたる。",
 observations:[
@@ -976,7 +1350,13 @@ normal:"",warn:"自傷行為増加→環境・心理的原因を評価"},
 {name:"医療的処置への適応",priority:"high",
 why:"認知能力に応じたインフォームドアセントと環境調整・鎮静が必要になることがある。",
 normal:"",warn:""},
-]},
+],
+refs:[
+"American Psychiatric Association (2013). DSM-5. APA.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児科学会（2021）「知的障害の診療ガイダンス」"
+]
+},
 {id:66,name:"学習障害（LD）",en:"Learning Disability",cat:"発達",age:"学童〜",
 overview:"知的能力は正常だが、読み（ディスレクシア）・書き・算数の特定領域に著しい困難を示す神経発達症。",
 observations:[
@@ -986,7 +1366,13 @@ normal:"",warn:"読み書き著明な遅れ→神経心理検査・特別支援�
 {name:"自己肯定感・二次的情緒問題",priority:"high",
 why:"繰り返す失敗体験で自己肯定感が低下し不安・抑うつを合併することが多い。",
 normal:"",warn:"意欲低下＋情緒問題→心理的支援"},
-]},
+],
+refs:[
+"American Psychiatric Association (2013). DSM-5. APA.",
+"日本LD学会（2020）「学習障害（LD）の支援ガイド」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:67,name:"発達性協調運動障害（DCD）",en:"Developmental Coordination Disorder",cat:"発達",age:"学童〜",
 overview:"年齢不相応な運動の不器用さ。書字・体育・日常生活動作に困難。ADHDやLDとの合併が多い。",
 observations:[
@@ -996,7 +1382,12 @@ normal:"",warn:"著明な不器用さ→作業療法士評価・支援"},
 {name:"自己肯定感・体育回避",priority:"mid",
 why:"運動の失敗体験で体育・集団活動を回避するようになる二次的問題に注意。",
 normal:"",warn:"体育回避＋意欲低下→心理的支援"},
-]},
+],
+refs:[
+"American Psychiatric Association (2013). DSM-5. APA.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:68,name:"吃音（どもり）",en:"Stuttering",cat:"発達",age:"幼児〜",
 overview:"言葉の流暢性障害。音の繰り返し・延長・ブロックが特徴。2〜5歳に発症し、多くは自然改善するが慢性化する場合もある。",
 observations:[
@@ -1009,7 +1400,13 @@ normal:"二次的行動なし",warn:"回避行動出現→早期言語療法"},
 {name:"自己肯定感・学校での対人関係",priority:"high",
 why:"吃音による学校でのいじめ・自己肯定感低下が二次障害につながる。",
 normal:"",warn:"いじめ・孤立→スクールカウンセラー連携"},
-]},
+],
+refs:[
+"Guitar B (2013). Stuttering: An Integrated Approach to its Nature and Treatment, 4th ed. LWW.",
+"日本音声言語医学会（2020）「吃音の支援ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 ,
 // ===== 循環器 =====
 {id:69,name:"先天性心疾患（VSD）",en:"Ventricular Septal Defect",cat:"循環器",age:"新生児〜乳児",
@@ -1027,7 +1424,13 @@ normal:"",warn:""},
 {name:"SpO₂・チアノーゼ",priority:"high",
 why:"大量短絡では肺高血圧が進行し右左短絡に転じてチアノーゼ（アイゼンメンゲル症候群）が出現。",
 normal:"SpO₂≥96%（右手）",warn:"SpO₂低下＋チアノーゼ出現→肺高血圧進行を疑う"},
-]},
+],
+refs:[
+"日本小児循環器学会（2022）「先天性心疾患の診療ガイドライン2022」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Hoffman JI & Kaplan S (2002). The incidence of congenital heart disease. J Am Coll Cardiol, 39(12):1890-1900."
+]
+},
 {id:70,name:"心房中隔欠損症（ASD）",en:"Atrial Septal Defect",cat:"循環器",age:"学童〜成人",
 overview:"心房中隔欠損による左右短絡。小児期は無症状が多いが成人になると運動耐容能低下・不整脈・肺高血圧が問題となる。",
 observations:[
@@ -1040,7 +1443,12 @@ normal:"",warn:""},
 {name:"不整脈（心房細動）",priority:"high",
 why:"成人ASDでは心房拡大により心房細動が合併しやすい。小児期でも心電図監視が推奨される。",
 normal:"洞調律",warn:"心房細動出現→閉鎖術適応・抗凝固療法"},
-]},
+],
+refs:[
+"日本小児循環器学会（2022）「先天性心疾患の診療ガイドライン2022」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:71,name:"動脈管開存症（PDA）",en:"Patent Ductus Arteriosus",cat:"循環器",age:"新生児〜乳児",
 overview:"胎児期の動脈管が出生後も開存し大動脈から肺動脈への短絡が持続。早産児に多く、心不全・肺水腫の原因となる。",
 observations:[
@@ -1053,7 +1461,13 @@ normal:"脈圧<40mmHg",warn:"脈圧拡大＋水槌脈→PDA確認"},
 {name:"哺乳困難・呼吸器症状",priority:"high",
 why:"早産児の大量PDAでは心不全・肺水腫により哺乳困難・頻呼吸・無呼吸が増悪。",
 normal:"",warn:"呼吸器症状悪化→インドメタシン・手術閉鎖"},
-]},
+],
+refs:[
+"日本小児循環器学会（2022）「動脈管開存症の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Dice JE & Bhatia J (2007). Patent ductus arteriosus: an overview. J Pediatr Pharmacol Ther, 12(3):138-146."
+]
+},
 {id:72,name:"川崎病",en:"Kawasaki Disease",cat:"循環器",age:"乳幼児（5歳未満）",
 overview:"原因不明の急性熱性全身性血管炎。冠動脈瘤が最大の合併症。5日以上の発熱＋主要症状4項目で診断。",
 observations:[
@@ -1069,7 +1483,13 @@ normal:"冠動脈正常",warn:"冠動脈拡張→抗凝固療法追加"},
 {name:"CRP・白血球・血沈",priority:"high",
 why:"炎症マーカーの高値が診断支持。IVIG治療後48〜72時間で解熱しない場合は追加治療を検討。",
 normal:"炎症マーカー正常",warn:"IVIG後も発熱持続→IVIG不応例として追加治療"},
-]},
+],
+refs:[
+"日本川崎病研究センター（2020）「川崎病診断の手引き改訂第6版」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"McCrindle BW et al. (2017). Diagnosis, treatment, and long-term management of Kawasaki disease: a scientific statement. Circulation, 135(17):e927-e999."
+]
+},
 {id:73,name:"不整脈（上室性頻拍）",en:"Supraventricular Tachycardia",cat:"循環器",age:"乳幼児〜学童",
 overview:"房室結節リエントリー等による発作性上室頻拍。突然の頻脈（200回/分以上）・動悸・蒼白。乳児では心不全に進展しやすい。",
 observations:[
@@ -1085,7 +1505,13 @@ normal:"",warn:""},
 {name:"心電図所見",priority:"high",
 why:"12誘導心電図でWPW症候群（デルタ波）の確認が治療方針に直結する。",
 normal:"洞調律",warn:"WPW＋SVT→カテーテルアブレーション適応"},
-]},
+],
+refs:[
+"日本小児循環器学会（2022）「小児上室性頻拍の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Page RL et al. (2016). 2015 ACC/AHA/HRS guideline for the management of adult patients with supraventricular tachycardia. Circulation, 133(14):e506-e574."
+]
+},
 {id:74,name:"心筋炎",en:"Myocarditis",cat:"循環器",age:"乳幼児〜学童",
 overview:"ウイルス（コクサッキーウイルス・アデノウイルス等）による心筋の炎症。急性心不全・不整脈・突然死の原因となる。",
 observations:[
@@ -1098,7 +1524,13 @@ normal:"洞調律",warn:"心室頻拍→緊急除細動・ICU管理"},
 {name:"バイタル（血圧・心拍数）",priority:"high",
 why:"心原性ショックでは血圧低下・頻脈・末梢冷感が出現。早期の強心剤・LVAD装着を検討。",
 normal:"血圧・心拍数正常",warn:"血圧低下＋頻脈→心原性ショックとして緊急対応"},
-]},
+],
+refs:[
+"日本小児循環器学会（2022）「小児心筋炎の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Sagar S et al. (2012). Myocarditis. Lancet, 379(9817):738-747."
+]
+},
 {id:75,name:"心不全（小児）",en:"Heart Failure (Pediatric)",cat:"循環器",age:"新生児〜小児",
 overview:"先天性心疾患・心筋炎・不整脈等による心ポンプ機能不全。頻呼吸・哺乳困難・浮腫・体重増加不良が主症状。",
 observations:[
@@ -1114,7 +1546,13 @@ normal:"肝腫大なし",warn:"肝腫大増大→右心不全増悪"},
 {name:"尿量",priority:"high",
 why:"心拍出量低下で腎血流が減少し乏尿となる。利尿薬療法の効果指標。",
 normal:"尿量1mL/kg/h以上",warn:"乏尿（<0.5mL/kg/h）→心不全悪化・腎不全"},
-]},
+],
+refs:[
+"日本小児循環器学会（2022）「小児心不全の管理指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Masarone D et al. (2017). Pediatric heart failure: a practical guide to diagnosis and management. Pediatr Neonatol, 58(4):303-312."
+]
+},
 {id:76,name:"起立性調節障害（OD）",en:"Orthostatic Dysregulation",cat:"循環器",age:"学童〜思春期",
 overview:"起立時の循環調節障害。起立後の血圧低下・頻脈により立ちくらみ・失神・倦怠感が生じる。思春期に多く不登校の主要原因の一つ。",
 observations:[
@@ -1127,7 +1565,13 @@ normal:"",warn:"慢性的な学校欠席→不登校対策・心身医学的評�
 {name:"水分・塩分摂取",priority:"mid",
 why:"循環血液量増加のための水分（2L/日以上）・塩分（10g/日）摂取が非薬物療法の基本。",
 normal:"",warn:"水分不足→症状増悪"},
-]},
+],
+refs:[
+"日本小児心身医学会（2021）「起立性調節障害の診療ガイドライン2021」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"田中英高（2021）『起立性調節障害の子どもの正しい理解と対応』中央法規出版."
+]
+},
 {id:77,name:"先天性心疾患（チアノーゼ型）",en:"Cyanotic Congenital Heart Disease",cat:"循環器",age:"新生児〜乳児",
 overview:"ファロー四徴症・大血管転位症等の肺血流減少型または混合型先天性心疾患。低酸素血症・チアノーゼが主症状。",
 observations:[
@@ -1140,7 +1584,12 @@ normal:"発作なし",warn:"突然の重篤チアノーゼ＋意識障害→無�
 {name:"哺乳・発育",priority:"high",
 why:"低酸素血症・心不全により哺乳困難・体重増加不良をきたす。哺乳時のSpO₂低下にも注意。",
 normal:"哺乳良好",warn:"哺乳中のSpO₂低下→姿勢・哺乳方法の調整"},
-]},
+],
+refs:[
+"日本小児循環器学会（2022）「チアノーゼ型先天性心疾患の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 // ===== 内分泌・代謝 =====
 {id:78,name:"1型糖尿病",en:"Type 1 Diabetes Mellitus",cat:"内分泌・代謝",age:"学童〜",
 overview:"膵β細胞の自己免疫性破壊によるインスリン絶対欠乏。小児糖尿病の主要型。ケトアシドーシスで発症することも多い。",
@@ -1157,7 +1606,13 @@ normal:"ケトン体陰性",warn:"嘔吐＋腹痛＋意識障害→DKAとして�
 {name:"低血糖の認知症状・夜間低血糖",priority:"high",
 why:"小児は低血糖の自覚症状が乏しく夜間低血糖（睡眠中）に気づかないことがある。悪夢・朝の頭痛が手がかり。",
 normal:"",warn:"夜間低血糖疑い→持続血糖モニタリング（CGM）導入検討"},
-]},
+],
+refs:[
+"日本糖尿病学会・日本小児内分泌学会（2022）「小児・思春期1型糖尿病の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"International Society for Pediatric and Adolescent Diabetes (2022). ISPAD Clinical Practice Consensus Guidelines. ispad.org."
+]
+},
 {id:79,name:"甲状腺機能低下症",en:"Hypothyroidism",cat:"内分泌・代謝",age:"新生児〜小児",
 overview:"甲状腺ホルモン産生不足。先天性（クレチン病）と後天性（橋本甲状腺炎）がある。知的障害・成長障害の原因となる。",
 observations:[
@@ -1173,7 +1628,12 @@ normal:"心拍数年齢正常域",warn:"徐脈＋体重増加過剰→甲状腺�
 {name:"薬物療法（レボチロキシン）の管理",priority:"high",
 why:"定期的なTSH・FT4モニタリングでレボチロキシン量を調整。服薬コンプライアンスと空腹時服用を確認。",
 normal:"TSH・FT4正常域",warn:"TSH上昇→服薬量調整"},
-]},
+],
+refs:[
+"日本小児内分泌学会（2022）「小児甲状腺機能低下症の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:80,name:"甲状腺機能亢進症（バセドウ病）",en:"Graves Disease",cat:"内分泌・代謝",age:"学童〜思春期",
 overview:"TSH受容体自己抗体による甲状腺機能亢進症。頻脈・体重減少・眼球突出・甲状腺腫大が特徴。",
 observations:[
@@ -1189,7 +1649,12 @@ normal:"WBC正常",warn:"発熱＋咽頭痛→白血球分画緊急確認"},
 {name:"眼球突出・眼症状",priority:"mid",
 why:"バセドウ眼症では眼球突出・眼瞼後退・複視が合併する。角膜保護が重要。",
 normal:"眼球突出なし",warn:"眼球突出増大→眼科受診"},
-]},
+],
+refs:[
+"日本小児内分泌学会（2022）「バセドウ病の診療ガイドライン（小児版）」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:81,name:"低身長・成長ホルモン分泌不全",en:"Growth Hormone Deficiency",cat:"内分泌・代謝",age:"学童〜",
 overview:"成長ホルモン分泌不全による成長障害。年間成長率4cm未満・SD値-2SD以下が診断基準。GH補充療法が有効。",
 observations:[
@@ -1202,7 +1667,12 @@ normal:"骨年齢≒暦年齢±1年",warn:"骨年齢遅延>2年→内分泌精�
 {name:"GH注射の手技・コンプライアンス",priority:"high",
 why:"GH補充は毎日皮下注射が基本。注射手技の習得と確認・注射部位ローテーションが重要。",
 normal:"規則正しく注射",warn:"注射忘れ多い→家族支援・看護師教育"},
-]},
+],
+refs:[
+"日本小児内分泌学会（2022）「成長ホルモン分泌不全性低身長症の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:82,name:"副腎皮質機能不全",en:"Adrenal Insufficiency",cat:"内分泌・代謝",age:"全年齢",
 overview:"コルチゾール産生不足。原発性（アジソン病）と中枢性がある。急性副腎不全（副腎クリーゼ）は生命の危機。",
 observations:[
@@ -1215,7 +1685,12 @@ normal:"",warn:"嘔吐で内服不能→注射剤使用・緊急受診"},
 {name:"電解質（Na・K）",priority:"high",
 why:"原発性副腎不全ではアルドステロン不足により低Na・高K血症が生じる。",
 normal:"Na 135〜145mEq/L",warn:"低Na＋高K＋脱水→副腎クリーゼ"},
-]},
+],
+refs:[
+"日本小児内分泌学会（2022）「副腎皮質機能不全の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:83,name:"フェニルケトン尿症（PKU）",en:"Phenylketonuria",cat:"内分泌・代謝",age:"新生児〜",
 overview:"フェニルアラニン水酸化酵素欠損による先天性代謝異常。新生児スクリーニングで早期発見し食事療法で知的障害を予防。",
 observations:[
@@ -1228,7 +1703,12 @@ normal:"食事管理遵守",warn:"管理困難→栄養士・MSW連携"},
 {name:"神経発達・学業成績",priority:"mid",
 why:"高Phe血症が持続すると認知機能・実行機能に影響する。定期的な神経心理検査が推奨される。",
 normal:"",warn:"学習困難→Phe管理強化・神経科評価"},
-]},
+],
+refs:[
+"日本先天代謝異常学会（2022）「フェニルケトン尿症（PKU）診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:84,name:"先天性甲状腺機能低下症（クレチン病）",en:"Congenital Hypothyroidism",cat:"内分泌・代謝",age:"新生児",
 overview:"出生時からの甲状腺ホルモン不足。新生児スクリーニングで発見し生後2週以内にレボチロキシン補充を開始することで正常発達が可能。",
 observations:[
@@ -1241,7 +1721,12 @@ normal:"哺乳良好・活気あり",warn:"遷延黄疸＋哺乳不良→甲状�
 {name:"レボチロキシン服薬管理",priority:"high",
 why:"薬は空腹時（哺乳前30分）に水か少量の母乳で溶かして服用。大豆製品・鉄剤と同時服用は吸収阻害。",
 normal:"TSH・FT4正常域",warn:"TSH上昇→服薬量調整"},
-]},
+],
+refs:[
+"日本小児内分泌学会（2022）「先天性甲状腺機能低下症（クレチン病）の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:85,name:"肥満（小児）",en:"Childhood Obesity",cat:"内分泌・代謝",age:"学童〜",
 overview:"エネルギー過剰摂取と不活動による体脂肪蓄積。肥満度+20%以上が小児肥満の基準。メタボリックシンドローム・2型糖尿病・脂肪肝のリスク。",
 observations:[
@@ -1257,7 +1742,13 @@ normal:"",warn:""},
 {name:"睡眠時無呼吸・整形外科的問題",priority:"mid",
 why:"高度肥満はOSA・ブラント病（脛骨内反症）・股関節頭すべり等の合併症をきたすことがある。",
 normal:"",warn:"いびき＋日中眠気→OSA評価"},
-]},
+],
+refs:[
+"日本肥満学会（2022）「小児肥満症診療ガイドライン2022」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Barlow SE (2007). Expert committee recommendations regarding the prevention, assessment, and treatment of child and adolescent overweight and obesity. Pediatrics, 120(Suppl 4):S164-S192."
+]
+},
 {id:86,name:"ターナー症候群",en:"Turner Syndrome",cat:"内分泌・代謝",age:"乳幼児〜思春期",
 overview:"45,X核型を主体とする女性性染色体異常。低身長・性腺発育不全・リンパ浮腫・心疾患（大動脈縮窄）が特徴。",
 observations:[
@@ -1270,7 +1761,13 @@ normal:"大動脈径正常",warn:"大動脈拡大→循環器科緊急評価"},
 {name:"思春期発来・ホルモン補充",priority:"high",
 why:"卵巣機能不全により自然思春期が来ないことが多い。エストロゲン補充療法の開始時期を内分泌科と連携。",
 normal:"",warn:"12歳以降の思春期発来なし→ホルモン補充開始"},
-]},
+],
+refs:[
+"日本小児内分泌学会（2021）「ターナー症候群の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Gravholt CH et al. (2017). Clinical practice guidelines for the care of girls and women with Turner syndrome. Eur J Endocrinol, 177(3):G1-G70."
+]
+},
 {id:87,name:"ダウン症候群",en:"Down Syndrome",cat:"内分泌・代謝",age:"新生児〜",
 overview:"21トリソミーによる染色体疾患。知的障害・特徴的顔貌・筋緊張低下・先天性心疾患・甲状腺疾患・白血病等の合併症を伴う。",
 observations:[
@@ -1286,7 +1783,13 @@ normal:"",warn:"発熱＋重症感染症→積極的治療"},
 {name:"嚥下機能・誤嚥リスク",priority:"mid",
 why:"筋緊張低下・大きな舌による嚥下障害が誤嚥性肺炎のリスクとなる。",
 normal:"嚥下良好",warn:"食事中の咳嗽・喘鳴→嚥下評価"},
-]},
+],
+refs:[
+"日本ダウン症学会（2022）「ダウン症候群の医療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Bull MJ (2011). Health supervision for children with Down syndrome. Pediatrics, 128(2):393-406."
+]
+},
 ,
 // ===== 腎・泌尿器 =====
 {id:88,name:"急性糸球体腎炎",en:"Acute Glomerulonephritis",cat:"腎・泌尿器",age:"学童",
@@ -1304,7 +1807,12 @@ normal:"浮腫消退・体重安定",warn:"浮腫増大＋乏尿→腎不全進�
 {name:"尿量",priority:"high",
 why:"乏尿（<0.5mL/kg/h）は腎機能障害の指標。利尿薬療法の効果確認に1〜2時間毎の尿量測定が有用。",
 normal:"尿量1mL/kg/h以上",warn:"無尿・高K血症→透析適応を検討"},
-]},
+],
+refs:[
+"日本小児腎臓病学会（2020）「急性糸球体腎炎の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:89,name:"ネフローゼ症候群",en:"Nephrotic Syndrome",cat:"腎・泌尿器",age:"幼児〜学童",
 overview:"大量蛋白尿（>40mg/m²/時）・低蛋白血症・浮腫・高脂血症を四主徴とする。微小変化型が小児では80%を占め、ステロイドによく反応する。",
 observations:[
@@ -1320,7 +1828,13 @@ normal:"感染症なし",warn:"発熱＋腹痛→原発性腹膜炎（肺炎球�
 {name:"血栓症リスク",priority:"high",
 why:"凝固因子の増加・血栓抑制因子の喪失・血液濃縮により深部静脈血栓・肺塞栓リスクが高い。",
 normal:"血栓症症状なし",warn:"下肢腫脹・疼痛→深部静脈血栓を疑い超音波"},
-]},
+],
+refs:[
+"日本小児腎臓病学会（2020）「小児ネフローゼ症候群診療ガイドライン2020」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"KDIGO (2012). Clinical practice guideline for glomerulonephritis. Kidney Int Suppl, 2(2):139-274."
+]
+},
 {id:90,name:"尿路感染症（UTI）",en:"Urinary Tract Infection",cat:"腎・泌尿器",age:"乳幼児〜",
 overview:"大腸菌を主因とする尿路の細菌感染。乳幼児では発熱の主要原因の一つ。膀胱炎（下部）と腎盂腎炎（上部）を鑑別。",
 observations:[
@@ -1336,7 +1850,13 @@ normal:"",warn:""},
 {name:"膀胱尿管逆流（VUR）の既往",priority:"high",
 why:"VURがある場合は腎盂腎炎の反復→腎瘢痕→腎機能低下のリスクが高い。MCUGで評価。",
 normal:"",warn:"VUR合併UTI→抗菌薬予防内服・泌尿器科フォロー"},
-]},
+],
+refs:[
+"日本小児泌尿器科学会（2020）「小児尿路感染症診療の手引き」",
+"Roberts KB (2011). Urinary tract infection: clinical practice guideline. Pediatrics, 128(3):595-610.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:91,name:"夜尿症（おねしょ）",en:"Nocturnal Enuresis",cat:"腎・泌尿器",age:"5歳以上",
 overview:"5歳以降も月1回以上の夜間不随意排尿が3か月以上持続。単純性夜尿症は夜間多尿型と覚醒障害型に分類。",
 observations:[
@@ -1349,7 +1869,13 @@ normal:"日中排尿正常",warn:"日中失禁合併→膀胱機能評価"},
 {name:"心理的負担・自己肯定感",priority:"high",
 why:"夜尿による罰・恥ずかしさが自己肯定感を低下させる。叱責しないよう家族教育が重要。",
 normal:"",warn:"夜尿による強い心理的苦痛→心理支援"},
-]},
+],
+refs:[
+"日本小児泌尿器科学会（2021）「夜尿症診療ガイドライン2021」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Neveus T et al. (2020). Management and treatment in monosymptomatic enuresis. Pediatr Nephrol, 35(7):1151-1162."
+]
+},
 {id:92,name:"陰囊水腫・鼠径ヘルニア",en:"Hydrocele/Inguinal Hernia",cat:"腎・泌尿器",age:"乳幼児",
 overview:"腹膜鞘状突起の閉鎖不全による陰嚢内水腫または腹腔内容物の嵌頓。嵌頓ヘルニアは緊急手術が必要。",
 observations:[
@@ -1359,7 +1885,12 @@ normal:"陰嚢腫脹なし",warn:"還納不能の硬い腫脹＋啼泣→嵌頓�
 {name:"疼痛・機嫌・嘔吐",priority:"high",
 why:"嵌頓ヘルニアでは腸管虚血による強い疼痛・不機嫌・嘔吐が生じる。緊急外科対応。",
 normal:"疼痛なし",warn:"疼痛＋嘔吐＋還納不能→緊急外科搬送"},
-]},
+],
+refs:[
+"日本小児外科学会（2021）「陰嚢水腫・鼠径ヘルニアの診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:93,name:"包茎",en:"Phimosis",cat:"腎・泌尿器",age:"乳幼児〜学童",
 overview:"包皮口狭窄により亀頭が露出できない状態。生理的包茎は自然退縮が多い。バランシスは再燃性包茎の原因。",
 observations:[
@@ -1369,7 +1900,12 @@ normal:"排尿良好",warn:"排尿困難＋尿路感染反復→手術適応評�
 {name:"炎症・感染徴候（亀頭包皮炎）",priority:"mid",
 why:"包皮内の細菌増殖により亀頭包皮炎が生じる。発赤・腫脹・膿性分泌物を確認。",
 normal:"炎症なし",warn:"亀頭包皮炎→局所洗浄・抗菌薬"},
-]},
+],
+refs:[
+"日本泌尿器科学会（2021）「包茎の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:94,name:"停留精巣",en:"Cryptorchidism",cat:"腎・泌尿器",age:"乳幼児",
 overview:"精巣が陰嚢内に下降せず腹腔内または鼠径管内に留まる。精巣腫瘍・不妊リスクがあり1歳前後の手術が推奨される。",
 observations:[
@@ -1379,7 +1915,12 @@ normal:"両側陰嚢内に精巣触知",warn:"片側または両側触知不能�
 {name:"手術後の経過",priority:"mid",
 why:"精巣固定術後は精巣萎縮・再上昇がないか追跡。精巣腫瘍の自己触診指導は思春期以降に実施。",
 normal:"精巣正常位置・大きさ",warn:"術後萎縮→泌尿器科再評価"},
-]},
+],
+refs:[
+"日本小児泌尿器科学会（2021）「停留精巣診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 // ===== 血液・腫瘍 =====
 {id:95,name:"急性リンパ性白血病（ALL）",en:"Acute Lymphoblastic Leukemia",cat:"血液・腫瘍",age:"2〜10歳",
 overview:"小児悪性腫瘍で最多。多剤化学療法により約85%が5年無病生存。発熱・貧血・紫斑・骨痛・リンパ節腫大が初発症状。",
@@ -1399,7 +1940,13 @@ normal:"口腔内清潔保持",warn:"重症口内炎→経口摂取困難・オ�
 {name:"心理的サポート",priority:"mid",
 why:"長期入院治療による学業遅滞・友人関係の変化・ボディイメージの変容（脱毛等）に対する心理的支援。",
 normal:"",warn:""},
-]},
+],
+refs:[
+"日本小児血液・がん学会（2022）「小児急性リンパ性白血病の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Pui CH et al. (2015). Pediatric acute lymphoblastic leukemia. N Engl J Med, 373(11):1020-1033."
+]
+},
 {id:96,name:"小児悪性リンパ腫",en:"Pediatric Lymphoma",cat:"血液・腫瘍",age:"学童〜思春期",
 overview:"ホジキンリンパ腫と非ホジキンリンパ腫に大別。頸部・縦隔リンパ節腫大・発熱・体重減少・盗汗（B症状）が特徴。",
 observations:[
@@ -1412,7 +1959,12 @@ normal:"B症状なし",warn:"B症状あり→進行期と判定・治療強化"}
 {name:"呼吸器症状（縦隔腫大）",priority:"high",
 why:"縦隔リンパ腫による気管・SVC圧迫で呼吸困難・顔面浮腫が生じる。麻酔・検査で悪化リスク。",
 normal:"呼吸器症状なし",warn:"呼吸困難＋縦隔腫大→麻酔前にリスク評価必須"},
-]},
+],
+refs:[
+"日本小児血液・がん学会（2022）「小児悪性リンパ腫の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:97,name:"脳腫瘍（小児）",en:"Pediatric Brain Tumor",cat:"血液・腫瘍",age:"全年齢",
 overview:"小児悪性腫瘍の第2位。髄芽腫・上衣腫・低悪性度グリオーマ等が多い。頭蓋内圧亢進症状と局所神経症状が主体。",
 observations:[
@@ -1428,7 +1980,13 @@ normal:"視力正常",warn:"視力低下＋視野欠損→眼底検査・MRI"},
 {name:"けいれん",priority:"high",
 why:"皮質浸潤・刺激によるけいれん。抗てんかん薬管理と術後の発作観察が必要。",
 normal:"発作なし",warn:"けいれん初発＋頭痛→脳腫瘍を鑑別"},
-]},
+],
+refs:[
+"日本脳腫瘍学会（2022）「脳腫瘍診療ガイドライン2022」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Ostrom QT et al. (2021). CBTRUS statistical report: primary brain and other CNS tumors. Neuro Oncol, 23(Suppl 3):iii1-iii105."
+]
+},
 {id:98,name:"神経芽腫",en:"Neuroblastoma",cat:"血液・腫瘍",age:"乳幼児（5歳未満）",
 overview:"交感神経系由来の悪性腫瘍。副腎・傍脊椎交感神経節が原発巣。腹部腫瘤・骨転移・眼窩周囲出血（パンダ眼）が特徴。",
 observations:[
@@ -1441,7 +1999,13 @@ normal:"眼窩周囲症状なし",warn:"両側眼窩周囲出血→神経芽腫�
 {name:"骨髄抑制・感染症",priority:"high",
 why:"骨髄浸潤・化学療法による骨髄抑制で感染リスクが高まる。発熱性好中球減少症の早期対応が重要。",
 normal:"好中球数>1000/μL",warn:"発熱＋好中球減少→広域抗菌薬"},
-]},
+],
+refs:[
+"日本小児血液・がん学会（2022）「神経芽腫の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Maris JM (2010). Recent advances in neuroblastoma. N Engl J Med, 362(23):2202-2211."
+]
+},
 {id:99,name:"ウィルムス腫瘍（腎芽腫）",en:"Wilms Tumor",cat:"血液・腫瘍",age:"2〜5歳",
 overview:"腎臓由来の胎児性悪性腫瘍。腹部腫瘤・高血圧・血尿が三主徴。予後良好（5年生存率約90%）。",
 observations:[
@@ -1454,7 +2018,12 @@ normal:"血圧正常域",warn:"高血圧→降圧薬"},
 {name:"血尿",priority:"mid",
 why:"肉眼的血尿または顕微鏡的血尿が合併。肉眼的血尿は腫瘍破裂を示唆することがある。",
 normal:"血尿なし",warn:"突然の肉眼的血尿→腫瘍破裂疑い→安静・緊急手術"},
-]},
+],
+refs:[
+"日本小児血液・がん学会（2022）「ウィルムス腫瘍の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:100,name:"再生不良性貧血",en:"Aplastic Anemia",cat:"血液・腫瘍",age:"学童〜思春期",
 overview:"造血幹細胞の障害による汎血球減少症。自己免疫性が多い。重症では免疫抑制療法または骨髄移植が必要。",
 observations:[
@@ -1467,7 +2036,12 @@ normal:"感染症なし",warn:"ANC<500＋発熱→緊急抗菌薬投与"},
 {name:"出血症状",priority:"high",
 why:"重篤な血小板減少による頭蓋内出血・消化管出血が生命に関わる。皮膚・粘膜の出血傾向を毎日観察。",
 normal:"出血症状なし",warn:"頭痛＋嘔吐＋血小板<2万→頭蓋内出血を疑い緊急CT"},
-]},
+],
+refs:[
+"日本血液学会（2022）「再生不良性貧血診療の参照ガイド」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:101,name:"特発性血小板減少性紫斑病（ITP）",en:"Immune Thrombocytopenia",cat:"血液・腫瘍",age:"幼児〜",
 overview:"抗血小板抗体による血小板破壊。急性型は感染後に自然治癒することが多い。慢性型は治療を要する。",
 observations:[
@@ -1480,7 +2054,13 @@ normal:"頭蓋内出血症状なし",warn:"頭痛＋嘔吐＋血小板<1万→�
 {name:"活動制限の指導",priority:"mid",
 why:"血小板低下中は頭部外傷・激しいスポーツを避けるよう生活指導が必要。",
 normal:"",warn:""},
-]},
+],
+refs:[
+"日本血液学会（2022）「免疫性血小板減少症（ITP）診療の参照ガイド」",
+"Provan D et al. (2019). Updated international consensus report on the investigation and management of primary immune thrombocytopenia. Blood Adv, 3(22):3780-3817.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:102,name:"鉄欠乏性貧血",en:"Iron Deficiency Anemia",cat:"血液・腫瘍",age:"乳幼児〜思春期",
 overview:"鉄不足による赤血球産生障害。乳幼児（哺乳量不足・離乳食遅延）と思春期女子（月経過多）に多い。小球性低色素性貧血。",
 observations:[
@@ -1493,7 +2073,13 @@ normal:"",warn:"牛乳過剰摂取（>500mL/日）→鉄摂取減少→指導"},
 {name:"鉄剤治療の効果・副作用",priority:"mid",
 why:"鉄剤内服で網赤血球が1〜2週で増加しHbが4週で改善。副作用（悪心・便秘・黒色便）を確認。",
 normal:"Hb上昇傾向",warn:"治療反応なし→鉄以外の原因を鑑別"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「鉄欠乏性貧血の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"World Health Organization (2020). Iron deficiency anaemia: assessment, prevention and control. WHO."
+]
+},
 {id:103,name:"血友病",en:"Hemophilia",cat:"血液・腫瘍",age:"全年齢（男児）",
 overview:"第VIII因子（A型）または第IX因子（B型）欠乏によるX連鎖劣性出血性疾患。関節出血・筋肉内出血・外傷後止血困難。",
 observations:[
@@ -1506,7 +2092,13 @@ normal:"",warn:"頭部打撲→即時因子補充＋CT"},
 {name:"因子補充製剤の管理",priority:"high",
 why:"定期補充療法（prophylaxis）の遵守が関節出血予防の基本。冷蔵保管・溶解方法・静脈路確保の教育が重要。",
 normal:"補充療法規則正しく実施",warn:"補充療法後も止血困難→インヒビター出現を疑い"},
-]},
+],
+refs:[
+"日本血液学会（2022）「血友病の診療ガイドライン2022」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Srivastava A et al. (2020). WFH guidelines for the management of hemophilia. Haemophilia, 26(Suppl 6):1-158."
+]
+},
 {id:104,name:"サラセミア・鎌状赤血球症",en:"Thalassemia/Sickle Cell Disease",cat:"血液・腫瘍",age:"乳幼児〜",
 overview:"遺伝性ヘモグロビン異常症。サラセミアはヘモグロビン合成障害、鎌状赤血球症は異常ヘモグロビン（HbS）による溶血・血管閉塞。",
 observations:[
@@ -1519,7 +2111,12 @@ normal:"Hb安定（サラセミア管理値）",warn:"急激なHb低下＋黄疸
 {name:"脾機能亢進・感染症",priority:"high",
 why:"鎌状赤血球症では脾機能が失われ肺炎球菌・インフルエンザ菌感染に極めて脆弱。ワクチン・予防抗菌薬が必須。",
 normal:"感染症なし",warn:"発熱→肺炎球菌敗血症を想定し緊急抗菌薬"},
-]},
+],
+refs:[
+"日本血液学会（2022）「サラセミア・鎌状赤血球症の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 ,
 // ===== 新生児 =====
 {id:105,name:"新生児黄疸",en:"Neonatal Jaundice",cat:"新生児",age:"新生児",
@@ -1537,7 +2134,13 @@ normal:"体重減少<10%（生後）",warn:"体重減少>10%→母乳支援・�
 {name:"神経症状（核黄疸）",priority:"high",
 why:"超高ビリルビン血症による脳幹障害（核黄疸）は聴覚障害・アテトーゼ型脳性麻痺の原因。",
 normal:"神経症状なし",warn:"後弓反張・甲高い啼泣・哺乳不良→核黄疸緊急対応"},
-]},
+],
+refs:[
+"日本新生児成育医学会（2022）「新生児黄疸の診療ガイドライン」",
+"American Academy of Pediatrics (2022). Clinical practice guideline: management of hyperbilirubinemia in the newborn infant. Pediatrics, 150(3):e2022058859.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:106,name:"新生児呼吸窮迫症候群（RDS）",en:"Respiratory Distress Syndrome",cat:"新生児",age:"早産児",
 overview:"肺サーファクタント不足による早産児の呼吸障害。出生直後から進行する多呼吸・陥没呼吸・うなり声（grunting）が特徴。",
 observations:[
@@ -1550,7 +2153,13 @@ normal:"SpO₂ 91〜95%（早産児管理目標）",warn:"SpO₂<91%または>95
 {name:"胸部X線所見",priority:"high",
 why:"すりガラス陰影・エアブロンコグラム・白肺がRDSの典型的X線所見。治療反応のモニタリングに使用。",
 normal:"エアリー改善傾向",warn:"白肺→高用量サーファクタント・高頻度振動換気"},
-]},
+],
+refs:[
+"日本新生児成育医学会（2022）「新生児呼吸窮迫症候群の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Sweet DG et al. (2019). European consensus guidelines on the management of respiratory distress syndrome. Neonatology, 115(4):432-451."
+]
+},
 {id:107,name:"新生児感染症（早発型・遅発型）",en:"Neonatal Infection",cat:"新生児",age:"新生児",
 overview:"出生時（早発型：B群溶連菌等）または生後7日以降（遅発型：黄色ブドウ球菌・クレブシエラ等）に発症する全身感染症。非特異的症状が多く見逃しが危険。",
 observations:[
@@ -1563,7 +2172,13 @@ normal:"哺乳良好・活気あり",warn:"哺乳力急低下＋活気消失→�
 {name:"呼吸の変化（無呼吸・多呼吸）",priority:"high",
 why:"感染症による呼吸変化は最初の警告サイン。新生児の無呼吸（>20秒）は常に感染を鑑別。",
 normal:"呼吸規則正しい",warn:"無呼吸発作→敗血症・髄膜炎を鑑別"},
-]},
+],
+refs:[
+"日本新生児成育医学会（2022）「新生児感染症の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Shane AL et al. (2017). Neonatal sepsis. Lancet, 390(10104):1770-1780."
+]
+},
 {id:108,name:"壊死性腸炎（NEC）",en:"Necrotizing Enterocolitis",cat:"新生児",age:"早産児",
 overview:"早産児・低出生体重児に多い腸管虚血・炎症・壊死。腹部膨満・血便・全身炎症反応が主症状。穿孔すると緊急手術。",
 observations:[
@@ -1576,7 +2191,13 @@ normal:"胃管排液正常・血便なし",warn:"血便＋腹部膨満→NECと�
 {name:"全身炎症反応（体温・心拍数）",priority:"high",
 why:"NECは全身敗血症に発展しショック・DICの原因となる。バイタルの悪化を見逃さない。",
 normal:"バイタル安定",warn:"体温不安定＋頻脈→敗血症性ショックを疑い集中管理"},
-]},
+],
+refs:[
+"日本新生児成育医学会（2022）「壊死性腸炎（NEC）の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Neu J & Walker WA (2011). Necrotizing enterocolitis. N Engl J Med, 364(3):255-264."
+]
+},
 {id:109,name:"新生児低血糖",en:"Neonatal Hypoglycemia",cat:"新生児",age:"新生児",
 overview:"血糖<47mg/dLが新生児低血糖の一般的基準。SGA児・LGA児・母糖尿病・早産が高リスク群。神経障害予防に早期発見・治療が重要。",
 observations:[
@@ -1589,7 +2210,13 @@ normal:"神経症状なし",warn:"痙攣＋低血糖→緊急ブドウ糖投与"
 {name:"哺乳量・哺乳間隔",priority:"high",
 why:"早期頻回授乳（2〜3時間毎）が低血糖予防の基本。哺乳不良児は補足授乳を早期に開始。",
 normal:"哺乳良好（8〜12回/日）",warn:"哺乳不良＋体重減少→補足授乳・血糖チェック強化"},
-]},
+],
+refs:[
+"日本新生児成育医学会（2022）「新生児低血糖の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Thornton PS et al. (2015). Recommendations from the Pediatric Endocrine Society for evaluation and management of persistent hypoglycemia in neonates, infants, and children. J Pediatr, 167(2):238-245."
+]
+},
 {id:110,name:"新生児けいれん",en:"Neonatal Seizure",cat:"新生児",age:"新生児",
 overview:"新生児期のけいれんは脳障害・低血糖・電解質異常・感染症・HIEを反映する。微細発作（眼球偏位・自転車こぎ）に注意。",
 observations:[
@@ -1602,7 +2229,13 @@ normal:"血糖・電解質正常",warn:"低血糖または電解質異常→補�
 {name:"原疾患の評価（HIE）",priority:"high",
 why:"周産期仮死（HIE）が原因の場合は低体温療法（33〜34℃×72時間）が神経保護に有効。",
 normal:"",warn:"HIE＋けいれん→低体温療法適応評価"},
-]},
+],
+refs:[
+"日本小児神経学会（2022）「新生児けいれんの診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Volpe JJ (2008). Neonatal seizures. Neurology of the Newborn, 5th ed. Saunders."
+]
+},
 {id:111,name:"早産・低出生体重",en:"Preterm/Low Birth Weight",cat:"新生児",age:"新生児（早産）",
 overview:"在胎37週未満の早産または出生体重2500g未満の低出生体重児。体温調節・呼吸・哺乳・感染などのリスクが高い。",
 observations:[
@@ -1615,7 +2248,13 @@ normal:"呼吸規則正しい",warn:"無呼吸発作頻回→カフェイン療�
 {name:"哺乳・栄養（経腸栄養の進め方）",priority:"high",
 why:"腸管の成熟に合わせた漸増が重要。急速な増量はNECリスクを高める。母乳は腸管保護効果がある。",
 normal:"体重増加15〜20g/日",warn:"体重増加不良→栄養評価・NEC監視"},
-]},
+],
+refs:[
+"日本新生児成育医学会（2022）「早産・低出生体重児の医療管理ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"WHO (2020). Born Too Soon: The Global Action Report on Preterm Birth."
+]
+},
 // ===== 皮膚 =====
 {id:112,name:"蜂窩織炎",en:"Cellulitis",cat:"皮膚",age:"全年齢",
 overview:"皮膚・皮下組織の細菌性炎症（黄色ブドウ球菌・A群溶連菌が主因）。発赤・腫脹・熱感・疼痛が特徴。眼窩周囲・顔面は重症化リスク高。",
@@ -1629,7 +2268,12 @@ normal:"全身状態良好",warn:"高熱＋頻脈→敗血症対応"},
 {name:"眼窩周囲蜂窩織炎",priority:"high",
 why:"眼窩隔膜前（preseptal）か眼窩内（orbital）かの鑑別が重要。眼球運動障害・眼球突出は眼窩内を示唆。",
 normal:"眼球運動正常",warn:"眼球運動障害＋眼球突出→眼窩蜂窩織炎→CT・入院"},
-]},
+],
+refs:[
+"日本皮膚科学会（2020）「蜂窩織炎・丹毒の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:113,name:"伝染性膿痂疹（とびひ）",en:"Impetigo",cat:"皮膚",age:"幼児〜学童",
 overview:"黄色ブドウ球菌・A群溶連菌による表在性皮膚感染症。水疱性（ブドウ球菌）と痂皮性（溶連菌）に分類。夏季・アトピー皮膚炎に多い。",
 observations:[
@@ -1642,7 +2286,12 @@ normal:"",warn:""},
 {name:"集団感染（学校・保育園）",priority:"mid",
 why:"家族内・集団感染リスクがある。タオル・衣類の共有を避け、治癒まで登園・登校を控えるよう指導。",
 normal:"",warn:""},
-]},
+],
+refs:[
+"日本皮膚科学会（2021）「伝染性膿痂疹診療ガイドライン2021」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:114,name:"水痘（みずぼうそう）",en:"Varicella",cat:"皮膚",age:"乳幼児〜学童",
 overview:"VZVによる初感染。斑疹→丘疹→水疱→痂皮の多形性発疹が全身に出現。成人や免疫低下者では重症化。",
 observations:[
@@ -1658,7 +2307,12 @@ normal:"二次感染なし",warn:"水疱→膿疱・蜂窩織炎→抗菌薬"},
 {name:"神経合併症",priority:"high",
 why:"小脳失調（水痘後1〜2週）・脳炎（発疹と同時）は重症合併症。歩行失調・意識障害を見逃さない。",
 normal:"神経症状なし",warn:"歩行失調・意識障害→水痘脳炎・小脳失調を疑い精査"},
-]},
+],
+refs:[
+"日本小児科学会（2023）「水痘（水ぼうそう）について」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:115,name:"手足口病（再掲・皮膚）",en:"HFMD (Skin)",cat:"皮膚",age:"乳幼児〜幼児",
 overview:"コクサッキーA・エンテロウイルスによる口腔・手掌・足底の水疱性発疹。通常は軽症だが爪甲脱落・脳炎合併に注意。",
 observations:[
@@ -1671,7 +2325,12 @@ normal:"",warn:""},
 {name:"神経症状（EV71型）",priority:"high",
 why:"エンテロウイルス71型感染では脳幹脳炎・神経原性肺水腫のリスクが高い。神経症状に細心の注意。",
 normal:"神経症状なし",warn:"高熱持続＋嘔吐＋神経症状→EV71型脳炎として緊急"},
-]},
+],
+refs:[
+"国立感染症研究所（2022）「手足口病とは」感染症情報センター.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:116,name:"乾癬",en:"Psoriasis",cat:"皮膚",age:"学童〜思春期",
 overview:"免疫介在性の慢性炎症性皮膚疾患。紅斑上の銀白色鱗屑が特徴。小児では滴状型が多い。精神的苦痛・QOL低下が大きい。",
 observations:[
@@ -1684,7 +2343,12 @@ normal:"関節症状なし",warn:"関節腫脹・朝のこわばり→リウマ�
 {name:"精神的負担・QOL",priority:"high",
 why:"皮疹の外観による羞恥心・いじめ・自己肯定感低下は特に思春期で深刻。",
 normal:"",warn:"うつ傾向・不登校→心理的支援"},
-]},
+],
+refs:[
+"日本皮膚科学会（2022）「乾癬診療ガイドライン2022」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:117,name:"尋常性疣贅（いぼ）",en:"Verruca Vulgaris",cat:"皮膚",age:"学童〜",
 overview:"ヒトパピローマウイルス（HPV）による皮膚良性腫瘍。手・足・顔面に出現。感染性があり拡大・家族内感染に注意。",
 observations:[
@@ -1694,7 +2358,12 @@ normal:"縮小傾向",warn:"急速増加→免疫低下状態を疑う"},
 {name:"疼痛（足底疣贅）",priority:"mid",
 why:"足底の疣贅は体重がかかり疼痛を生じる。歩行への影響・体育参加に配慮が必要。",
 normal:"疼痛なし",warn:"強い疼痛で歩行困難→液体窒素治療"},
-]},
+],
+refs:[
+"日本皮膚科学会（2019）「尋常性疣贅・伝染性軟属腫の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:118,name:"脂漏性皮膚炎",en:"Seborrheic Dermatitis",cat:"皮膚",age:"乳児・思春期",
 overview:"皮脂腺活発部位（頭皮・顔面・体幹）の慢性炎症性皮膚疾患。乳児型（頭垢・うろこ状痂皮）と思春期型に分かれる。",
 observations:[
@@ -1704,7 +2373,12 @@ normal:"痂皮消退",warn:"広範な体幹・顔面浸潤→アトピー性皮�
 {name:"瘙痒・二次感染",priority:"mid",
 why:"瘙痒がある場合は掻破による二次感染に注意。清潔保持と適切な外用薬指導が重要。",
 normal:"瘙痒軽微",warn:"二次感染（膿性分泌物）→抗菌薬外用"},
-]},
+],
+refs:[
+"日本皮膚科学会（2020）「脂漏性皮膚炎の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 // ===== 整形外科 =====
 {id:119,name:"骨折（小児）",en:"Pediatric Fracture",cat:"整形外科",age:"幼児〜学童",
 overview:"小児の骨折は骨端（成長軟骨）損傷・若木骨折など特徴的なパターンがある。虐待（被虐待児症候群）との鑑別が重要。",
@@ -1718,7 +2392,13 @@ normal:"末梢循環・感覚正常",warn:"5P症状出現→ギプス解放・�
 {name:"発症機転・受傷状況",priority:"high",
 why:"受傷機転と骨折パターンの不一致（低エネルギー外傷での多発骨折・骨幹部螺旋骨折）は虐待を強く示唆。",
 normal:"受傷機転と骨折一致",warn:"受傷機転説明不一致→被虐待児症候群を疑いMDT対応"},
-]},
+],
+refs:[
+"日本整形外科学会（2021）「小児骨折の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Beaty JH & Kasser JR (2010). Rockwood and Wilkins' Fractures in Children, 7th ed. LWW."
+]
+},
 {id:120,name:"発育性股関節形成不全（DDH）",en:"Developmental Dysplasia of the Hip",cat:"整形外科",age:"乳児〜幼児",
 overview:"股関節の形成不全・脱臼。早期発見（生後3か月以内）でリーメンビュgel装具治療が可能。遅延診断は手術が必要。",
 observations:[
@@ -1731,7 +2411,12 @@ normal:"皺対称",warn:"著明な非対称→超音波追加"},
 {name:"歩行異常（トレンデレンブルグ歩行）",priority:"high",
 why:"学歩期以降に発見されるDDHでは患側に体幹が傾くトレンデレンブルグ歩行（ひょこひょこ歩き）が特徴。",
 normal:"歩行正常",warn:"歩行異常→股関節X線・MRI"},
-]},
+],
+refs:[
+"日本小児整形外科学会（2021）「発育性股関節形成不全（DDH）診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:121,name:"ペルテス病",en:"Legg-Calvé-Perthes Disease",cat:"整形外科",age:"4〜8歳（男児）",
 overview:"大腿骨頭の無菌性壊死。股関節痛・跛行で発症。男児に多い。壊死・再生・リモデリングの過程を経る。",
 observations:[
@@ -1744,7 +2429,13 @@ normal:"可動域正常",warn:"可動域著明制限→骨頭壊死進行を評�
 {name:"X線所見の変化",priority:"mid",
 why:"骨頭扁平化・破砕・再骨化のステージに応じた荷重制限・装具療法の管理が必要。",
 normal:"骨頭形状保持",warn:"骨頭扁平化進行→手術適応評価"},
-]},
+],
+refs:[
+"日本小児整形外科学会（2021）「ペルテス病の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Kim HK (2012). Legg-Calvé-Perthes disease. J Am Acad Orthop Surg, 20(4):223-232."
+]
+},
 {id:122,name:"先天性内反足",en:"Congenital Clubfoot",cat:"整形外科",age:"新生児〜乳児",
 overview:"足の尖足・内反・回外・前足内転を特徴とする先天性変形。出生直後からポンセティ法（連続ギプス矯正）が有効。",
 observations:[
@@ -1757,7 +2448,13 @@ normal:"皮膚トラブルなし・循環良好",warn:"指の蒼白・冷感→�
 {name:"装具（デニスブラウン装具）の装着",priority:"high",
 why:"ギプス矯正後は少なくとも4年間の装具装着が再発予防に必須。装着コンプライアンスを確認。",
 normal:"装着継続",warn:"装具装着不良→内反足再発リスク急増"},
-]},
+],
+refs:[
+"日本小児整形外科学会（2021）「先天性内反足の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Ponseti IV (2002). Congenital clubfoot: fundamentals of treatment. Oxford University Press."
+]
+},
 {id:123,name:"側弯症",en:"Scoliosis",cat:"整形外科",age:"思春期（女性）",
 overview:"脊柱の3次元的変形。思春期特発性側弯が最多。Cobb角10°以上が診断基準。重症例は肺機能障害・疼痛の原因となる。",
 observations:[
@@ -1770,7 +2467,13 @@ normal:"呼吸器症状なし",warn:"呼吸困難→肺機能検査"},
 {name:"体幹の非対称（学校健診スクリーニング）",priority:"mid",
 why:"前屈位での肋骨隆起（Adam前屈テスト）が学校健診スクリーニングの標準法。",
 normal:"肋骨隆起なし",warn:"肋骨隆起>5mm→精密X線"},
-]},
+],
+refs:[
+"日本脊椎脊髄病学会（2022）「脊柱側弯症の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Weinstein SL et al. (2008). Effects of bracing in adolescents with idiopathic scoliosis. N Engl J Med, 369(16):1512-1521."
+]
+},
 {id:124,name:"オスグッド・シュラッター病",en:"Osgood-Schlatter Disease",cat:"整形外科",age:"10〜15歳",
 overview:"脛骨粗面の骨端炎。成長期のスポーツ活動中のジャンプ・全力疾走で生じる。膝蓋腱付着部の疼痛・腫脹が特徴。",
 observations:[
@@ -1780,7 +2483,12 @@ normal:"疼痛消退（骨端閉鎖後）",warn:"安静時疼痛・激しい腫�
 {name:"運動量・スポーツ制限",priority:"high",
 why:"症状増悪期は疼痛が出る運動の制限が必要。完全休止ではなく疼痛の範囲での活動継続が推奨。",
 normal:"疼痛ない範囲で運動可",warn:"無制限運動継続→症状長期化"},
-]},
+],
+refs:[
+"日本整形外科学会（2021）「オスグッド・シュラッター病の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 // ===== 心身症 =====
 {id:125,name:"過換気症候群",en:"Hyperventilation Syndrome",cat:"心身症",age:"思春期",
 overview:"過呼吸による低炭酸ガス血症。手足のしびれ・テタニー・口周囲のしびれ・胸痛・めまいが主症状。不安・ストレスが誘因。",
@@ -1794,7 +2502,12 @@ normal:"テタニー症状なし",warn:"手足のこわばり＋失神→紙袋�
 {name:"ストレス・誘因の把握",priority:"high",
 why:"学校・家庭・試験・人間関係のストレスが誘因。心理的背景を丁寧に聴取し心理支援につなげる。",
 normal:"",warn:"反復発作→心身科・カウンセリング"},
-]},
+],
+refs:[
+"日本小児心身医学会（2021）「過換気症候群の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:126,name:"不登校・学校恐怖症",en:"School Refusal",cat:"心身症",age:"学童〜思春期",
 overview:"持続的な学校欠席。身体症状（腹痛・頭痛・倦怠感）が登校前に出現し休むと消退する。多因子（不安・いじめ・うつ・発達障害）。",
 observations:[
@@ -1810,7 +2523,13 @@ normal:"",warn:"希死念慮・自傷→精神科緊急評価"},
 {name:"家族関係・家庭環境",priority:"mid",
 why:"親の過剰保護・家族の機能不全が不登校の維持因子になることがある。家族全体へのアプローチが必要。",
 normal:"",warn:""},
-]},
+],
+refs:[
+"日本小児心身医学会（2021）「不登校の診療ガイドライン」",
+"Kearney CA (2008). School absenteeism and school refusal behavior in youth. Clin Psychol Rev, 28(3):451-471.",
+"文部科学省（2022）「不登校児童生徒への支援の在り方について」"
+]
+},
 {id:127,name:"起立性調節障害（再掲・心身）",en:"Orthostatic Dysregulation (Psychosomatic)",cat:"心身症",age:"思春期",
 overview:"自律神経機能障害による起立後の血圧低下・頻脈。心身症的側面が強く、不登校の主要な身体的原因となる。",
 observations:[
@@ -1823,7 +2542,13 @@ normal:"",warn:"慢性的な学校欠席→不登校対策"},
 {name:"心理的サポート",priority:"high",
 why:"身体症状に対する不安・学校への恐怖が症状を増悪させる。本人と家族への心理教育が重要。",
 normal:"",warn:""},
-]},
+],
+refs:[
+"日本小児心身医学会（2021）「起立性調節障害の診療ガイドライン2021」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"田中英高（2021）『起立性調節障害の子どもの正しい理解と対応』中央法規出版."
+]
+},
 {id:128,name:"摂食障害（神経性やせ症）",en:"Anorexia Nervosa",cat:"心身症",age:"思春期（女性）",
 overview:"体型・体重に対する歪んだ認知による食事制限・体重減少。身体的合併症（電解質異常・骨粗鬆症・無月経）と心理的問題が複合。",
 observations:[
@@ -1839,7 +2564,13 @@ normal:"心拍数50以上",warn:"心拍数<50または低血圧→入院・内�
 {name:"骨密度・無月経",priority:"mid",
 why:"エストロゲン欠乏による骨密度低下は回復後も持続することがある。月経再開が栄養回復の指標。",
 normal:"月経正常（回復後）",warn:"無月経6か月以上→骨密度測定"},
-]},
+],
+refs:[
+"日本摂食障害学会（2022）「摂食障害（神経性やせ症）の診療ガイドライン2022」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Hay PJ et al. (2014). Royal Australian and New Zealand College of Psychiatrists clinical practice guidelines for the treatment of eating disorders. Aust N Z J Psychiatry, 48(11):977-1008."
+]
+},
 {id:129,name:"転換性障害（機能性神経症状）",en:"Conversion Disorder",cat:"心身症",age:"学童〜思春期",
 overview:"心理的ストレスが神経症状（麻痺・失立・失語・けいれん様発作）として現れる機能性疾患。器質的神経疾患の除外が必要。",
 observations:[
@@ -1852,7 +2583,13 @@ normal:"",warn:""},
 {name:"学校・日常生活への影響",priority:"high",
 why:"機能障害の程度と心理的苦痛を評価。過度な安静・二次疾病利得が症状を長期化させることがある。",
 normal:"",warn:"長期化・回避強化→入院リハビリ・心理療法"},
-]},
+],
+refs:[
+"日本小児心身医学会（2021）「転換性障害（機能性神経症状）の診療指針」",
+"American Psychiatric Association (2013). DSM-5. APA.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:130,name:"チック障害",en:"Tic Disorder",cat:"心身症",age:"学童",
 overview:"不随意の反復性運動（運動チック）または発声（音声チック）。トゥレット症候群は両者が1年以上持続。多くは自然軽快。",
 observations:[
@@ -1865,7 +2602,13 @@ normal:"",warn:"強迫症状著明→SSRIなど"},
 {name:"精神的負担・いじめ",priority:"high",
 why:"チックによるからかい・いじめが自己肯定感を低下させる。学校への情報提供・環境調整が重要。",
 normal:"",warn:"いじめ→スクールカウンセラー・担任と連携"},
-]},
+],
+refs:[
+"日本小児神経学会（2021）「チック障害・トゥレット症の診療ガイドライン」",
+"American Psychiatric Association (2013). DSM-5. APA.",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:131,name:"身体表現性障害（機能性身体症状）",en:"Somatic Symptom Disorder",cat:"心身症",age:"学童〜思春期",
 overview:"器質的原因を明確に特定できない反復する身体症状（頭痛・腹痛・倦怠感・胸痛等）。心理社会的因子が症状維持に関与。",
 observations:[
@@ -1878,7 +2621,13 @@ normal:"",warn:""},
 {name:"過剰な医療検索の回避",priority:"mid",
 why:"多くの検査・受診が症状強化につながることがある。「問題ない」ではなく「脳・体の働き方の問題」として説明。",
 normal:"",warn:""},
-]},
+],
+refs:[
+"American Psychiatric Association (2013). DSM-5. APA.",
+"日本小児心身医学会（2021）「身体表現性障害の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:132,name:"自傷行為・自殺念慮",en:"Self-Harm/Suicidal Ideation",cat:"心身症",age:"思春期",
 overview:"思春期の精神的苦痛のSOSサイン。自傷（リストカット等）は自殺未遂とは異なるが自殺リスクの評価が必須。うつ・BPD・虐待と関連。",
 observations:[
@@ -1891,7 +2640,13 @@ normal:"",warn:"具体的計画あり→精神科緊急入院"},
 {name:"支援体制・安全計画",priority:"high",
 why:"危機時の連絡先・ホットライン・親への開示などの安全計画を立て、信頼できる大人との関係構築を支援。",
 normal:"",warn:""},
-]},
+],
+refs:[
+"日本精神科救急学会（2022）「自傷・自殺企図の救急初期対応ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"厚生労働省（2022）「子どもの自殺対策のための手引き」"
+]
+},
 {id:133,name:"虐待（被虐待児症候群）",en:"Child Abuse",cat:"心身症",age:"全年齢（主に乳幼児〜学童）",
 overview:"身体的・性的・心理的・ネグレクトを含む広義の児童虐待。乳幼児揺さぶり症候群（SBS）・説明のつかない骨折・熱傷が身体的虐待の指標。",
 observations:[
@@ -1907,7 +2662,13 @@ normal:"成長曲線正常",warn:"成長遅滞＋衛生不良→ネグレクト�
 {name:"精神的・行動的変化",priority:"high",
 why:"突然の行動退行・強い解離症状・性化行動・過度の怯えは性的・心理的虐待のサイン。",
 normal:"",warn:"性化行動・強い解離→性的虐待評価"},
-]},
+],
+refs:[
+"厚生労働省（2022）「子ども虐待対応の手引き（改訂版）」",
+"日本小児科学会（2022）「子どもへの虐待対応マニュアル」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 // ===== 症状相談 =====
 {id:134,name:"発熱",en:"Fever",cat:"症状相談",age:"全年齢",
 overview:"腋窩体温37.5℃以上（小児）を発熱と定義。感染症が最多原因。3か月未満の発熱は緊急評価が必要。",
@@ -1921,7 +2682,13 @@ normal:"",warn:"高熱＋発疹＋粘膜症状→川崎病を除外"},
 {name:"脱水状態",priority:"high",
 why:"発熱による不感蒸泄増加と食欲低下で脱水リスクが高まる。水分摂取量・尿量・口腔内湿潤を確認。",
 normal:"水分摂取良好・尿量正常",warn:"水分摂取不良＋尿量減少→輸液"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「小児の発熱の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"NICE (2019). Fever in under 5s: assessment and initial management. NG143."
+]
+},
 {id:135,name:"嘔吐",en:"Vomiting",cat:"症状相談",age:"全年齢",
 overview:"噴水状・胆汁性・血性など性状が病態を反映。脱水・電解質異常の予防が基本。緊急疾患（腸重積・幽門狭窄・頭蓋内圧亢進）の除外が重要。",
 observations:[
@@ -1934,7 +2701,13 @@ normal:"脱水徴候なし",warn:"脱水>5%→輸液"},
 {name:"腹痛・腹部膨満の有無",priority:"high",
 why:"嘔吐＋腹部膨満は腸閉塞・腹膜炎を疑う。間欠的腹痛＋嘔吐は腸重積の三徴の一つ。",
 normal:"腹痛なし",warn:"腹部膨満＋腹痛→腸閉塞・腸重積緊急評価"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児科学会（2022）「小児の嘔吐・下痢の診療指針」",
+"Vomiting in children (2022). BMJ Best Practice."
+]
+},
 {id:136,name:"腹痛",en:"Abdominal Pain",cat:"症状相談",age:"全年齢",
 overview:"小児の腹痛は機能性（過敏性腸症候群・便秘・心身症）が多いが、虫垂炎・腸重積・卵巣捻転等の外科的緊急疾患を見逃さないことが重要。",
 observations:[
@@ -1947,7 +2720,13 @@ normal:"",warn:"血便＋腹痛→腸重積疑い緊急超音波"},
 {name:"腹部所見（圧痛・筋性防御）",priority:"high",
 why:"腹膜刺激症状（反跳痛・筋性防御）は外科的緊急疾患の指標。歩行時の腹痛増強も腹膜刺激を示唆。",
 normal:"腹壁軟・圧痛なし",warn:"筋性防御＋反跳痛→外科緊急"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「小児の腹痛の診療指針」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Pediatric abdominal pain (2022). BMJ Best Practice."
+]
+},
 {id:137,name:"頭痛",en:"Headache",cat:"症状相談",age:"学童〜",
 overview:"片頭痛・緊張型が多い。髄膜炎・脳腫瘍・頭蓋内圧亢進などの二次性頭痛を見逃さないことが重要。",
 observations:[
@@ -1960,7 +2739,13 @@ normal:"髄膜刺激症状なし",warn:"頭痛＋発熱＋項部硬直→髄膜�
 {name:"視力変化・神経症状",priority:"high",
 why:"頭痛＋視力低下・複視・麻痺は脳腫瘍・頭蓋内圧亢進を示唆。神経学的評価が必須。",
 normal:"神経症状なし",warn:"神経症状合併→MRI緊急"},
-]},
+],
+refs:[
+"日本小児神経学会（2022）「小児頭痛の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Lewis DW et al. (2004). Practice parameter: evaluation of children and adolescents with recurrent headaches. Neurology, 59(4):490-498."
+]
+},
 {id:138,name:"呼吸困難",en:"Dyspnea",cat:"症状相談",age:"全年齢",
 overview:"息苦しさを訴える、または呼吸努力の増大が観察される状態。喘息・肺炎・心不全・異物誤嚥・アナフィラキシーが主要鑑別。",
 observations:[
@@ -1973,7 +2758,12 @@ normal:"喘鳴なし",warn:"突然の吸気性喘鳴→異物誤嚥・喉頭浮�
 {name:"発症の速度・誘因",priority:"high",
 why:"突然発症（異物・アナフィラキシー）vs 数日かけた増悪（肺炎・心不全）で緊急度が異なる。",
 normal:"",warn:"突然発症の呼吸困難→アナフィラキシー・異物を疑い緊急"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「小児の呼吸困難の評価と初期対応」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020."
+]
+},
 {id:139,name:"けいれん・てんかん発作",en:"Seizure",cat:"症状相談",age:"全年齢",
 overview:"突然の意識消失・全身強直・間代運動を呈するけいれん発作の初期対応。熱性けいれん・てんかん・脳炎・代謝異常が原因。",
 observations:[
@@ -1986,7 +2776,13 @@ normal:"",warn:"発熱なし・初発発作→てんかん精査"},
 {name:"意識回復状況",priority:"high",
 why:"発作後の意識回復を確認。遷延する意識障害・局所神経症状は脳炎・頭蓋内圧亢進を示唆。",
 normal:"数分〜30分以内に意識回復",warn:"意識回復遅延＋神経症状→脳炎・ICH緊急評価"},
-]},
+],
+refs:[
+"日本小児神経学会（2022）「けいれん・てんかん発作の初期対応ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Glauser T et al. (2016). Evidence-based guideline: treatment of convulsive status epilepticus. Epilepsy Curr, 16(1):48-61."
+]
+},
 {id:140,name:"発疹",en:"Rash",cat:"症状相談",age:"全年齢",
 overview:"発疹は多様な疾患の皮膚症状。感染症（麻疹・水痘・手足口病）・アレルギー・血管炎・川崎病を系統的に鑑別する。",
 observations:[
@@ -1999,7 +2795,13 @@ normal:"",warn:"高熱5日以上＋多形性発疹→川崎病を鑑別"},
 {name:"粘膜症状・眼充血",priority:"high",
 why:"口腔内粘膜疹（手足口病・ヘルパンギーナ）、結膜充血（川崎病・麻疹）は診断の鍵となる粘膜所見。",
 normal:"粘膜症状なし",warn:"結膜充血＋高熱→川崎病・麻疹を評価"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児科学会（2022）「小児の発疹の鑑別と対応」",
+"Kimberlin DW et al. Red Book: 2021-2024. AAP."
+]
+},
 {id:141,name:"脱水",en:"Dehydration",cat:"症状相談",age:"全年齢",
 overview:"水分・電解質の喪失による体液量減少。嘔吐・下痢・発熱が主因。乳幼児は体表面積が大きく急速に重症化する。",
 observations:[
@@ -2012,7 +2814,13 @@ normal:"排尿2〜3時間毎（乳幼児）",warn:"6時間以上無尿→輸液"
 {name:"意識レベル・活気",priority:"high",
 why:"重症脱水（>10%）では意識障害・循環不全が出現。GCSや活気の変化で重症度を評価。",
 normal:"意識清明・活気あり",warn:"意識障害→重症脱水・ショックとして緊急"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「小児脱水の評価と補液療法ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"ESPGHAN/ESPID (2008). Evidence-based guidelines for the management of acute gastroenteritis. J Pediatr Gastroenterol Nutr, 46(Suppl 1):S81-S122."
+]
+},
 {id:142,name:"泣き止まない（乳児）",en:"Inconsolable Crying",cat:"症状相談",age:"乳児",
 overview:"平静時に突然泣き始め、通常の方法では泣き止まない。腸重積・腸疝痛・頭蓋内出血・感染症・骨折（虐待）などを鑑別。",
 observations:[
@@ -2025,7 +2833,13 @@ normal:"随伴症状なし",warn:"血便出現→腸重積を疑い緊急"},
 {name:"バイタル・全身状態",priority:"high",
 why:"活気・哺乳力・皮膚色・バイタルを確認。重篤疾患は泣き止んで活気がなくなる段階で悪化している。",
 normal:"活気あり・バイタル安定",warn:"活気消失→重篤疾患の可能性・緊急評価"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児科学会（2022）「乳児の啼泣・泣き止まない場合の診療指針」",
+"Ziegler M et al. (2009). Atlas of Pediatric Emergency Medicine, 2nd ed. McGraw-Hill."
+]
+},
 {id:143,name:"リンパ節腫脹",en:"Lymphadenopathy",cat:"症状相談",age:"全年齢",
 overview:"頸部・腋窩・鼠径部などのリンパ節腫大。感染症（上気道炎・EBV・CMV）が多いが、悪性リンパ腫・白血病の除外が重要。",
 observations:[
@@ -2038,7 +2852,13 @@ normal:"B症状なし",warn:"B症状＋リンパ節腫脹→悪性リンパ腫�
 {name:"原発病巣の有無（咽頭炎・皮膚感染）",priority:"mid",
 why:"頸部リンパ節腫脹では咽頭炎・口腔内感染・耳鼻科疾患を原発巣として確認。",
 normal:"原発病巣あり（感染性）",warn:"原発病巣不明＋長期腫脹→精査"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本小児科学会（2022）「リンパ節腫脹の鑑別と対応」",
+"Twist CJ & Link MP (2002). Assessment of lymphadenopathy in children. Pediatr Clin North Am, 49(5):1009-1025."
+]
+},
 {id:144,name:"意識障害",en:"Altered Consciousness",cat:"症状相談",age:"全年齢",
 overview:"意識レベルの低下。低血糖・けいれん後・頭蓋内病変・感染症・中毒・代謝異常が原因。ABCの確保と迅速な原因検索が必要。",
 observations:[
@@ -2054,7 +2874,13 @@ normal:"瞳孔等大・対光反射あり",warn:"瞳孔不同＋意識障害→�
 {name:"服薬歴・中毒の可能性",priority:"high",
 why:"小児の中毒（薬剤・植物・アルコール・一酸化炭素）を除外。家庭内の薬剤・化学物質への曝露歴を確認。",
 normal:"",warn:"中毒疑い→中毒センターへ問い合わせ"},
-]},
+],
+refs:[
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"日本救急医学会（2022）「意識障害の評価と初期対応ガイドライン」",
+"Kirkham FJ (2001). Non-traumatic coma in children. Arch Dis Child, 85(4):303-312."
+]
+},
 {id:145,name:"外傷（頭部）",en:"Head Trauma",cat:"症状相談",age:"全年齢",
 overview:"頭部への衝撃による損傷。脳震盪から頭蓋内出血まで重症度が幅広い。乳幼児では受傷機転と症状の不一致に虐待を疑う。",
 observations:[
@@ -2070,7 +2896,13 @@ normal:"神経学的所見なし",warn:"神経学的異常→緊急CT＋神経�
 {name:"受傷機転（虐待の除外）",priority:"high",
 why:"乳幼児の「転落」という説明での重篤な頭部外傷は揺さぶり症候群・虐待の可能性を検討。",
 normal:"受傷機転合理的",warn:"説明不一致→虐待疑い（児童相談所通告）"},
-]},
+],
+refs:[
+"日本神経救急学会（2022）「小児頭部外傷の初期診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Kuppermann N et al. (2009). Identification of children at very low risk of clinically-important brain injuries after head trauma. Lancet, 374(9696):1160-1170."
+]
+},
 {id:146,name:"異物誤嚥・誤飲",en:"Foreign Body Ingestion/Aspiration",cat:"症状相談",age:"乳幼児",
 overview:"異物の気道内吸引（誤嚥）または消化管内摂取（誤飲）。突然の咳嗽・チアノーゼ（誤嚥）や無症状（消化管異物）で発見。",
 observations:[
@@ -2083,6 +2915,12 @@ normal:"自然排出可能な異物",warn:"ボタン電池誤飲→緊急内視�
 {name:"誤飲後の症状（嘔吐・血液混入）",priority:"high",
 why:"食道異物では嚥下困難・唾液貯留・嘔吐が生じる。喀血・下血は食道・消化管損傷を示唆。",
 normal:"症状なし",warn:"嚥下困難＋唾液貯留→食道異物として緊急X線"},
-]},
+],
+refs:[
+"日本小児科学会（2022）「小児の異物誤嚥・誤飲の診療ガイドライン」",
+"Kliegman RM et al. Nelson Textbook of Pediatrics, 21st ed. Elsevier, 2020.",
+"Sink JR & Mehta D (2022). Foreign body ingestion in children. Pediatr Rev, 43(3):163-166."
+]
+},
 ];
 // 全疾患データ完成
