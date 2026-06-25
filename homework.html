@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FF6B35">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="しゅくだいアプリ">
+<title>しゅくだいアプリ 📚</title>
+<style>
+:root {
+  --bg: #FFF9EE;
+  --card: #FFFFFF;
+  --primary: #FF6B35;
+  --primary-light: #FFF0EA;
+  --green: #3CC47C;
+  --green-light: #E8FAF0;
+  --text: #2D2D2D;
+  --text-sub: #888888;
+  --border: rgba(0,0,0,0.08);
+  --shadow: 0 4px 16px rgba(0,0,0,0.08);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Maru Gothic ProN', 'Yu Gothic', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF9A5C 100%);
+  padding: 16px 20px;
+  padding-top: calc(16px + env(safe-area-inset-top));
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(255,107,53,0.3);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.header-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header-title span { font-size: 26px; }
+.star-counter {
+  background: rgba(255,255,255,0.22);
+  border-radius: 99px;
+  padding: 6px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.star-counter:hover { background: rgba(255,255,255,0.32); }
+
+/* ===== PROGRESS SECTION ===== */
+.progress-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 16px 0;
+}
+.date-label {
+  font-size: 14px;
+  color: var(--text-sub);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.progress-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--primary-light);
+}
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.progress-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+.progress-count {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--primary);
+}
+.progress-bar-wrap {
+  background: #F0F0F0;
+  border-radius: 99px;
+  height: 14px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #FF6B35, #FF9A5C);
+  border-radius: 99px;
+  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-width: 0;
+}
+.progress-msg {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-sub);
+  text-align: center;
+}
+
+/* ===== TAB BAR ===== */
+.tabs {
+  max-width: 600px;
+  margin: 20px auto 0;
+  padding: 0 16px;
+  display: flex;
+  gap: 8px;
+}
+.tab {
+  flex: 1;
+  padding: 10px 8px;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-sub);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.tab .tab-emoji { font-size: 18px; }
+.tab:hover { background: #FFF0EA; }
+.tab.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.tab-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  margin-top: 2px;
+}
+.tab.active .tab-badge { background: var(--primary); }
+
+/* ===== LIST SECTION ===== */
+.list-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px 16px calc(100px + env(safe-area-inset-bottom));
+}
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+  padding: 0 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.hw-list { display: flex; flex-direction: column; gap: 10px; }
+
+/* ===== HOMEWORK CARD ===== */
+.hw-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s;
+  animation: slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.hw-card:active { transform: scale(0.98); }
+.hw-card.done {
+  opacity: 0.6;
+  background: #FAFAFA;
+}
+.hw-card.done .hw-title { text-decoration: line-through; color: var(--text-sub); }
+.hw-card.overdue { border-color: #FF5252; }
+
+.subject-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+.hw-body { flex: 1; min-width: 0; }
+.hw-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hw-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.subject-label {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+.due-label {
+  font-size: 12px;
+  color: var(--text-sub);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.due-label.overdue { color: #FF5252; }
+.due-label.today { color: var(--primary); font-weight: 700; }
+
+.hw-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.done-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 3px solid #E0E0E0;
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.done-btn:hover { border-color: var(--green); background: var(--green-light); }
+.done-btn.done-active {
+  border-color: var(--green);
+  background: var(--green);
+  color: #fff;
+}
+.delete-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--text-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+.delete-btn:hover { opacity: 1; color: #FF5252; }
+
+/* ===== EMPTY STATE ===== */
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-sub);
+}
+.empty-state .empty-emoji { font-size: 64px; display: block; margin-bottom: 16px; }
+.empty-state p { font-size: 16px; font-weight: 600; line-height: 1.8; }
+.empty-state .empty-sub { font-size: 14px; margin-top: 8px; font-weight: 400; }
+
+/* ===== FAB ===== */
+.fab {
+  position: fixed;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  right: 24px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF6B35, #FF9A5C);
+  color: #fff;
+  font-size: 32px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(255,107,53,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 50;
+  line-height: 1;
+}
+.fab:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(255,107,53,0.55); }
+.fab:active { transform: scale(0.95); }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.modal-overlay.show { opacity: 1; pointer-events: auto; }
+.modal {
+  background: var(--bg);
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  width: 100%;
+  max-width: 600px;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-overlay.show .modal { transform: translateY(0); }
+.modal-handle {
+  width: 40px;
+  height: 4px;
+  background: #DDD;
+  border-radius: 99px;
+  margin: 0 auto 20px;
+}
+.modal-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Subject picker */
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.subject-btn {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 6px;
+  background: var(--card);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: 12px;
+  font-weight: 700;
+}
+.subject-btn .s-emoji { font-size: 24px; display: block; margin-bottom: 4px; }
+.subject-btn:hover { transform: scale(1.05); }
+.subject-btn.selected {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.form-group { margin-bottom: 16px; }
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus { border-color: var(--primary); }
+
+.form-hint {
+  font-size: 12px;
+  color: var(--text-sub);
+  margin-top: 4px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #FF6B35, #FF9A5C);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(255,107,53,0.4);
+  margin-top: 8px;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+}
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,107,53,0.5); }
+.submit-btn:active { transform: translateY(0); }
+.submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.cancel-btn {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  color: var(--text-sub);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.cancel-btn:hover { background: #F0F0F0; }
+
+/* ===== CELEBRATION OVERLAY ===== */
+.celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.celebration.show { opacity: 1; pointer-events: auto; }
+.celebration-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.celebration-card {
+  position: relative;
+  background: var(--card);
+  border-radius: 28px;
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 300px;
+  width: 90%;
+  transform: scale(0.5);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+.celebration.show .celebration-card { transform: scale(1); }
+.celebration-emoji { font-size: 72px; display: block; margin-bottom: 16px; animation: bounce 0.6s ease infinite alternate; }
+@keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-12px); } }
+.celebration-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.celebration-msg { font-size: 15px; color: var(--text-sub); line-height: 1.6; margin-bottom: 24px; }
+.celebration-points {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 99px;
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: 800;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.celebration-close {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #FF6B35, #FF9A5C);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Confetti particles */
+.confetti-container { position: fixed; inset: 0; pointer-events: none; z-index: 9998; overflow: hidden; }
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  animation: confettiFall 1.5s ease forwards;
+}
+@keyframes confettiFall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ===== ALL DONE BANNER ===== */
+.all-done-banner {
+  background: linear-gradient(135deg, #3CC47C, #56CF91);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 20px rgba(60,196,124,0.35);
+  animation: slideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.all-done-emoji { font-size: 36px; }
+.all-done-text { color: #fff; }
+.all-done-text strong { display: block; font-size: 16px; font-weight: 800; }
+.all-done-text span { font-size: 13px; opacity: 0.9; }
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed;
+  bottom: calc(90px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #2D2D2D;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.25s;
+  pointer-events: none;
+  z-index: 9997;
+  white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ===== POINTS MODAL ===== */
+.points-modal .modal { text-align: center; }
+.points-big {
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--primary);
+  display: block;
+  margin: 16px 0 4px;
+}
+.points-unit { font-size: 20px; color: var(--text-sub); margin-bottom: 20px; }
+.points-history { text-align: left; margin-top: 16px; }
+.points-history-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.points-history-row:last-child { border-bottom: none; }
+.points-history-row .ph-title { color: var(--text); font-weight: 600; flex: 1; }
+.points-history-row .ph-pts { color: var(--green); font-weight: 700; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 400px) {
+  .subject-grid { grid-template-columns: repeat(3, 1fr); }
+  .header-title { font-size: 18px; }
+  .subject-btn .s-emoji { font-size: 20px; }
+}
+@media (min-width: 600px) {
+  .fab { right: calc(50% - 300px + 24px); }
+}
+</style>
+</head>
+<body>
+
+<div class="confetti-container" id="confettiContainer"></div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-title">
+      <span>📚</span>しゅくだいアプリ
+    </div>
+    <button class="star-counter" onclick="showPointsModal()" title="ポイント一覧">
+      ⭐ <span id="totalPoints">0</span>pt
+    </button>
+  </div>
+</header>
+
+<!-- Progress Section -->
+<div class="progress-section">
+  <div class="date-label">📅 <span id="todayLabel"></span></div>
+  <div class="progress-card">
+    <div class="progress-top">
+      <div class="progress-label">きょうの宿題</div>
+      <div class="progress-count"><span id="doneCount">0</span> / <span id="totalCount">0</span></div>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progressBar" style="width:0%"></div>
+    </div>
+    <div class="progress-msg" id="progressMsg"></div>
+  </div>
+</div>
+
+<!-- Tabs -->
+<div class="tabs">
+  <button class="tab active" id="tab-today" onclick="switchTab('today')">
+    <span class="tab-emoji">☀️</span>きょう
+    <span class="tab-badge" id="badge-today">0</span>
+  </button>
+  <button class="tab" id="tab-upcoming" onclick="switchTab('upcoming')">
+    <span class="tab-emoji">📅</span>これから
+    <span class="tab-badge" id="badge-upcoming">0</span>
+  </button>
+  <button class="tab" id="tab-done" onclick="switchTab('done')">
+    <span class="tab-emoji">✅</span>おわった
+    <span class="tab-badge" id="badge-done">0</span>
+  </button>
+</div>
+
+<!-- List -->
+<div class="list-section" id="listSection"></div>
+
+<!-- FAB -->
+<button class="fab" onclick="openAddModal()" title="宿題を追加">＋</button>
+
+<!-- Add Modal -->
+<div class="modal-overlay" id="addModal">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-title">📝 しゅくだいをついか</div>
+
+    <div class="section-label" style="margin-bottom:12px;">きょうか</div>
+    <div class="subject-grid" id="subjectGrid"></div>
+
+    <div class="form-group">
+      <label class="form-label">ないよう</label>
+      <input type="text" class="form-input" id="hwTitle" placeholder="れい: けいさんプリント10もん" maxlength="50">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">しめきり</label>
+      <input type="date" class="form-input" id="hwDueDate">
+      <div class="form-hint">入力しないと「きょう」になるよ</div>
+    </div>
+
+    <button class="submit-btn" onclick="addHomework()" id="addBtn">✅ ついか！</button>
+    <button class="cancel-btn" onclick="closeAddModal()">キャンセル</button>
+  </div>
+</div>
+
+<!-- Points Modal -->
+<div class="modal-overlay points-modal" id="pointsModal">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-title">⭐ ポイント</div>
+    <div style="text-align:center;">
+      <span class="points-big" id="pointsBig">0</span>
+      <div class="points-unit">ポイント</div>
+      <div style="font-size:14px;color:var(--text-sub);margin-bottom:16px;">
+        宿題を１つおわらせると<strong style="color:var(--primary)">＋10pt</strong>もらえるよ！
+      </div>
+    </div>
+    <div class="points-history">
+      <div class="section-label" style="margin-bottom:12px;">きろく</div>
+      <div id="pointsHistoryList"></div>
+    </div>
+    <button class="cancel-btn" onclick="closePointsModal()" style="margin-top:12px;">とじる</button>
+  </div>
+</div>
+
+<!-- Celebration Overlay -->
+<div class="celebration" id="celebration" onclick="closeCelebration()">
+  <div class="celebration-bg"></div>
+  <div class="celebration-card">
+    <span class="celebration-emoji" id="celebEmoji">🌟</span>
+    <div class="celebration-title" id="celebTitle">やったー！</div>
+    <div class="celebration-msg" id="celebMsg">じょうず！</div>
+    <div class="celebration-points" id="celebPoints">＋10pt</div>
+    <button class="celebration-close" onclick="closeCelebration()">つぎの宿題へ →</button>
+  </div>
+</div>
+
+<script>
+// ===== SUBJECTS =====
+const SUBJECTS = [
+  { name: '算数',   emoji: '🔢', color: '#FF5252', bg: '#FFE5E5' },
+  { name: '国語',   emoji: '📖', color: '#2196F3', bg: '#E3F2FD' },
+  { name: '理科',   emoji: '🔬', color: '#4CAF50', bg: '#E8F5E9' },
+  { name: '社会',   emoji: '🌍', color: '#FF9800', bg: '#FFF3E0' },
+  { name: '英語',   emoji: '🗣️',  color: '#9C27B0', bg: '#F3E5F5' },
+  { name: '体育',   emoji: '⚽', color: '#795548', bg: '#EFEBE9' },
+  { name: '音楽',   emoji: '🎵', color: '#E91E63', bg: '#FCE4EC' },
+  { name: '図工',   emoji: '🎨', color: '#00BCD4', bg: '#E0F7FA' },
+  { name: 'その他', emoji: '✏️', color: '#9E9E9E', bg: '#F5F5F5' },
+];
+
+const CHEERS = [
+  ['🌟', 'やったー！', 'すごいね！よくできました！'],
+  ['🎉', 'かんぺき！', 'その調子！どんどんやっちゃおう！'],
+  ['🏆', 'さいこう！', '一つ一つ、ちゃんと終わらせてえらい！'],
+  ['⭐', 'すごい！', 'がんばったね！ポイントゲット！'],
+  ['🦸', 'ヒーロー！', '宿題を倒したぞ！'],
+  ['🎯', 'ばっちり！', 'よくできました！'],
+  ['🌈', 'きれい！', 'おもしろかった？次も頑張ろう！'],
+  ['🚀', 'ロケットスタート！', 'どんどん進んでいこう！'],
+];
+
+// ===== STATE =====
+let homeworks = [];
+let selectedSubject = SUBJECTS[0];
+let currentTab = 'today';
+let totalPoints = 0;
+let pointsHistory = [];
+
+// ===== STORAGE =====
+function save() {
+  localStorage.setItem('hw_list', JSON.stringify(homeworks));
+  localStorage.setItem('hw_points', String(totalPoints));
+  localStorage.setItem('hw_phist', JSON.stringify(pointsHistory));
+}
+function load() {
+  try { homeworks = JSON.parse(localStorage.getItem('hw_list') || '[]'); } catch { homeworks = []; }
+  try { totalPoints = parseInt(localStorage.getItem('hw_points') || '0', 10); } catch { totalPoints = 0; }
+  try { pointsHistory = JSON.parse(localStorage.getItem('hw_phist') || '[]'); } catch { pointsHistory = []; }
+}
+
+// ===== DATE HELPERS =====
+function today() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+function fmtDate(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  const m = d.getMonth() + 1;
+  const day = d.getDate();
+  const w = ['日','月','火','水','木','金','土'][d.getDay()];
+  return `${m}/${day}(${w})`;
+}
+function todayLabel() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = d.getMonth() + 1;
+  const day = d.getDate();
+  const w = ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'][d.getDay()];
+  return `${y}年${m}月${day}日（${w}）`;
+}
+function dueDiff(dateStr) {
+  const t = new Date(today() + 'T00:00:00').getTime();
+  const d = new Date(dateStr + 'T00:00:00').getTime();
+  return Math.round((d - t) / 86400000);
+}
+
+// ===== PROGRESS =====
+function updateProgress() {
+  const t = today();
+  const todayHws = homeworks.filter(h => h.dueDate === t && !h.deleted);
+  const doneToday = todayHws.filter(h => h.completed).length;
+  const total = todayHws.length;
+  document.getElementById('doneCount').textContent = doneToday;
+  document.getElementById('totalCount').textContent = total;
+  const pct = total === 0 ? 0 : Math.round((doneToday / total) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+
+  let msg = '';
+  if (total === 0) msg = '宿題を追加してみよう！（＋ボタン）';
+  else if (doneToday === 0) msg = `あと ${total} こ がんばろう！💪`;
+  else if (doneToday < total) msg = `あと ${total - doneToday} こ！もうちょっと！🔥`;
+  else msg = '今日の宿題ぜんぶおわり！すごい！🎊';
+  document.getElementById('progressMsg').textContent = msg;
+  document.getElementById('totalPoints').textContent = totalPoints;
+}
+
+// ===== TAB BADGES =====
+function updateBadges() {
+  const t = today();
+  const active = homeworks.filter(h => !h.deleted);
+  const todayPending = active.filter(h => h.dueDate === t && !h.completed).length;
+  const upcoming = active.filter(h => h.dueDate > t && !h.completed).length;
+  const done = active.filter(h => h.completed).length;
+  document.getElementById('badge-today').textContent = todayPending;
+  document.getElementById('badge-upcoming').textContent = upcoming;
+  document.getElementById('badge-done').textContent = done;
+}
+
+// ===== RENDER =====
+function render() {
+  updateProgress();
+  updateBadges();
+  const t = today();
+  const active = homeworks.filter(h => !h.deleted);
+  let items = [];
+
+  if (currentTab === 'today') {
+    items = active.filter(h => h.dueDate <= t && !h.completed);
+    const overdue = items.filter(h => h.dueDate < t);
+    const todayItems = items.filter(h => h.dueDate === t);
+    items = [...todayItems, ...overdue];
+  } else if (currentTab === 'upcoming') {
+    items = active.filter(h => h.dueDate > t && !h.completed)
+      .sort((a, b) => a.dueDate.localeCompare(b.dueDate));
+  } else {
+    items = active.filter(h => h.completed)
+      .sort((a, b) => (b.completedAt || 0) - (a.completedAt || 0));
+  }
+
+  const section = document.getElementById('listSection');
+  section.innerHTML = '';
+
+  // All-done banner for today tab
+  if (currentTab === 'today') {
+    const todayAll = active.filter(h => h.dueDate === t);
+    const todayDone = todayAll.filter(h => h.completed);
+    if (todayAll.length > 0 && todayAll.length === todayDone.length) {
+      const banner = document.createElement('div');
+      banner.className = 'all-done-banner';
+      banner.innerHTML = `<span class="all-done-emoji">🎊</span><div class="all-done-text"><strong>今日の宿題コンプリート！</strong><span>すごい！よく頑張ったね！</span></div>`;
+      section.appendChild(banner);
+    }
+  }
+
+  if (items.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    if (currentTab === 'today') {
+      empty.innerHTML = `<span class="empty-emoji">😊</span><p>今日の宿題はないよ！<br>ゆっくり休んでね！</p>`;
+    } else if (currentTab === 'upcoming') {
+      empty.innerHTML = `<span class="empty-emoji">🌟</span><p>これからの宿題はないよ！<br><span class="empty-sub">＋ボタンで追加しよう</span></p>`;
+    } else {
+      empty.innerHTML = `<span class="empty-emoji">📚</span><p>まだ宿題が終わっていないよ！<br><span class="empty-sub">頑張って終わらせよう！</span></p>`;
+    }
+    section.appendChild(empty);
+    return;
+  }
+
+  const list = document.createElement('div');
+  list.className = 'hw-list';
+
+  items.forEach(hw => {
+    const subj = SUBJECTS.find(s => s.name === hw.subject) || SUBJECTS[SUBJECTS.length - 1];
+    const diff = dueDiff(hw.dueDate);
+    const isOverdue = diff < 0;
+    const isToday = diff === 0;
+
+    const card = document.createElement('div');
+    card.className = 'hw-card' + (hw.completed ? ' done' : '') + (isOverdue && !hw.completed ? ' overdue' : '');
+    card.style.borderColor = hw.completed ? 'transparent' : (isOverdue ? '#FF5252' : 'transparent');
+
+    let dueText = '';
+    let dueClass = 'due-label';
+    if (isOverdue && !hw.completed) {
+      dueText = `⚠️ ${Math.abs(diff)}日おくれ`;
+      dueClass += ' overdue';
+    } else if (isToday) {
+      dueText = '📅 きょうまで';
+      dueClass += ' today';
+    } else {
+      dueText = `📅 ${fmtDate(hw.dueDate)}まで`;
+    }
+
+    card.innerHTML = `
+      <div class="subject-icon" style="background:${subj.bg};">${subj.emoji}</div>
+      <div class="hw-body">
+        <div class="hw-title">${escHtml(hw.title)}</div>
+        <div class="hw-meta">
+          <span class="subject-label" style="background:${subj.bg};color:${subj.color}">${subj.name}</span>
+          <span class="${dueClass}">${dueText}</span>
+        </div>
+      </div>
+      <div class="hw-actions">
+        <button class="done-btn ${hw.completed ? 'done-active' : ''}"
+                onclick="toggleDone('${hw.id}')"
+                title="${hw.completed ? '元に戻す' : '完了！'}">
+          ${hw.completed ? '✅' : '○'}
+        </button>
+        <button class="delete-btn" onclick="deleteHw('${hw.id}')" title="削除">🗑</button>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+
+  section.appendChild(list);
+}
+
+// ===== TOGGLE DONE =====
+function toggleDone(id) {
+  const hw = homeworks.find(h => h.id === id);
+  if (!hw) return;
+
+  if (!hw.completed) {
+    hw.completed = true;
+    hw.completedAt = Date.now();
+    totalPoints += 10;
+    pointsHistory.unshift({ title: hw.title, subject: hw.subject, pts: 10, at: Date.now() });
+    if (pointsHistory.length > 50) pointsHistory = pointsHistory.slice(0, 50);
+    save();
+    render();
+    showCelebration(hw);
+  } else {
+    hw.completed = false;
+    hw.completedAt = null;
+    totalPoints = Math.max(0, totalPoints - 10);
+    pointsHistory = pointsHistory.filter(p => !(p.title === hw.title && p.pts === 10));
+    save();
+    render();
+    showToast('元に戻したよ');
+  }
+}
+
+// ===== DELETE =====
+function deleteHw(id) {
+  const hw = homeworks.find(h => h.id === id);
+  if (!hw) return;
+  if (!confirm(`「${hw.title}」を削除する？`)) return;
+  hw.deleted = true;
+  save();
+  render();
+  showToast('削除したよ');
+}
+
+// ===== ADD MODAL =====
+function openAddModal() {
+  selectedSubject = SUBJECTS[0];
+  renderSubjectGrid();
+  document.getElementById('hwTitle').value = '';
+  document.getElementById('hwDueDate').value = today();
+  document.getElementById('addModal').classList.add('show');
+  setTimeout(() => document.getElementById('hwTitle').focus(), 400);
+}
+function closeAddModal() {
+  document.getElementById('addModal').classList.remove('show');
+}
+
+function renderSubjectGrid() {
+  const grid = document.getElementById('subjectGrid');
+  grid.innerHTML = '';
+  SUBJECTS.forEach(s => {
+    const btn = document.createElement('button');
+    btn.className = 'subject-btn' + (s.name === selectedSubject.name ? ' selected' : '');
+    btn.style.borderColor = s.name === selectedSubject.name ? s.color : '';
+    btn.style.background = s.name === selectedSubject.name ? s.bg : '';
+    btn.innerHTML = `<span class="s-emoji">${s.emoji}</span>${s.name}`;
+    btn.onclick = () => { selectedSubject = s; renderSubjectGrid(); };
+    grid.appendChild(btn);
+  });
+}
+
+function addHomework() {
+  const title = document.getElementById('hwTitle').value.trim();
+  const dueDate = document.getElementById('hwDueDate').value || today();
+  if (!title) { showToast('ないようを入力してね！'); return; }
+
+  const hw = {
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+    subject: selectedSubject.name,
+    title,
+    dueDate,
+    completed: false,
+    completedAt: null,
+    deleted: false,
+    createdAt: Date.now(),
+  };
+  homeworks.unshift(hw);
+  save();
+  closeAddModal();
+  render();
+  showToast('宿題を追加したよ！📚');
+
+  // Switch to today tab if due today
+  if (dueDate === today() && currentTab !== 'today') {
+    switchTab('today');
+  }
+}
+
+// ===== TAB =====
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  render();
+}
+
+// ===== CELEBRATION =====
+function showCelebration(hw) {
+  const cheer = CHEERS[Math.floor(Math.random() * CHEERS.length)];
+  document.getElementById('celebEmoji').textContent = cheer[0];
+  document.getElementById('celebTitle').textContent = cheer[1];
+  document.getElementById('celebMsg').textContent = cheer[2];
+  document.getElementById('celebPoints').textContent = '＋10pt ゲット！';
+  document.getElementById('celebration').classList.add('show');
+  spawnConfetti();
+
+  // Check all done
+  const t = today();
+  const todayAll = homeworks.filter(h => !h.deleted && h.dueDate === t);
+  const todayDone = todayAll.filter(h => h.completed);
+  if (todayAll.length > 0 && todayAll.length === todayDone.length) {
+    setTimeout(() => {
+      document.getElementById('celebEmoji').textContent = '🎊';
+      document.getElementById('celebTitle').textContent = 'コンプリート！！';
+      document.getElementById('celebMsg').textContent = '今日の宿題ぜんぶおわり！\nすごすぎる！！！';
+      document.getElementById('celebPoints').textContent = `合計 ${totalPoints}pt！`;
+    }, 800);
+  }
+}
+function closeCelebration() {
+  document.getElementById('celebration').classList.remove('show');
+}
+
+// ===== CONFETTI =====
+const CONFETTI_COLORS = ['#FF6B35','#FF9A5C','#FFD700','#3CC47C','#2196F3','#E91E63','#9C27B0','#00BCD4'];
+function spawnConfetti() {
+  const container = document.getElementById('confettiContainer');
+  for (let i = 0; i < 60; i++) {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.className = 'confetti-piece';
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.top = '-10px';
+      el.style.background = CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)];
+      el.style.width = (6 + Math.random() * 10) + 'px';
+      el.style.height = (6 + Math.random() * 10) + 'px';
+      el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+      el.style.animationDuration = (1 + Math.random() * 1.5) + 's';
+      el.style.animationDelay = Math.random() * 0.5 + 's';
+      container.appendChild(el);
+      setTimeout(() => el.remove(), 3000);
+    }, i * 20);
+  }
+}
+
+// ===== POINTS MODAL =====
+function showPointsModal() {
+  document.getElementById('pointsBig').textContent = totalPoints;
+  const list = document.getElementById('pointsHistoryList');
+  if (pointsHistory.length === 0) {
+    list.innerHTML = '<div style="text-align:center;color:var(--text-sub);padding:20px;font-size:14px;">まだ宿題が終わっていないよ！<br>頑張ってね！</div>';
+  } else {
+    list.innerHTML = pointsHistory.slice(0, 20).map(p => {
+      const d = new Date(p.at);
+      const label = `${d.getMonth()+1}/${d.getDate()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+      const subj = SUBJECTS.find(s => s.name === p.subject) || SUBJECTS[SUBJECTS.length-1];
+      return `<div class="points-history-row">
+        <span class="ph-title">${subj.emoji} ${escHtml(p.title)}</span>
+        <span style="font-size:12px;color:var(--text-sub);margin:0 8px;">${label}</span>
+        <span class="ph-pts">+${p.pts}pt</span>
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('pointsModal').classList.add('show');
+}
+function closePointsModal() {
+  document.getElementById('pointsModal').classList.remove('show');
+}
+
+// ===== TOAST =====
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ===== UTILS =====
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function genId() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+}
+
+// Close modals on overlay click
+document.getElementById('addModal').addEventListener('click', function(e) {
+  if (e.target === this) closeAddModal();
+});
+document.getElementById('pointsModal').addEventListener('click', function(e) {
+  if (e.target === this) closePointsModal();
+});
+
+// Keyboard support
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeAddModal(); closePointsModal(); closeCelebration(); }
+  if (e.key === 'Enter' && document.getElementById('addModal').classList.contains('show')) {
+    addHomework();
+  }
+});
+
+// ===== INIT =====
+(function init() {
+  load();
+  document.getElementById('todayLabel').textContent = todayLabel();
+  renderSubjectGrid();
+  render();
+})();
+</script>
+</body>
+</html>
