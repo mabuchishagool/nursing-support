@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<title>Instagramはこちら</title>
+<style>
+  :root{ color-scheme: dark; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{
+    background:#0a0a0a;
+    font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic UI',sans-serif;
+    display:flex;
+    overflow:hidden;
+  }
+
+  a.stage{
+    position:relative;
+    width:100%;
+    height:100dvh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  /* soft glowing backdrop so the mark reads instantly */
+  .glow{
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 42%, rgba(255,255,255,0.14), transparent 60%),
+      radial-gradient(ellipse 120% 90% at 50% 100%, rgba(120,60,255,0.18), transparent 70%),
+      #0a0a0a;
+    z-index:0;
+  }
+
+  .ring{
+    position:absolute;
+    top:42%;
+    left:50%;
+    width:min(78vw,420px);
+    height:min(78vw,420px);
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.18);
+    animation:pulse 2.6s ease-out infinite;
+    z-index:1;
+  }
+  .ring.r2{ animation-delay:1.3s; }
+  @keyframes pulse{
+    0%{ transform:translate(-50%,-50%) scale(0.75); opacity:0.7; }
+    100%{ transform:translate(-50%,-50%) scale(1.25); opacity:0; }
+  }
+
+  .badge-wrap{
+    position:relative;
+    z-index:2;
+    width:min(62vw,320px);
+    aspect-ratio:1/1;
+    border-radius:50%;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:
+      0 0 0 6px rgba(255,255,255,0.06),
+      0 20px 60px rgba(0,0,0,0.55),
+      0 0 80px rgba(255,255,255,0.15);
+    animation:float 3s ease-in-out infinite;
+  }
+  @keyframes float{
+    0%,100%{ transform:translateY(0) scale(1); }
+    50%{ transform:translateY(-14px) scale(1.02); }
+  }
+
+  .badge-wrap img{
+    width:72%;
+    height:72%;
+    object-fit:contain;
+  }
+
+  .tap-msg{
+    position:relative;
+    z-index:2;
+    margin-top:34px;
+    color:#ffffff;
+    font-size:15px;
+    letter-spacing:0.12em;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    animation:blink 1.7s ease-in-out infinite;
+  }
+  @keyframes blink{
+    0%,100%{ opacity:0.45; }
+    50%{ opacity:1; }
+  }
+
+  .ig-icon{
+    width:26px;
+    height:26px;
+    flex-shrink:0;
+  }
+
+  .sub{
+    position:relative;
+    z-index:2;
+    margin-top:10px;
+    color:rgba(255,255,255,0.5);
+    font-size:12px;
+    letter-spacing:0.08em;
+  }
+</style>
+</head>
+<body>
+<a class="stage" href="https://www.instagram.com/kumamoto_hokubujh?utm_source=qr" rel="noopener">
+  <div class="glow"></div>
+  <div class="ring"></div>
+  <div class="ring r2"></div>
+
+  <div class="badge-wrap">
+    <img src="assets/logo.jpg" alt="校章">
+  </div>
+
+  <div class="tap-msg">
+    <svg class="ig-icon" viewBox="0 0 448 512" fill="#ffffff" aria-hidden="true">
+      <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+    </svg>
+    タップしてInstagramへ
+  </div>
+  <div class="sub">kumamoto_hokubujh</div>
+</a>
+</body>
+</html>
